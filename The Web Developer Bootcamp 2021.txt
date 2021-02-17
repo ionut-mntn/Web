@@ -1,0 +1,757 @@
+aici vad schimbarile aduse cursului:
+https://www.notion.so/Web-Developer-Bootcamp-ChangeLog-45e3eab6be724c5f9a4b83c01044e126
+
+12. The Internet in 5 minutes:
+	Internet = network of networks
+
+13. Intro to the Web:
+	URL = Uniform Resource Locators
+	Web = information system taht allows us to share resources over the internet; these resources
+are identified by the URL
+
+HTTP = HyperText Transfer Protocol -> asa functioneaza WWW-ul World Wide Web
+	= reguli standardizateI(protocol)despre cum ar trebui sa functioneze comunicarea
+- exista multe alte protocoale
+
+	Cand de exemplu dam un refresh pe reddit --> generam un request; un request catre
+URL-ul respectiv, more specifically. semnal catre unul din serverele Reddit, iar apoi
+semnal back la noi
+
+Web Server(ca la retele): = masini (de calcul) conectate la internet a caror whole purpose
+este de a satisface requests coming in via the Web
+
+La baza, Web-ul este sistemul de a impartasi resurse over the Internet si e in intregime con-
+struit pe aceasta chestie (protocol) nuimt HTTP
+
+client = device-ul cu request-ul / "client side"
+
+
+14. The Request / Response Cycle
+-----------------------------------
+	Ce se intampla cand fac un request iar acel request ajunge la server?
+Ei bine, server-ul nu raspune cu pagina web!! Serverul raspunde cu instructiuni pe care
+browserul clientului le intelege; job-ul browserului este sa "render" content for the client
+adica sa interpreteze acele instructiuni. Deci serverul returneaza un set de instructiuni!!
+ca la Ikea; instructiunile nu sunt in sine canapeaua.
+
+Cum arata aceste instructiuni?
+	In Chrome: click-dreapta si "view page source " <--- astea vin de la server iar 
+browser-ul le interpreteaza si le transforma in ceva ce omul intelege !!
+	!!! TOT CODUL ASTA CONSTA DIN HTML, CSS SI JAVASCRIPT(JS) !!!
+
+
+15. Front-End / Back-End
+
+
+16. What do HTML/CSS/JS do?
+HTML - the what?
+CSS - the style adjectives ( infrumuseteaza )
+JS - the actions
+
+20. Introduction to HTML
+-----------------------
+html -- not full blown programming language
+	-- marking up document adica asa cum face profa cand iti corecteaza lucrarea..
+"marcheaza" lucrarea
+
+
+mark-up = the process or result of correcting text in preparation for printing
+
+creem elemente in html folosind tag uri...
+ !! most - but not all of - the elements consist of an oopening and cosing tag:
+<p> paragraf </p>
+
+21. Our very first HTML Document
+--------------------------------
+
+
+22. Mozilla Developer Network
+------------------------------
+references ... toate tag-urile acolo
+
+23. Paragraph elements
+----------------------
+
+
+24. Heading elements:
+h1 - main heading
+h1 -> h6 ( is mai mici treptat ca font, dar nu de asta le folosim )
+ONE H1 at most on a page
+!! niciodata nu am hn fara sa am h(n-1)
+
+
+25. Chrome Inspector
+
+
+26. HTML Boilerplate
+-----------------------
+chestii standardizate care trebuie sa intre in orice document html
+
+html element -> the root element
+title element -> titul tabului
+
+
+27. VSCode Tip
+-------------
+ctrl + shift + p --> The VSCode Palette (cauti format document sau ce ai nevoie)
+       shift + alt + f --> format document
+ctrl + , --> settings -- am aici save on format !!
+shift + alt + down arrow --> duplica linia
+
+
+28. List elements
+-----------------
+ol -> ordered list (numbered points)
+ul -> unordered list (bullet points)
+<li> --> list element -- apare doar intre <ol> ... </ol> sau <ul> ... </ul>
+
+29. Anchor tag
+--------------
+prin elementul asta legam link-uri catre alte pagini sau chiar catre alta sectiune a paginii
+curente
+
+ATRIBUTE !! = little pieces of info that we pass to a tag; href = hypertext reference probabil
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+34. Inline vs Block Comments
+block: paragraph ,h1, h2
+inline: 
+
+<div> vine de la division / divider
+--> e un container generic to hold/group things together
+--> e un element de tip "block"
+--> deci e o metoda de a grupa continut impreuna pentru a-i trata similar unitatile ce 
+alcatuiesc intregul
+
+<span>
+--> idem
+--> e un element de tip "inline"
+--> idem
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+35. <hr> <br> <sup> <sub>
+<hr> horizontal rule
+--> nu are ending tag
+--> e o linie orizontala care are la mijloc un semn ceva;
+--> "thematic break" between parapgraph level elements
+
+<br> line break (endline)
+--> poezii
+
+<sup>, <sub> superscript subscript
+
+36. HTML Entities (aka "entity codes")
+--------------------------------------
+sunt diferite caractere: copyright symbol, diamond, cruce etc
+--> incep cu un ampersand si se termina cu punct-virgula
+--> folosite pt a afisa diverse caractere care ar fi invalide otherwise
+--> browserul le interpreteaza si "renders" the correct character!!
+
+
+37. Semantic Markups
+---------------------
+header, footer, nav, section, article, main...
+--> toate se comporta ca div doar ca ofera un anumit sens !!
+
+Dar totusi.. dc ar conta? Evident pt ca adauga inteles !!
+		2) pt ca ajuta web crawlers sa indexeze continutul si pe screen readers
+
+DECI ASTA ADAUGA INTELES!!!
+
+38. Playing With Semantic Elements
+---------------------------------
+: instead of using generic containers - such as <div> - we can use specific ones, like:
+main, nav, section, header, footer
+
+<section>
+<article>
+<nav>
+<main>
+<header>
+<footer>
+<aside>
+<summary>
+<details>
+.. plus : <time> - inline
+<figure> (optional sa apara in interiorul sau: <figcaption>)
+<abbr>
+<data>
+
+<main> --> continutul principal specific continutului paginii; ceva ce nu se repeta pe alte 
+pagini
+
+<article> --> ceva self-contained ce ar putea fi refolosit pe alte site-uri (cum ar fi un 
+weather widget)
+
+<aside> --> ceva nenecesar
+
+<header> --> introductroy content; poate include navigational content la fel de bine
+<footer> -->
+
+
+!! SEO = SEARCH ENGINE OPTIMIZATION !!
+
+39. Screen Reader Demonstration
+-------------------------------
+
+
+
+
+42. Unit Goals
+
+43. HTML Tables
+
+44. Table Elements: TR, TD, TH
+<td> table data cell deci o intrare pe un rand ( a cell )
+<tr> un rand nou
+<th> table heading - numele coloanei; dar si astea trebuie sa apara pe un rand, deci 
+intre prima pereche: <tr> si </tr>, iar aceasta prima pereche apare la randul ei
+(se explica in videoul urmator intre <thead> si </thead>)
+
+
+
+45. Tables: Thead, Tbody, Tfoot elements
+----------------------------------------
+
+
+46. Colspawn & Rowspan !!
+----------------------
+
+47. The Form Element
+-------------------
+<form> --> grupeaza + dicteaza unde se trimite informatiile din form cand se da submit
+
+exemplu cu search pe reddit pe la minutul 06:10
+ceva http request cand dai search:
+"an http request will be fired off to /search" (cand apasa search)
+/search nu e un website pe care putem merge. asta e relativ pagina site-ului pe care 
+ne aflam deja
+
+! when submitting a form, an http request will be sent and we control where that request goes
+to using the attribute called "action" ( al lui <form> ) si controlam ce tip de http method
+folosind atributul "method"
+
+48. ce intra intr-un form?
+--------------------------
+<input> !!! extrem de versatil: checkbox, color picker, date picker, password input, text input
+atributul "type" e important !!
+INPUT NU ARE CLOSING TAG !!!
+
+49. "the All-important Label"
+----------------------------
+cand asociez un label cu un textbox/checkbox/altele... pot apasa si pe label; se va interpreta 
+ca clicul pe checkbox
+
+!! for, id !!
+
+
+50. Buttons
+---------
+<button> text_button </button>
+open+close tag
+
+orice buton intr-un form pt care nu se specifica explicit ce ar trebui sa faca este asociat
+cu actiunea form-ului!! adica "action"-ul form-ului!!
+
+51. The name attribute(for input)
+----------------------
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+cand dam submit la un form se trimite un http request catre actiunea form-ului !!!
+si apoi se trimit datele!! "q=silkie" --> asta e numele input-ului !!
+
+--> trebuie pus la orice input folosim!!
+
+52. Hijacking" Google & Reddit's Search
+---------------------------------------
+!!!!!!!!!!!!!!!!!
+atributul name !!! --> asta e numele variabilei pt server
+
+trebuie sa matchuim "actiunea" noastra (query-ul / http-get request-ul) cu sintaxa pe care serverele
+reddit o asteapta
+!!!!!!!!!!!!!!!!!
+
+
+
+53. !!!!!!!!!!! Alte chestii pt <input> !!!!!!!
+--------------------------------------------
+daca un checkbox e unchecked, atunci nu apare in query; in schimb, daca e checked va aparea
+
+diff intre radio si checkbox e ca e la radio am voie sa am doar o optiune aleasa!!
+!! atributul 'value' in cazul UNOR(deci mai multe) radio buttons este foarte important pt ca
+!! ne ajuta sa trimitem valoarea checkboxului (in loc de yes/no) !!!!!
+!! in general pt input: atributului 'name' i se atribuie valoarea atributului 'value' when
+we submit a form !!
+<!-- PRIN atributul 'name' le grupam pe toate, adica impunem user-ului sa bifeze un singur cerculetz din astea de mai jos !! -->
+
+
+<select> + <option>
+selected
+o optiune fara
+
+54. Range & Text Area
+--------------------
+
+55. validations
+--------------
+patterns
+
+56. form
+-------
+
+
+!!! holding alt and clicking in multiple specific places voi crea mai multi cursori
+
+
+
+58. CSS
+---------
+cand scriem
+
+59. What is CSS?
+----------------
+!! cand scriem css, scriem css-reguli / css-rules !!
+pattern/template basic:
+
+selector {
+   property: value;
+}
+
+asa facem toate h1-urile purple!!
+h1{
+  color: purple;
+}
+
+img{
+width: 100px;
+height: 200px;
+}
+
+
+toate input-urile unde tipul e selectat la text, din 2 in 2
+input[type="text"]: nth-of-type(2n){
+    border:2px solid red;
+}
+
+61. Including Styles Correctly
+-----------------------------
+External Stylesheets - cea mai buna varianta de a lucra cu css, dar exista si variantele:
+--> <style> (in head-ul documentului html)
+--> style direct ca atribut in elementul!!
+
+!! Elementul <link> !!
+--> il includem in head-ul html-ului
+
+62. Color
+---------
+toate variantele alea de pe mdn reprezinta o singura culoare!!
+
+63. Color Systems
+-----------------
+/* 
+rgb(255,0,0) - red
+rgb(0,0,255) - blue
+rgb(0,255,0) - green
+rgb(173,20,219) - un purple
+rgb(0,0,0) - black
+rgb(255,255,255) - white
+*/
+
+64.Hexadecimals / Hex Colors
+----------------------------
+
+!!! properties / proprietatile sunt ceea ce stilizam la anumite elemente
+(selectorul le selecteaza, iar proprietatile
+
+
+66. Text Properties
+-------------------
+
+68. The Font Family Property
+----------------------------
+Font stack = list of fonts de folosit, in ordine
+
+69. Universal / Element Selectors
+---------------------------------
+* -> tot
+* {
+color: black;
+}
+
+
+71.
+!! Ca sa "stilizez" ceva specific, adica ceva cu un ID:
+#logout{
+	color: orange;
+	height: 200px;
+}
+
+72. The Class Selector 
+---------------------
+#logout{		/* asta e pt elemente cu id!!*/
+	color: orange;
+	height: 200px;
+}
+
+.complete{		/* Asta e pt elemente din aceeasi clasa! */
+	color: green;
+}
+
+73. Descendant selectors
+--------------------------
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+li [space] a {			/* selecteaza toate anchor tag-urile care sunt nested(/"descendant": e acelasi lucru) al unui li(list item)
+	color: teal; 
+}
+
+li, a{ 			--> e cu totul diferit cu virgula
+	color: teal;
+}
+se pot combina in mai multe feluri!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+74. Adjacent selector / Direct descendant(child) selector
+--------------------------------------------------------
+(sunt numite combinators aste de genul: h1 + p --> plusul e combinator)
+adjacent selector:
+/* asta de jos: selecteaza doar paragrafele care sunt imediat precedate de un h1 */
+h1 + p{
+	color:red;
+}
+
+adjacent: +     --> "h2+button"
+direct-child: >     --> "footer>a"
+
+75. The Attribute selector
+---------------------------
+pt input !! (the type attribute)
+input[type="text"]{
+}
+
+class si id sunt si ele atribute !!
+
+
+
+section[class="post"]{
+    background-color: purple;
+}
+/* astea 2 cred ca sunt echivalente*/
+/* .post{
+    background-color: purple;
+} */
+
+/*obs: daca aveam mai multe elemente de tipuri diferite in clasa "post"
+ dar voiam doar pe acelea care sunt de tip "section" puteam face:
+ section.post{
+... 
+}
+ */ 
+/* astea 2 cred ca sunt echivalente*/
+/* .post{
+    background-color: purple;
+} */
+
+/*obs: daca aveam mai multe elemente de tipuri diferite in clasa "post"
+ dar voiam doar pe acelea care sunt de tip "section" puteam face:
+ section.post{
+... 
+}
+ */ 
+/* astea deja intra in expresii regulare*/
+ a[href*="google"]{     /* anchor tags care contin "google" */
+     color:magenta
+ }
+
+ a[href$=".org"]{       /* anchor tags care se termina in ".org" */
+     
+ }
+
+ 
+
+
+OBS: tot ce pe MDN e cu a little flask next to it(o
+
+76. Pseudo Classes
+------------------
+sunt multe
+
+!!cu astea stilizam un element bazat pe "state"!!
+
+un fel de modifiers; keywords pe care le adaugam la un selector ca sa specificam "the state"
+of the selected elements. The state poate fi - dar nu cred ca se rezuma la:
+:active
+:checked
+:first
+:first-child
+:hover
+:not()
+:nth-child()
+:nth-of-type()
+
+!! Toate incep cu colon(doua puncte:)
+
+77. Pseudo Elements
+-------------------
+nu s asa multe
+
+cu astea stilizam (un element) parti ale unui element selectat-selectat intr-un anume fel-!!!
+
+astea ne ajuta sa stilizam o parte specifica a elementelor selectate
+::after
+::before
+::first-letter
+::first-line
+::selection
+
+
+78. The Cascade
+---------------
+2 conflicting styles (prolly cu aceeasi precedenta) --> va castiga ultima care apare!!
+!! conteaza si ordinea in care apar link-urile in head-ul html-ului!!
+
+79. Specificity
+---------------
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Cand avem acelasi tip de selector --> conteaza doar ordinea! adica "The Cascade"
+
+Cand nu --> Specificity = "ce reguli sa aplice un browser cand exista un conflict?"
+conflict = mai multe reguli se pot aplica unui element
+!!! Cum o spune si numele "SPECIFICITY" --> cel mai specific selector castiga !!!
+
+--tre sa le simtim astea:
+p{
+  color:yellow;
+}
+
+section p{
+  color: teal;
+}
+
+e clar ca al doilea e mai specific
+
+formula generala:
+	ID > CLASS > ELEMENT
+
+nav a.active{
+
+}
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+80. Chrome Dev Tools (inspect-ul)
+----------------------------------
+
+81.Inline styles(the most specific things, but almost nobody uses them)
+-----------------------------------------------------------------------
+The !important exception (rule)
+
+.foo[style*="color: red"]{
+  color: firebrick !important; --> asta e exceptie la modelul specificitatii si overrides orice exista deja
+--> "cea mai cea mai" specifica (nici macar nu ia parte la regulile jocului specificitatii, ci castiga implicit)
+
+}
+
+
+82. CSS Inheritance
+-------------------
+!!!!!!!!!!!!!
+
+83. Box Model
+
+84. Box Model
+--------------
+cam totu is a box
+padding e distanta de la content box la border iar -spre deosebire- 
+margin e distanta de la borderul box-ului respecitv la altceva ( alt element)
+
+padding = distanta inside of the border
+margin = distanta outside of the border
+
+width & height controleaza dimensiunea inner content-ului 
+
+cea atentie la box-sizing nujce
+
+85. Border & Border-Radius
+--------------------------
+reprez border-ul din jurul elementului (deci content-box + padding are surrounded by this)
+
+main 3 properties:
+border-width
+border-color
+border-style
+
+!!
+box-sizing: border-box
+------------------------
+/* border-box tells the browser to account for any border and padding in
+ the values you specify for an element's width and height. If you set an
+  element's width to 100 pixels, that 100 pixels will include any border 
+  or padding you added, and the content box will shrink to absorb that 
+  extra width. This typically makes it much easier to size elements. */
+!!
+
+!! In inspect: 
+cu albastru -> content area
+cu green -> padding
+cu portocaliu -> margin
+!! In inspect
+
+86. Padding (se foloseste mostly pixels)
+----------------------------------------
+4 feluri de a folosi:
+padding: 10px
+padding: 5px 10px ( vertical orizontal )
+padding: 1px 2px 2px ( top horizontal bottom )
+padding: 5px 1px 0 2px ( top right bottom left -> trigonometric; orar )
+
+88. The Display Property
+------------------------
+
+!! F IMPORTANT !!!
+
+
+
+89. CSS Units - Relative & Absolute Units
+-----------------------------------------
+width: 50% -> 50% din valoarea parintelui
+line-height: 50% -> jumatate din font-size-ul elementului insusi
+
+deci unele is relative la parinte, altele relative la o proprietatea a lor insisi
+!! in general, procentele sunt folosite cu proprietati, precum: widht, height
+
+90. CSS Units: ems
+-----------------
+1 em inseamna font-size ul parintelui ( dar nu pt toate proprietatile )
+cu alte proprietati, 1 em este egal cu font-size-ul parintelui
+
+
+91. CSS Units: rems
+-------------------
+Rezolva problema cu recursivitatea la em-uri
+
+!! r-ul vine de la root!! deci relativ la font-size-ul intregului document !!
+<html> e root-element-ul !!!
+
+91 --> ??05:30??
+
+93. Opacitate & Alpha-Channel
+----------------------------
+rgba (a,b,c,opacitate) unde 0 <= opacitate <= 1
+
+94. The Position Property
+-------------------------
+relative, absolute, fixed, sticky(sticky cea mai misto.. e ce cautam eu pt nav-bar uri!!)
+
+95. CSS Transitions!
+---------------------
+prin "transition" property, avem control asupra :
+-> property name
+-> duration
+-> timing function
+-> delay
+
+
+------------------------------------------------------------------------------------
+.circle{
+    width:300px;
+    height:300px;
+    background-color: magenta;
+    /* transition: 1s; */
+    /* transition: background-color 3s; */
+    /* transition: background-color 3s 1s; */
+    /* 1s, deci al doilea timp e delay-ul! */
+    /* transition: all 1s 1s; */
+    transition: background-color 3s ease-in, border-radius 2s;
+}
+/* DEFINITELY SINGLE OUT PROPERTIES TO BE "transitioned" (animated) */
+
+.circle:hover{  /* hover e state-ul.. la schimbare de state se aplica tranzitia de mai sus!!*/
+    background-color: cyan;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+/* 
+Pana aici avem o oarecare tranzitie, dar e din topor. Am putea spune ca vrem ca aceasta tranzitie sa ia 
+o secunda intreaga pana sa devina din patrat cerc (si invers)
+ */
+
+
+
+h1{
+    background-color: magenta;
+    width: 25%;
+    text-align: center;
+    padding: 1em;
+    color: white;
+    transition: background-color 1s ease-in-out, width 1s ease-in-out;
+}
+
+h1:hover{
+    width: 50%;
+    background-color: cyan;
+}
+
+section div{
+    height: 100px;
+    width: 100px;;
+    background-color: turquoise;
+    margin: 20px 0; 
+    transition: margin-left 3s;
+}
+
+section:hover div{
+    margin-left: 500px;
+    /* de regula cica nu facem din astea, ca ar fi o varianta mai buna de a anima chestii */
+}
+/* asa iau fiecare al n-lea element de acel tip */
+div:nth-of-type(1){
+    transition-timing-function: ease-in;
+    /* ease-in = start slow, then speed up */
+}
+
+div:nth-of-type(2){
+    transition-timing-function: ease_out;
+    /* ease-out = start fast, then slow up */
+}
+
+div:nth-of-type(3){
+    transition-timing-function: cubic-bezier(0.7,0,0.84,0);
+}
+
+div:nth-of-type(4){
+    transition-timing-function: cubic-bezier(0.85,0,0.15,1);
+}
+/* !!Toate ajung la final in acelasi moment de timp  */
+
+/*
+REZUMAT
+------
+Cu "transition" putem specifica 4 chestii:
+    - o proprietate pe care vrem sa o animam (gen background-color)
+    - o durata de timp pt animatie (secunde sau milisecund)
+    - timing function (obs care nu prea are treaba dar totusi pot face asta: pot 
+    seta aceeasi animatie pt niste obiecte de un anume tip, iar prin aceasta functie 
+    separat pt fiecare vitezele acel "graficul al functiei" deci modul de miscare)
+    - delay
+*/
+
+-------------------------------------------------------------------------------------
+
+96. The Power of CSS Transforms
+------------------------------
+transform: scale, translate (dai offset-ui la astea si poate si culori in unele cazuri)
+
+
+97. Fancy Button Hover Effect
+-----------------------------
+cum importi font-uri
+ceva legat de flexbox
+
+98.
+
+99.

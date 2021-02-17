@@ -1,0 +1,62 @@
+/* h1{
+    background-color: palegoldenrod;
+    border: 1px solid black;
+    display: inline;
+}
+
+span{
+    background-color: paleturquoise;
+    border: 1px solid black;
+    display: block;
+} */
+
+span{
+    background-color: palevioletred;
+    border: 1px solid black;
+    width: 500px;
+    /* cand setez width-ul pt inline elementes... nothing happens. WHY? */
+    
+    padding: 100px;
+    /* padding-ul totusi exista dar observam ca nu e respectat de restul content-ului
+    de pe restul paginii */
+    
+    margin: 50px;
+    /* margin vedem ca e respectata orizontal, dar vertical e complet ignorata!! */
+
+}
+
+h1{
+    background-color: paleturquoise;
+    border: 1px solid black;
+    width: 300px;
+    height: 200px;
+    padding: 50px;
+    /* width, height, padding sunt respectate */
+    margin: 100px;
+}
+
+div{
+    height: 200px;
+    width: 200px;
+    /* 
+    chiar daca am facut width-ul mai mic decat intreg block-ul ocupat de un div - care e block-element - el
+    tot un block intreg ocupa
+    */
+    background-color: olivedrab;
+    border: 5px solid black;
+    
+    /* display: inline; */
+    /* 
+    asta nu merge pt ca
+    dupa cum am vazut si mai sus
+    WIDTH & HEIGHT AREN'T RESPECTED FOR INLINE ELEMENTS !!!! */
+
+    display: inline-block;
+    /* de acuma toate proprietatile o sa functioneze!! */
+
+    margin: 50px;
+
+    /* display:none */
+    /* !! asta o sa imi ascunda elementul respectiv din document !! */
+
+}

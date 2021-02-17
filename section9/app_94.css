@@ -1,0 +1,59 @@
+div{
+    width:100px;
+    height: 100px;
+    background-color: #3d405b;
+    border: 2px solid black;
+    margin: 10px;
+    display: inline-block;
+}
+
+#middle{
+    background-color: #81b29a;
+}
+
+#static #middle{
+    position: static;
+    top: 100px;
+}
+
+#relative #middle{
+    position: relative;
+    top: 50px;
+    /* top: -100px; */
+    /* pozitionat cu 100 pixeli mai in jos(offset top de 100 px) fata de unde ar fi normal,
+    adica unde ar fi daca nu am avea "position" set la relatve */
+    /* left: 100px; */
+    /* left: -100px; */
+    left: 50px;
+}
+
+
+#absolute{ /* parintele lui #absolute #middle */
+    position: relative;
+}
+
+#absolute #middle{
+    position: absolute;
+    /* am spus browser-ului ca acest element nu ocupa niciun spatiu in docmunet, it s removed from the flow
+    e ca si cum spatiul dintre primul si al doilea patrat + al doilea patrat 
+    a fost acoperit de al treilea patrat, care s-a translatat spre stanga*/
+    /* top:50px; */
+    /* left:50px; */
+    top:1px;
+    left:1px;
+}
+/* 
+Un element este "positioned" daca: are proprietatea 'position' setata la orice altceva, mai putin "static".
+Cu position setat la absolute, elementul respectiv va fi pozitionat relativ la cel mai apropiat "ancestor"(parinte) POZITIONAT,
+daca exista unul. Daca nu exista, va fi plasat relativ la initial containing block(the <body> tag), adica top-ul screen-ului.
+*/
+
+#fixed #middle{
+    position:fixed;
+    top:0px;
+    left:0px;
+}
+/* fixed e ca absolute dar nu prea are de-a face cu elemente parinte or anything like that */
+/* am putea face nav bar-uri asa*/
+
+/* !!! Sticky !!! e aia ce cautam eu. incepe not-fixed, iar cand dam scroll vine cu noi in jos*/

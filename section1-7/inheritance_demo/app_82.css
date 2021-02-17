@@ -1,0 +1,35 @@
+body{                   
+    color: purple;
+}
+/* 
+Elementul "body" el insusi nu are text direct inauntrul lui.. deci ce
+ ne asteptam sa vedem la refresh?
+ Rasppuns: Elementele dinauntrul tag-ului vor mosteni culoarea (styling-ul) -->
+-->  asta daca nu am setat explicit culoarea acestora
+*/
+
+h1{
+    color: blue;
+}
+
+section{
+    color: aqua;
+}
+
+/* In acest caz, daca elementul nu are o culoare selectata, atunci va mosteni de la
+cel mai apropiat ascendent care ARE o culoare setata!! 
+De exemplu, body ar putea fi mov, dar section este un ascendent mai aproape de text!!
+*/
+
+form{
+    color: greenyellow;
+}
+
+/* DAR ATENTIE! Anumite elemente nu mostenesc implicit!! 
+de exemplu, in form: textul din input si din buton nu mostenesc culoare care ar trebui
+daca vrem putem impune sa mosteneasca, astfel:
+*/
+
+button, input{
+    color: inherit;
+}

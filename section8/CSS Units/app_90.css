@@ -1,0 +1,70 @@
+html{
+    font-size:30px;
+}
+
+h2{
+    font-size: 2em; /* asta e fata de parinte; 1em = 1 * font-size la care e setat parintele */
+}
+
+article{
+    font-size: 20px;
+}
+
+p{
+    font-size: 0.8em;
+}
+
+h2{
+    font-size: 5em; /* asta e fata de parinte */
+    margin-left: 1em; /* exact font-size of the element itself */
+    /* cred ca se raporteaza la continutul din content-box!! */
+}
+
+h3{
+    font-size: 1.5em;
+}
+
+p{
+    font-size: 1em;
+}
+
+/*  */
+
+button{
+    /* font-size: 30px; */
+    /* font-size: 80px; */
+    /* font-size: 200px; */
+    /*
+    font-size: 20px;
+    padding: 0 30px;
+    border-radius: 15px;
+    */
+
+    font-size: 1em;
+    padding: 0 1em;
+    border-radius: 0.5em;
+
+    background-color: #2a9d8f;
+    color:white;
+}
+
+ul{
+    font-size: 1.5em;   /* la o astfel de faza(liste in liste) apare recursivitate si nu e bn*/
+    font-size: 0.8em;
+}
+
+#rems h3{
+    font-size: 3rem;
+}
+
+#rems h2{
+    font-size: 2rem;
+}
+
+#rems ul{
+    font-size: 1.5rem;
+}
+
+#rems button{
+    font-size: 1.5rem;
+}

@@ -1,0 +1,82 @@
+div{
+    width: 200px;
+    height: 200px;
+    /* asta e pt inner-content area */
+    background-color: #e5989b;
+}
+
+h1{
+    background-color: pink;
+    width: 200px;
+    /* padding-left: 30px; */
+    padding-left: 100px;
+    padding-top: 50px;
+    margin: 0;
+}
+
+span{
+    margin-left: 30px;
+    margin-top: 30px;
+    /* asta nu merge.. dc? */
+}
+
+#one{
+    background-color: #e5989b;
+    border-width: 5px; 
+    border-color: black;
+    border-style: solid;
+    box-sizing: border-box;
+    /* padding: 10px; */
+    /* pt borders pixeli se folosesc cel mai adesea ca unitate */
+    /* border box seteaza border-ul sa fie maxim pana in  ...*/
+/* border-box tells the browser to account for any border and padding in
+ the values you specify for an element's width and height. If you set an
+  element's width to 100 pixels, that 100 pixels will include any border 
+  or padding you added, and the content box will shrink to absorb that 
+  extra width. This typically makes it much easier to size elements. */
+
+    margin-left: 15px;
+    margin-bottom: 100px;
+}
+
+#two{
+    background-color: #b5838d;
+    border-color: #ffcdb2;
+    border-width: 3px;
+    border-style: dashed;
+    border-left-width: 8px;
+    /* stiluri le putem combina !! */
+
+    /* border: */
+    /* width, style, color e ordinea!!*/
+
+    padding-right: 50px;
+    margin: 200px;
+}
+
+#three{
+    background-color: #6d6875;
+    border: 4px solid black;
+    border-left-style: dotted;
+    /* border-radius: 10px; */
+    border-radius: 50%;
+    /* pixeli sau percentage !! */
+}
+
+button{
+    /* padding: 20px; */
+    /* padding: 10px 20px; */
+    
+    /* padding: 0 20 px; */
+    /* padding: 10px 30px 0px; */
+
+    padding: 10px 20px 30px 40mm;
+    /* putem folosi diverse unitati de masura */
+}
+
+body{
+    margin:0
+    /* cica asta e foarte comuna! */
+}
+
+

@@ -1,0 +1,93 @@
+h1 {
+  background-color: #2a9d8f;
+  /* text-decoration: overline; */
+  border: 5px solid #264653;
+  color: #eae2b7;
+  padding: 0.7em;
+  width: 300px;
+  font-size: 1.8em;
+  text-align: center;
+  margin: 20px auto;
+  /* 2o px vertical iar pe orizontala: auto */
+  font-family: Courier New;
+  font-weight: lighter;
+}
+
+/* section{
+    margin-top: 100px;
+} */
+
+h1:nth-of-type(4n + 1) {
+  background-color: #e9c46a;
+}
+
+h1:nth-of-type(4n + 2) {
+  background-color: #f4a261;
+}
+
+h1:nth-of-type(4n + 3) {
+  background-color: #e76f51;
+}
+
+section:first-of-type h1:nth-of-type(1) {
+  /*!! asta ia primul h1 din fiecare element !!*/
+  /* h1:first-of-type{          !! asta ia primul h1 din fiecare element !! */
+  /* transform: rotate(45deg); */
+  /* transform: rotate(180deg); */
+  /* transform-origin: bottom right; */
+  transform-origin: top right;
+  /* transform: rotate(45deg); */
+  transform: rotate(300deg);
+}
+
+section:first-of-type h1:nth-of-type(2) {
+  /*!! asta ia primul h1 din fiecare element !!*/
+  /* transform: scale(0.5); */
+  /* transform: scale(2); */
+  /* transform: scale(2,1); */
+  /* transform: scaleY(2); */
+  transform: scale(0.6);
+
+  /* asa e width, height */
+}
+
+section:first-of-type h1:nth-of-type(3) {
+  transform: translateX(200px);
+}
+
+/* these selectors are equivalent */
+section:nth-of-type(1) h1:nth-of-type(4) {
+  /* section:first-of-type h1:nth-of-type(4){ */
+  /* transform: translateX(-200px); */
+  /* transform: translateY(-120px); */
+  /* transform: translateY(20px); */
+  /* transform: translate(-300px, 300px); */
+  transform: translate(-100px, 50px);
+  /* aici e prima data orizontal, apoi vertical.. dar e ok. pe axe prima data desenezi Ox de regula */
+  /* sensurile pozitive sunt: in dreapta, apoi jos, dupa cum se vede */
+}
+
+section:nth-of-type(2) h1:nth-of-type(1) {
+  transform: skew(30deg);
+}
+
+section:nth-of-type(2) h1:nth-of-type(1) {
+  /* transform: skew(10deg, 25deg); */
+  transform: skew(10deg, 5deg);
+  /* intai pe Ox, apoi pe Oy*/
+}
+
+section:nth-of-type(2) h1:nth-of-type(2) {
+  transform: rotate(-20deg) scale(1.3);
+}
+
+section:nth-of-type(2) h1:nth-of-type(4) {
+  transform: translateX(-500px) rotate(0.5turn) scaleY(1.5);
+  /* 0.5turn = 180deg */
+}
+
+/* !!TRANSFORM se aplica pe whatever the contents of the element!! */
+
+section:nth-of-type(2) {
+  transform: scale(0.7) translateX(500px);
+}

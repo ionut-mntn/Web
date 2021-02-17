@@ -1,0 +1,35 @@
+/* sa nu uitam de punct-virgula!! E ESENTIAL; S-AR PUTEA SA NU FUNCTIONEZE DUPA NISTE COMENZI DE MAI JOS*/
+
+h2{
+    color: teal; 
+    /* background-color: plum; H2-ul E BLOCK LEVEL!! deci va ocupa intreg block-ul */
+    /* background-color: papayawhip; */
+    /* background-color: rgb(89,151,0); */
+    background-color: #0f5679;
+}
+
+button{
+    color: magenta
+    background-color: cyan;
+}
+
+p{
+    color: olive;
+    /* background-color: aliceblue; */
+    background: orange; /* asta e mai puternic, putem pune si o imagine sau alte chestii pe aici cica */
+}
+
+body{
+    /* background-color: #000000; */
+    /* background-color: #CC55EE; */
+    background-color: #C5E;
+}
+
+/* 
+rgb(255,0,0) - red
+rgb(0,0,255) - blue
+rgb(0,255,0) - green
+rgb(173,20,219) - un purple
+rgb(0,0,0) - black
+rgb(255,255,255) - white
+*/

@@ -1,0 +1,37 @@
+section{
+    width:500px;
+    height: 500px;
+    background-color: magenta;
+}
+
+#rgba{
+    width:50%;
+    height:50%;
+    /* padding:10px; */
+    /* background-color: white; */
+    /* background-color: rgba(255,255,255,0.7); */
+    /* 1 inseamna: deloc transparent */
+    /* 0 inseamna: total transparent */
+    /* alpha channel */
+    /* !! "alpha channel" afecteaza doar o proprietate; in acest caz, background-color ul!! */
+
+    /* !opacitatea e ceva ce afecteaza tot continutul unui element, nu doar background-color ul !!*/
+
+    background-color: #00cca0b9;  
+    /* ultimele 2 digits  reprezinta opacitatea; in hexa, avem de la 00 la 0 la 255, nu de la 0 la 1 */
+    /* mai degraba rgba decat hexa */
+
+}
+
+#opacity{
+    width:50%;
+    height:50%;
+    background-color: yellow;
+    opacity: 0.3;
+    /* opacity: 0.1; */
+    /* opacity afecteaza intreg continutul elementului (al div-ului in acest caz) */
+}
+
+p:{
+    
+}

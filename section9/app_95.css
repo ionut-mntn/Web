@@ -1,0 +1,83 @@
+.circle{
+    width:300px;
+    height:300px;
+    background-color: magenta;
+    /* transition: 1s; */
+    /* transition: background-color 3s; */
+    /* transition: background-color 3s 1s; */
+    /* 1s, deci al doilea timp e delay-ul! */
+    /* transition: all 1s 1s; */
+    transition: background-color 3s ease-in, border-radius 2s;
+}
+/* DEFINITELY SINGLE OUT PROPERTIES TO BE "transitioned" (animated) */
+
+.circle:hover{  /* hover e state-ul.. la schimbare de state se aplica tranzitia de mai sus!!*/
+    background-color: cyan;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+/* 
+Pana aici avem o oarecare tranzitie, dar e din topor. Am putea spune ca vrem ca aceasta tranzitie sa ia 
+o secunda intreaga pana sa devina din patrat cerc (si invers)
+ */
+
+
+
+h1{
+    background-color: magenta;
+    width: 25%;
+    text-align: center;
+    padding: 1em;
+    color: white;
+    transition: background-color 1s ease-in-out, width 1s ease-in-out;
+}
+
+h1:hover{
+    width: 50%;
+    background-color: cyan;
+}
+
+section div{
+    height: 100px;
+    width: 100px;;
+    background-color: turquoise;
+    margin: 20px 0; 
+    transition: margin-left 3s;
+}
+
+section:hover div{
+    margin-left: 500px;
+    /* de regula cica nu facem din astea, ca ar fi o varianta mai buna de a anima chestii */
+}
+/* asa iau fiecare al n-lea element de acel tip */
+div:nth-of-type(1){
+    transition-timing-function: ease-in;
+    /* ease-in = start slow, then speed up */
+}
+
+div:nth-of-type(2){
+    transition-timing-function: ease_out;
+    /* ease-out = start fast, then slow up */
+}
+
+div:nth-of-type(3){
+    transition-timing-function: cubic-bezier(0.7,0,0.84,0);
+}
+
+div:nth-of-type(4){
+    transition-timing-function: cubic-bezier(0.85,0,0.15,1);
+}
+/* !!Toate ajung la final in acelasi moment de timp  */
+
+/*
+REZUMAT
+------
+Cu "transition" putem specifica 4 chestii:
+    - o proprietate pe care vrem sa o animam (gen background-color)
+    - o durata de timp pt animatie (secunde sau milisecund)
+    - timing function (obs care nu prea are treaba dar totusi pot face asta: pot 
+    seta aceeasi animatie pt niste obiecte de un anume tip, iar prin aceasta functie 
+    separat pt fiecare vitezele acel "graficul al functiei" deci modul de miscare)
+    - delay
+*/

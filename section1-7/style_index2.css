@@ -1,0 +1,47 @@
+h1{
+    /* text-align: center; */
+    text-align: right;
+    /* width: 50%; ??? */
+    font-weight: 400; /*normal;*/
+    /* daca incercam sa punem un font care nu exista, browser-ul incearca
+    sa inlocuiasca acea valoare cu cea mai apropiata valoare existenta */
+    letter-spacing: 15px;
+    /* font-size: 100px; */
+    /* font-family: Times New Roman; */
+
+    /* font-family: Segoe UI, Futura, Arial, sans-serif;  */
+    /* al doilea font e cel de backup; daca pe
+    un mac - de exemplu - nu exista primul font, atunci se va folosi al doilea font 
+    sau daca a doua chestie specificata e o familie de fonturi - cum e sans-serif - 
+    atunci se va folosi orice font din cea de-a doua familie de fonturi!! pot 
+    specifica mai multe. E mereu bine sa includem la final o familie de fonturi de
+    back-up, generica*/
+
+    /* font-family: monospace; */
+    /* font-family: papyrus; */
+    /* font-family: times new roman; */
+
+}
+
+p{
+    text-align: right;
+    font-weight: bold; /*700*/
+    /* text-decoration: underline; */
+    /* text-decoration: overline; */
+    /* text-decoration: line-through; */
+    /* text-decoration: blue underline; */
+    /* text-decoration: #f81Fe4 underline; */
+    /* text-decoration: #f81Fe4 underline wavy ; */
+    /* text-decoration: #f81Fe4 underline wavy ; */
+    /* thick line,  */
+    /* line-height: 2.5; 2.5 * normal spaceline-ul !! */
+    /* line-height: 2; */
+    /* line-height: 10px; */
+    line-height: 20px; /*pot selecta textul ca sa vad cu ochii mei line height-ul !!*/
+}
+
+a{
+    text-decoration: none;
+    /* color: black; */
+}
+

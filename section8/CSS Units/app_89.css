@@ -1,0 +1,22 @@
+section{
+    background-color: #6d6875;
+    width: 800px;
+    /* height: 800px; */
+    height: 700px;
+}
+
+div{
+    background-color: #e5989b;
+    width: 70%;
+    height: 20%;
+    /* padding: 10%;
+    align-self: center; */
+
+}
+
+h1{
+    font-size: 40px;
+    border: 1px solid black;
+    line-height: 200%; /*fata de dimensiunea lui implicita; nu e f comun sa fie folosite asa*/
+    line-height: 10px;
+}

@@ -1,0 +1,221 @@
+/* * {
+    color: pink;
+    background: cyan;
+} */
+
+body{
+    background-color: #f1faee;
+}
+
+img{
+    width: 100px;
+    height: 200px;
+}
+
+button{
+    font-size: 30px;
+    background-color: #a8dadc;
+}
+
+h1,h2{
+    /* color: magenta; */
+    /* color: white; */
+    color: #1d3557;
+}
+
+#signup{
+    background-color: #1d3557;
+    color: #f1faee;
+}
+
+span{
+    color: #457b9d;
+}
+
+.tag{
+    background-color: #e63946;
+    color: #f1faee;
+    font-size: 16px;
+}
+
+/* section span a{ /* anchor tags inside of a span; pot omite section aici*/
+    /* color: #457b9d; */
+/* } */
+
+.post a{        /* orice anchor tag nested inside of a "post"-type element */
+    color: #457b9d;
+    font-weight: 700;
+    text-decoration: none;
+
+}
+
+footer a {      /* orice anchor tag nested inside of a footer */
+    color:#e63946;
+} */
+
+/* footer nav ul li a{ */   /* ???asta dc nu merge??*/
+
+
+    /* merge si asta pana la urma */
+li a{ 
+    color:#000;
+}
+
+footer a{           /* orice anchor tag nested inside of a footer */
+    color: #e63946;
+}
+
+/*74. The adjacent & direect-child selector*/
+input + button{
+    background-color: pink;
+}
+
+h2 + button{
+    font-size: 20px;
+    background-color: magenta;
+}
+
+div > li { /* li care sunt copii DIRECTI ai lui div.. "ONE LEVEL DOWN" */
+    color: 
+}
+
+footer > a{
+    color:#a8dadc;
+}
+/* Nivelul (nesting level-ul) mai mic inseamna precedenta mai mare?? 
+Cum e aici cu: "footer a{..." si "footer > a{..."
+*/
+
+/* input{
+    color: greenyellow;
+} */
+input[type="password"]{
+    color: greenyellow;
+}
+
+/* .post{
+    background-color: #dfe8dc ;
+} */
+/* Section are precedenta mai mare decat .post? Astea predefinite de ei
+au precedenta mai mare decat cele definite de mn cred */
+/* section[class="post"]{
+    background-color: purple;
+} */
+
+/* astea 2 cred ca sunt echivalente*/
+/* .post{
+    background-color: purple;
+} */
+
+/*obs: daca aveam mai multe elemente de tipuri diferite in clasa "post"
+ dar voiam doar pe acelea care sunt de tip "section" puteam face:
+ section.post{
+... 
+}
+ */ 
+/* astea deja intra in expresii regulare*/
+ a[href*="google"]{     /* anchor tags care contin "google" */
+     color:magenta
+ }
+
+ a[href$=".org"]{       /* anchor tags care se termina in ".org" */
+     
+ }
+/* button:hover /* cu varianta asta nu se mai coloreaza "log in" button ul*/ 
+/*buton in interiorul unui element de tip "post"*/
+.post button:hover{     
+     background-color: #e63946;
+     color: #f1faee;
+ }
+
+ /* 
+    OBS: --SPECIFICITY--
+        Butonul de Sign Up nu se face rosu when we hover over it. Dc?
+    Raspuns: 
+        -avem din 2 parti cumstomizare la el:
+    -> prin id-selector ul "#signup"
+    -> prin button:hover
+    prolly id-selector ul are precedenta mai mare fata de "pseudo classes"
+ */
+
+
+ /* .post button:hover{ /* buton in interiorul unui element de tip "post"
+
+ } */
+
+ /* a:hover{
+     text-decoration: underline;
+ } */
+
+ /* .post a{
+     color: #457b9d;
+     text-decoration: none;
+ } */
+
+ .post a:hover{
+     text-decoration: underline;
+ }
+
+
+.post button:active{
+    background-color: #02c39a;
+}
+
+/* .post:nth-of-type(3){       /* al n-lea, in acest caz al treilea 
+    background-color: #dfe8dc ;
+} */
+/* mai este si nth-last-of-type care lucreaza invers, de la coada la cap */
+.post:nth-of-type(3n){         /* FIECARE al n-lea, in acest caz din trei in trei */
+    background-color: #dfe8dc ;
+}
+
+/* vad ca daca le las pe amandoua se fac amandoua */
+
+/* :checked */
+
+
+h2::first-letter{       /*aparent putem folosi : cu :: interschimbabil dar mai bn keep it classy*/
+    font-size: 50px;
+}
+
+p::first-line{
+    color: purple;
+}
+
+p::selection{
+    background-color: #fcbf49;
+}
+/*putem aplica si intregului document asa "::selection"*/
+
+
+/* h1,h2{
+    color: yellow;
+} */
+
+
+/* ---- */
+
+.post button:hover{     /*buton in interiorul unui element de tip "post"*/
+    background-color: #e63946;
+    color: #f1faee;
+}
+
+
+button:hover{
+    background-color: olive;
+    font-size: 10px;    /* asta merge pt toate butoanele*/
+    /* dar "olive" de mai sus merge doar pt butonul de "log in" 
+    asta pentru ca avem mai sus un selector pt button care modifica tot background-color
+    DAR care este mai specific!!
+    */
+}
+
+/*  */
+
+button{
+    background-color: magenta !important;   /* asta + inline styles --> de evitat!! */
+}
+
+
+/* CSS Inheritance */
+

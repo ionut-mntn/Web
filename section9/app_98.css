@@ -1,0 +1,37 @@
+section {
+  width: 80%;
+  height: 800px;
+  /* background-image: url("https://images.unsplash.com/photo-1593532847202-e818146e134a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=255&q=80"); */
+  /* background-image: url("https://unsplash.com/photos/HjO5vw_PP5c"); */
+  /* de copiat image address, nu link address */
+  /* background-image: url("https://images.unsplash.com/photo-1588514912908-8f5891714f8d?ixid=MXwxMjA3fDB8MHx0b3BpYy1mZWVkfDF8UzRNS0xBc0JCNzR8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60"); */
+
+  /* background-size: cover; */
+  /* optiunea asta creste imaginea cat de larg posibil; "shrinks it down as large as possible"; it crops stuff off if needed*/
+
+  /* background-size: contain; */
+  /* varianta asta propune si repetitie de imagine cumva */
+
+  /* background-position: bottom; */
+  /* background-position: top; */
+  /* ii spunem cum sa alineze imaginea */
+
+  /* background: center/80% no-repeat
+      url("https://images.unsplash.com/photo-1588514912908-8f5891714f8d?ixid=MXwxMjA3fDB8MHx0b3BpYy1mZWVkfDF8UzRNS0xBc0JCNzR8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60"),
+    blueviolet; */
+  /* daca vreau asa, nuj din ce motiv tre sa pun slash-ul ala intre position si cover; deci intai background-position si apoi size */
+
+  background: center/cover
+      url("https://images.unsplash.com/photo-1588514912908-8f5891714f8d?ixid=MXwxMjA3fDB8MHx0b3BpYy1mZWVkfDF8UzRNS0xBc0JCNzR8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60"),
+    blueviolet;
+
+  margin: 0 auto;
+  /* asa centram.. exista si variante mai bune */
+}
+
+h1 {
+  font-size: 100px;
+  color: white;
+  background-image: ;
+  /* putem folosi si gradient */
+}

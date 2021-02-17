@@ -1,0 +1,34 @@
+body {
+  font-family: "Roboto", sans-serif;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+  /* vue height units */
+  background-color: #151b29;
+}
+
+button {
+  background: none;
+  color: #ffa260;
+  border: 2px solid;
+  padding: 1em 2em;
+  font-size: 1em;
+  /* transition: all 0.25s; */
+  /* secundele astea le puteam pune si in button:hover, dar cred ca e mai clar daca le pun aici! */
+  transition: color 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+}
+
+button:hover {
+  border-color: #f1ff5c;
+  color: white;
+  box-shadow: 0 0.5em 0.5em -0.4em #f1ff5c;
+  /* pt box shadow: x offset, y offset, blur radius, spread radius */
+  /* transition:  */
+  /* transform: translateY(-em);
+  transition: ease in 0.5s; */
+  transform: translateY(-0.25em);
+  cursor: pointer;
+}

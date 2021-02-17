@@ -1,0 +1,29 @@
+body{
+  /* font-family: Roboto, sans-serif; */
+  font-family: Montserrat, sans-serif;
+}
+
+main{
+  width: 60%;
+  margin: 0 auto;
+  text-align: justify;
+}
+
+h1{
+  /* font-weight: 100; */
+  /* font-weight: 700; */
+  /* asta cu 700 nu l-am inclus in link-ul de pe google fonts; deci se va seta la cea mai apropiata valoare posibila de 700 (which is 400 - regular) */
+  font-size: 3rem;
+  margin-bottom: 0;
+}
+
+/* amintim: adjacent selector */
+h1 + h2{
+  /* margin-top: 0; */
+  margin-top: 10px;
+}
+
+h1,h2,h3{
+  font-family: Roboto, sans-serif;
+  font-weight: 100;
+}
