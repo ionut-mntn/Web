@@ -1,0 +1,38 @@
+img{
+    /* 40% din parinte */
+    width:30%;
+    /* width:0.25em; */
+    
+    /* margin:20px */
+    /* margin: 1.66666%; */
+    /* margin: 1%; */
+    margin: calc(10%/6);
+
+    /* 
+    cica it was common to see weird decimals pe aicea 
+    exista totusi variante ma simple
+    */
+}
+
+nav{
+    text-transform: uppercase;
+    border-bottom: 2px solid #f1f1f1;
+    width: 30%;
+    /* margin: calc(10%/6); */
+    margin-left: calc(10%/6);
+    /* padding: 20px 0; */
+    /* 20px top-bottom, 0 left-right */
+    padding: 1.5em 0;
+    /* !! PADDING-UL SE RAPORTEAZA LA FONT-SIZE DACA LUCRAM CU "em"s */
+
+    font-family: 'Raleway', sans-serif;
+    /* font-size: 25px; */
+    /* font-size: 1.5em; */
+    /* font-size: 3.5em; */
+    font-size: 1.2em;
+    /* FONT-SIZE-ul SE RAPORTEAZA LA PARINTE DACA LUCRAM CU "em"s */
+    /* 
+    cica aproape niciodata nu folosim percentages pt font sizes 
+    putem folosi em-uri tho
+    */
+}
