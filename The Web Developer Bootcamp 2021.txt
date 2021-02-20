@@ -755,3 +755,48 @@ ceva legat de flexbox
 98.
 
 99.
+
+
+103. FlexBox
+------------
+un container in care alegem cum distribuim spatiul
+
+cand facem resize se modifica si dimenisunile & layout-ul containerelor
+
+3:30: Deci pricipalul concept pt FlexBox este:
+within one container, how do we distribute across differente elements to make those elements
+larger OR add space between those elements, move them to the left/right, split up the space
+evenly, make sure the first/second...nth thing gets more space
+
+!! WE CREATE FLEXIBE LAYOUTS !!
+
+104. Flex-Direction
+-------------------
+are cam 8-10 proprietati
+
+display: flex --> pt elementul care ma intereseaza
+In Flexbox: 
+-----------
+atunci cand setam "display:flex" pt un anume container, in acel box container apar 2 axe:
+	main axis(orizontala - cred)
+	cross axis(verticala - cred)
+		(ori variaza in functie de ce precizez eu la "flex-direction")
+
+flex-direction
+
+105. Justify-Content
+--------------------
+
+
+106.Flex-wrap
+------------
+Deci flex-direction zice main-axis ul de orientare in container, iar 
+flex-wrap zice cross-axis ul de orientare in container !!
+
+107. Align items
+----------------
+-> distribute space along the cross-axis (justify-content e along the main-axis)
+!!! 
+
+108. Align content & align self
+------------------

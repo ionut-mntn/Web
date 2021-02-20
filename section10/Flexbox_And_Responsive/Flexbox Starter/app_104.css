@@ -1,0 +1,55 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+h1 {
+    text-align: center;
+}
+#container {
+    background-color: #003049;
+    width: 90%;
+    /* height: 300px; */
+    /* height: 500px; */
+    /* daca nu se poate si nu se poate, flexbox ul nu o sa mearga!! */
+    margin: 0 auto;     /* centrat thanks to this*/
+    border: 5px solid #003049;
+    display: flex;
+    /* flex-direction: row; */
+    /* flex-direction: row-reverse; */
+    /* flex-direction: column; */
+    /* 
+    observam aici ca div-urile din container nu sunt 200x200 pixeli. 
+    DC? ei bine, pt ca am setat o inaltime de 500px si avem 5 divuri 
+    */
+    /* flex-direction: column-resverse; */
+    
+    /* 105.Justify-Content */
+    /* "flex" inseamna pe axa principala --> adica pe ce ii spun eu in "flex-direciton" */
+    /* justify-content: flex-start; */
+    /* justify-content: flex-end; */
+    /* justify-content: center; */
+    /* justify-content: space-between; */
+    /* justify-content: space-around; */
+    /* justify-content: space-evenly; */
+
+    /* 106. Flex-Wrap */
+    height: 500px;
+
+    /* flex-direction: column; */
+    /* justify-content: space-evenly; */
+    /* justify-content: flex-start; */
+    /* flex-wrap: wrap; */
+    /* flex-wrap: wrap-reverse; */
+    /* la acest pas: main-axis e top-bottom(din "flex-direction: column;"  )*/
+    /* wrap, no-wrap, wrap-reverse */
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+
+}
+
+#container div{
+    /* width: 200px; */
+    width: 350px;
+    height: 200px;
+}
