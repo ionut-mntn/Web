@@ -8,13 +8,135 @@ h1 {
 }
 nav {
     font-size: 1.5em;
+    /* display: flexbox; asa dc nu mergea?? nu e acelasi lucru?? */
+    display: flex;
+    /* flex-direction: row; */
+    /* justify-content: center; */
+    justify-content: space-between;
+    /* space between-ul asta face loc intre elementele din nav-bar, care sunt 3 la numar!! */
 }
 
-ul,li {
+/* 
+virgula spunea doar ca se aplica pe ambele: "ul" si "li"
+it is just a grouping method
+*/
+
+
+
+ul,li {             
     display: inline;
     margin: 0;
     padding: 0;
 }
+/* ordinea era problema aici!! */
+ul{
+    border: 1px solid red;
+    flex: 1;    /* flex grow e asta!! */
+    max-width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* when the width is exactly 800px, do this */
+/* @media (width: 800px){   */
+/* @media (min-width: 800px){   */
+/* @media (max-width: 800px){   */
+/* @media (min-width:600px) and (max-width: 800px){  
+    h1{
+        color:blue;
+    }
+} */
 
 
+/* @media(max-width:500px){
+    h1{
+        color: red;
+    }
+}
 
+@media(max-width:1000px){
+    h1{
+        color:orange;
+    }
+} */
+/* ramane orange, 'cause of the specificity. Ne putem juca cu ordinea, asa: */
+/* 
+
+@media(max-width:1500px){
+    h1{
+        color: yellow;
+    }
+}
+
+@media(max-width:1000px){
+    h1{
+        color:orange;
+    }
+}
+
+@media(max-width:500px){
+    h1{
+        color: red;
+    }
+    /* aici putem sa mai adaugam chestii
+}
+ */
+/* si atunci o sa apara efectul dorit: pana la 500px red, dupa pana la 1000 orange */
+/* SAU: */
+
+h1{
+    color:red;
+}
+
+@media(min-width:500px){
+    h1{
+        color:orange;
+    }
+}
+
+@media(min-width:1000px){
+    h1{
+        color:yellow;
+    }
+}
+
+@media(min-width:1500px){
+    h1{
+        color:green;
+    }
+}
+
+/* @media(orientation: landscape){
+    body{
+        background-color: magenta;
+    }
+} */
+
+/* atentie sa nu uitam unitatea de masura!! */
+@media (max-width:768px){
+    h1{
+        font-size: 4em;
+    }
+    nav{
+        flex-direction: column;
+        align-items: center;
+    }
+    /* descendant selector: ul inside of  */
+    nav ul{
+        flex-direction: column;
+        /* justify-content: center; */
+        /* align-items: flex-end; */
+        align-items: center;
+    }
+
+    nav, nav ul{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 576px){
+    h1{
+        font-size: 2em;
+    }
+}

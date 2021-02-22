@@ -774,7 +774,9 @@ evenly, make sure the first/second...nth thing gets more space
 -------------------
 are cam 8-10 proprietati
 
-display: flex --> pt elementul care ma intereseaza
+"display: flex" --> pt elementul care ma intereseaza
+!! ATENTIE: CORECT ESTE "display: flex", NU "display: flexbox"
+
 In Flexbox: 
 -----------
 atunci cand setam "display:flex" pt un anume container, in acel box container apar 2 axe:
@@ -863,3 +865,7 @@ sintaxa:
 @media ...
 
 112. Media Queries
+------------------
+(Def) = main mechanism that we can use to make a responsive website to restyle/remove/add/
+show/hide things... change size/change orientation/go from row to column - schimbari bazate
+pe un atribut al browser-ului, fie acesta: width/height/orientation
