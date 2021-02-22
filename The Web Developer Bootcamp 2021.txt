@@ -782,21 +782,50 @@ atunci cand setam "display:flex" pt un anume container, in acel box container ap
 	cross axis(verticala - cred)
 		(ori variaza in functie de ce precizez eu la "flex-direction")
 
-flex-direction
+!!flex-direction seteaza main axis-ul!!
 
 105. Justify-Content
 --------------------
-
+!asta depinde de flex-direction!
+ 
+aliniaza elementele across the main axis: la inceput de flex, la sfarsit de flex, centru +
+space-between --> doar intre elemente, se neglijeaza border-ul
+space-around --> intre elemente, inclusiv border-ul (distanta de la border la primul, respectiv ultimul e jumatate din distanta dintre oricare alte doua items)
+space-evenly --> orice distanta intre iteme sau item si border este egala
+(check photo)
 
 106.Flex-wrap
 ------------
 Deci flex-direction zice main-axis ul de orientare in container, iar 
 flex-wrap zice cross-axis ul de orientare in container !!
+(sensul pe directii, adica)
+
+By defalut: "wrap" inseamna stanga-dreapta sau sus-jos; 
+"wrap-reverse" inseamna dreapta-stanga sau jos-sus
+
+!!DECI: flex-direction, flex-wrap: seteaza axis-urile!!
+!!DECI: justify-content: aliniaza pe main-axis, align-items aliniaza pe cross-axis!!
 
 107. Align items
 ----------------
--> distribute space along the cross-axis (justify-content e along the main-axis)
+-> distribute (space/)our items along the cross-axis (justify-content e along the main-axis)!!!
 !!! 
 
+!
+optiunea "baseline" (03:18):
+ aliniaza dupa pe baza textului (adica dupa "linia imaginara" de dedesubtul textului)
+!
+
+!!DECI: flex-direction, flex-wrap: seteaza axis-urile!!
+!!DECI: justify-content: aliniaza pe main-axis, align-items aliniaza pe cross-axis!!
+
+
+
 108. Align content & align self
-------------------
+-------------------------------
+align content -> distribute space along the cross axis (doar cand avem multiple rows/columns)
+deci spatiul dintre randuri sau coloane
+
+
+!!DECI: flex-direction, flex-wrap: seteaza axis-urile!!
+!!DECI: justify-content: aliniaza pe main-axis, align-items aliniaza pe cross-axis!!
