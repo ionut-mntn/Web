@@ -473,8 +473,8 @@ section[class="post"]{
 
 OBS: tot ce pe MDN e cu a little flask next to it(o
 
-76. Pseudo Classes
-------------------
+76. Pseudo Classes ":"
+----------------------
 sunt multe
 
 !!cu astea stilizam un element bazat pe "state"!!
@@ -492,11 +492,11 @@ of the selected elements. The state poate fi - dar nu cred ca se rezuma la:
 
 !! Toate incep cu colon(doua puncte:)
 
-77. Pseudo Elements
--------------------
+77. Pseudo Elements "::"
+-------------------------
 nu s asa multe
 
-cu astea stilizam (un element) parti ale unui element selectat-selectat intr-un anume fel-!!!
+cu astea stilizam (un element) parti ale unui element selectat - selectat intr-un anume fel-!!!
 
 astea ne ajuta sa stilizam o parte specifica a elementelor selectate
 ::after
@@ -834,3 +834,14 @@ deci spatiul dintre randuri sau coloane
 
 !! align self? similar cu align-items: proprietate pe care o adaugam unor elemente individuale
 in the flex container !!
+
+109. Flex-Basis, Grow, & Shrink
+-------------------------------
+Flex-basis: dimensiunea initiala pe axa principala
+Flex-grow: controls the amount of available space an element should take up, if there is available space
+Flex-shrink: -analog-
+
+110. Flex shorthand
+-------------------
+astea de mai sus le putem scrie dintr-un foc: "flex: flex-grow | flex-shrink | flex-basis"
+!!check MDN!!
