@@ -844,4 +844,22 @@ Flex-shrink: -analog-
 110. Flex shorthand
 -------------------
 astea de mai sus le putem scrie dintr-un foc: "flex: flex-grow | flex-shrink | flex-basis"
+
 !!check MDN!!
+
+!!DECI: flex-direction, flex-wrap: seteaza axis-urile!!
+!!DECI: justify-content: aliniaza pe main-axis, align-items aliniaza pe cross-axis!!
+!!SI: align content -> cum le aliniaza along the cross axis DAR INTRE ELE - cumva !!
+
+111. Responsive Design & Media Queries
+--------------------------------------
+Responsive Design = making a SINGLE website capable of responding to the device that it 
+is on (mobile phone / super large monitor / orientation of device)
+
+We accomplish this by using MEDIA QUERIES
+MEDIA QUERIES = stilizare bazata pe parametrizare
+
+sintaxa:
+@media ...
+
+112. Media Queries

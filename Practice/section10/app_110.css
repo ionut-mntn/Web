@@ -42,11 +42,21 @@ main {
 }
 main .sidebar {
     background-color: #6930c3;
+    /* flex:1 2 300px; */
+    /* border: 2px solid white; */
+    /* flex:1 300px; */
     flex:1 2 300px;
+    /* flex-basis: */
 }
 main .maincontent {
     background-color: #80ffdb;
-    flex: 2 1 800px;
+    /* flex: 2 1 800px; */
+    /* flex:1 600px; */
+    flex:2 1 800px;
 }
 
+/* cand e comentat flex, nu vedem nimic practic, tocmai pt ca nu am zis sa creasca so that
+it takes up any space */
 
+/* cand si .sidebar-urile si .maincontent-ul au "flex: 1" acestea ocupa acelasi spatiu
+fiindca nu le-am dat un flex-basis */
