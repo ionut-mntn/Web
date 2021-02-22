@@ -813,19 +813,24 @@ By defalut: "wrap" inseamna stanga-dreapta sau sus-jos;
 
 !
 optiunea "baseline" (03:18):
- aliniaza dupa pe baza textului (adica dupa "linia imaginara" de dedesubtul textului)
+ aliniaza dupa pe baza textului (adica dupa "linia imaginara" de dedesubtul textului, a fiecarei litere)
 !
 
 !!DECI: flex-direction, flex-wrap: seteaza axis-urile!!
-!!DECI: justify-content: aliniaza pe main-axis, align-items aliniaza pe cross-axis!!
+!!DECI: justify-content: aliniaza pe main-axis; align-items: aliniaza pe cross-axis!!
 
+?? 06:39 mai exact, cum se face center-center ala ?? 
 
 
 108. Align content & align self
 -------------------------------
-align content -> distribute space along the cross axis (doar cand avem multiple rows/columns)
+align content -> distribute space along the cross axis (doar cand avem multiple rows/columns),
 deci spatiul dintre randuri sau coloane
 
+!DECI EXACT ca justify-content, doar ca pe cross axis
 
 !!DECI: flex-direction, flex-wrap: seteaza axis-urile!!
 !!DECI: justify-content: aliniaza pe main-axis, align-items aliniaza pe cross-axis!!
+
+!! align self? similar cu align-items: proprietate pe care o adaugam unor elemente individuale
+in the flex container !!

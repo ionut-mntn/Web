@@ -1,0 +1,58 @@
+#container{
+    background-color: #003049;
+    width:90%;
+    height:500px;
+    margin: 0 auto;
+    border: 5px solid #003049;
+    display: flex;
+
+    /* flex-direction: row; */
+    flex-direction: column;
+
+    justify-content: center;
+    /* justify content e spatiul dintre iteme pe main-axis */
+    
+    align-items: flex-start;
+    /* align-items e unde sa le alinieze fata de "flex" */
+    
+    flex-wrap: wrap;
+    /* prin wrap ii spun sa le insireze  */
+
+    /* align-content functioneaza doar daca flex-wrap e activ !! logic */
+    /* align-content:center; */
+    /* align-content:space-between; */
+    /* align-content:space-around; */
+    /* align-content:space-evenly; */
+    /* align-content: flex-start */
+    /* align-content: flex-end */
+
+
+}
+
+#container div{
+    width: 200px;
+    /* width: 400px; */
+    height: 200px;
+    text-align: center;
+}
+
+
+/* div:nth-of-type(2){
+    align-self: center;
+    /* aligned to the center of the cross-axis
+} */
+
+/* div:nth-of-type(3){
+    /* align-self: center;
+    align-self: flex-end;
+    /* aligned to the center of the cross-axis
+} */
+
+div:nth-of-type(2){
+    align-self: center;
+    /* aligned to the center of the cross-axis */
+}
+div:nth-of-type(5){
+    align-self: flex-start;
+    /* in acest caz(flex-direction:columnaligned to the start of the cross-axis, within the current column*/
+}
