@@ -869,3 +869,15 @@ sintaxa:
 (Def) = main mechanism that we can use to make a responsive website to restyle/remove/add/
 show/hide things... change size/change orientation/go from row to column - schimbari bazate
 pe un atribut al browser-ului, fie acesta: width/height/orientation
+
+
+@media (width: 800px){  
+    h1{
+        color:blue;
+    }
+}
+
+"width" se refera la width0ul viewport-ului
+Viewport = suprafata poligonala curent vizualizata in browser
+deci: - daca sunt in fullscreen mode --> efectiv width-ul ecranului
+	- altfel, width-ul a cat este vizibil din pagina curent deschisa in browser
