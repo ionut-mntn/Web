@@ -892,3 +892,62 @@ deci: - daca sunt in fullscreen mode --> efectiv width-ul ecranului
 CSS Reset --> basic css formating stuff that everybody copies so that they eliminate
 bulinele de la list items pt ul, ol, seteaza margini, padding, line-height pt body..
 si mai multe; funny ca toata lumea o copiaza :))
+
+
+120. CSS Frameworks: Bootstrap
+------------------------------
+Ce este Bootstrap?
+Library (third party tool); = css that smn else has written that we can incorporate into our
+own code; 
+
+Cum il folosim?
+E diferit de ce am folosit noi pana acum. NU SCRIEM NOI CSS !!
+Bulma, Foundation, Semantic UI
+
+121. What is Bootstrap?
+-----------------------
+un framework(un template, pattern)
+
+Ne ajuta sa creem nice-looking responsive websites. Provids the starting point to build a website
+
+What is the Grid System? Its point is to help us layout our websites and have them have pieces
+take up space and redistribute that space depending on screen size
+
+122. Including Bootstrap & Containers
+----------------------------------------
+
+!! Bootstrap-ul vad ca apare mai mult in HTML, prin clasele tag-urilor!!
+
+CDN = Content Delivery Network; hosted version of a stylesheet that we can access remotely; we do not have
+to download it on our machine
+
+<!-- pe getbootstrap.com->Getting Started->Introduction, mai sunt 3 link-uri de inclus daca vrem acces la TOATE componentele Bootstrap -->
+<!-- In plus, anumite componente au nevoie de JS. Cele 3 link-uri de care ziceam mai sus, le adaugam right before the closing 'body' tag -->
+
+ASTA E LINK-UL DE INCLUS:
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  
+
+ASTEA SUNT SCRIPT-urile, if I ever need them:
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+!! EXISTA MULTE CLASE PREDEFINITE IN OUR BOOTSTRAP STYLESHEETS !!
+
+!! Cand facem redimensionarea unei ferestre cu container scris in Bootstrap, obs ca exista niste
+breakpoints. Those breakpoints are predefined !!
+
+Container Fluid -> it goes all the way across the screen
+
+123. Bootstrap Buttons
+----------------------
+Care e treba cu primary, secondary, success, danger, warning, info, light, dark??
+CA LA HTML: 38. Semantic Elements
