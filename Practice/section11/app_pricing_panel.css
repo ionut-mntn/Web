@@ -1,3 +1,4 @@
+/* NOTA: ACEST PRICING PANEL NU IMI APARTINE, NU EU L-AM DESIGNED; DOAR L-AM REPRODUS */
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -46,4 +47,38 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+/*  */
+
+html{
+    box-sizing: border-box;
+    /* cand vom seta un width, the border va fi inclusa in acel width;
+    daca, de exemplu, setam width la 100: the overall width will be 100!!
+    */
+    font-family: Open Sans, sans-serif;
+}
+
+body{
+    background-color: #60a9ff;
+    display: flex;
+    /* daca las doar display: flex, ce se intampla? dc devine jumate de ecran 
+    culoarea body-ului, iar div-ul "panel" culoarea sa? prolly ceva related to 
+    flexbox*/
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* vh vine de la o unitate "view height" */
+}
+
+.panel{
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px 25px;
+    /* amintesc: vertical, orizontal */
+    width:100%
+    /* sa ocupe maxim din div-ul parinte */
+    max-width: 960px;
+    /* dar nu mai mult de 950px */
+}
+
+
 
