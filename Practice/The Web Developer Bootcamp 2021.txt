@@ -473,6 +473,9 @@ section[class="post"]{
 
 OBS: tot ce pe MDN e cu a little flask next to it(o
 
+
+!!! ATENTIE MARE CU PSEUDO-ASTEA... CONTEAZA SA NU FIE SPATIU INTRE ":" SI PARTEA STANGA,
+RESPECTIV DREAPTA A ":" !!!
 76. Pseudo Classes ":"
 ----------------------
 sunt multe
@@ -492,6 +495,8 @@ of the selected elements. The state poate fi - dar nu cred ca se rezuma la:
 
 !! Toate incep cu colon(doua puncte:)
 
+!!! ATENTIE MARE CU PSEUDO-ASTEA... CONTEAZA SA NU FIE SPATIU INTRE ":" SI PARTEA STANGA,
+RESPECTIV DREAPTA A ":" !!!
 77. Pseudo Elements "::"
 -------------------------
 nu s asa multe
@@ -881,3 +886,9 @@ pe un atribut al browser-ului, fie acesta: width/height/orientation
 Viewport = suprafata poligonala curent vizualizata in browser
 deci: - daca sunt in fullscreen mode --> efectiv width-ul ecranului
 	- altfel, width-ul a cat este vizibil din pagina curent deschisa in browser
+
+114. Pricing Panel
+------------------
+CSS Reset --> basic css formating stuff that everybody copies so that they eliminate
+bulinele de la list items pt ul, ol, seteaza margini, padding, line-height pt body..
+si mai multe; funny ca toata lumea o copiaza :))
