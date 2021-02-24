@@ -949,5 +949,46 @@ Container Fluid -> it goes all the way across the screen
 
 123. Bootstrap Buttons
 ----------------------
-Care e treba cu primary, secondary, success, danger, warning, info, light, dark??
+??Care e treba cu primary, secondary, success, danger, warning, info, light, dark??
 CA LA HTML: 38. Semantic Elements
+
+124. Bootstrap Typograhpy & Utilities
+--------------------------------------
+display headers
+
+        <blockquote class="blockquote text-right bg-light">
+            <!-- this is simlpy a quotation -->
+            <!-- "mb-0" margin bottom setata la 0-->
+            <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, beatae. Inventore, nobis
+                reprehenderit
+                id non necessitatibus quae beatae ipsum fuga omnis quis nulla itaque repudiandae nesciunt illo placeat
+                praesentium blanditiis?
+            </p>
+            <footer class="blockquote-footer">Mr. Lorem Ipsum</footer>
+        </blockquote>
+
+
+  <h1 class="display-1 text-center text-primary">Bootstrap Playground</h1>
+        <h2 class="display-4">Buttons</h2>
+        <!-- 124. -->
+        <h1>Placeholder</h1>
+
+        <!-- 123. -->
+        <button type="button" class="btn btn-primary">Primary</button>
+        <button type="button" class="btn btn-success">Success</button>
+        <button type="button" class="btn btn-info">Info</button>
+        <button class="btn btn-outline-warning">Warning</button>
+        <button class="btn btn-outline-danger">Danger Outline</button>
+        <button class="btn btn-outline-info btn-lg">Info Outline</button>
+        <button class="btn btn-secondary btn-sm">SM Button</button>
+        <button type="button" class="btn btn-success" disabled>Success disabled</button>
+        <!-- putem folosi clasele astea si pe anchor tags / input !! -->
+
+
+
+125. Badges, Alerts & Button Groups
+-----------------------------------
+
+
+
+
