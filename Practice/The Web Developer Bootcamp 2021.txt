@@ -1049,3 +1049,42 @@ cu style setam culoarea!
 131. Bootstrap Icons!
 ---------------------
 svg = scalable vector graphics!!
+they "kind of" behave like text!!
+fontawesome.com pt mai multe smekere
+
+132. Other Bootstrap Utilities
+------------------------------
+border (dar nu putem controla width of the border)
+class=border-0 boder-primary
+
+shadow
+
+margin&padding (commonly used)
+
+m - margin
+p - padding
+https://getbootstrap.com/docs/5.0/utilities/spacing/#margin-and-padding
+
+display: block, inline, none
+.d-none(tot responsive)
+
+flex-direction(idem)
+
+width: w-25/50/75/100
+
+133. A Mixed Bag of Other Bootstrap Stuff
+-----------------------------------------
+(cam toate astea includ some javascript)
+
+CARDS
+cards - container generic
+special header, footer
+group
+
+CAROUSEL
+
+DROPDOWNS
+
+SPINNERS
+
+PROGRGESS
