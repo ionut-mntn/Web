@@ -1038,4 +1038,14 @@ custom checkboxes, custom radiobuttons
 
 130. Bootstrap Navbars(signature Bootstrap component, except for the grid system)
 --------------------------------------------------------------------------------
+responsive
 
+collapsable navbars
+
+cu style setam culoarea!
+
+!!! FOARTE IMPORTANT!!!
+
+131. Bootstrap Icons!
+---------------------
+svg = scalable vector graphics!!
