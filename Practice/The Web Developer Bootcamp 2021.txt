@@ -988,7 +988,30 @@ display headers
 
 125. Badges, Alerts & Button Groups
 -----------------------------------
+badges...
+
+button-group components..
+
+alerts..
+
+f misto astea
+
+126. Intro to the Bootstrap Grid
+--------------------------------
+ne ajuta sa creem responsive websites
+
+functioneaza doar:
+1) in interiorul unui container
+2) daca adaugam un row
+<!-- EVERY ROW IN BOOTSTRAP HAS 12 UNITS OF SPACE TO DIVVY UP (A IMPARTI) -->
+TRE SA CREEM coloane in randul nostru. Every piece that we want to divvy up is going 
+to be a column
+
+127. Responsive Bootstrap Grids
+-------------------------------
 
 
 
+responsive images ?? ceva nu o mers aici !!
 
+gutters

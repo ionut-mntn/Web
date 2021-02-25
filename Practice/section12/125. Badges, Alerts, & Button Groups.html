@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Ar fi mai bn de descarcat, dar merge si asa cu link  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <!-- <link rel="stylesheet" href="app_122.css"> -->
+    <!-- pe getbootstrap.com->Getting Started->Introduction, mai sunt 3 link-uri de inclus daca vrem acces la TOATE componentele Bootstrap -->
+    <!-- In plus, anumite componente au nevoie de JS. Cele 3 link-uri de care ziceam mai sus, le adaugam right before the closing 'body' tag -->
+    <title>Bootstrap Basics</title>
+</head>
+
+<!-- <body class="bg-dark"> -->
+
+<body>
+    <!-- <div class="container">
+    <div class="container-fluid"> -->
+    <!-- fluid merge all the way across the screen -->
+    <div class="container-md">
+
+        <h1 class="display-1 text-center text-primary">Bootstrap Playground</h1>
+        <h2 class="display-4">Buttons <span class="badge badge-success badge-pill">8</span></h2>
+        <h1>Placeholder</h1>
+
+        <button type="button" class="btn btn-primary">Primary</button>
+        <button type="button" class="btn btn-success">Success</button>
+        <button type="button" class="btn btn-info">Info</button>
+        <button class="btn btn-outline-warning">Warning</button>
+        <button class="btn btn-outline-danger">Danger Outline</button>
+        <button class="btn btn-outline-info btn-lg">Info Outline</button>
+        <button class="btn btn-secondary btn-sm">SM Button</button>
+        <button type="button" class="btn btn-success" disabled>Success disabled</button>
+        <!-- putem folosi clasele astea si pe anchor tags / input !! -->
+        <button class="btn btn-primary">Updates<span class="badge badge-light">12</span></button>
+
+        <h3>Button Groups</h3>
+        <div class="btn-group">
+            <button class="btn btn-warning">Sanki</button>
+
+            <button class="btn btn-warning btn-danger">Two</button>
+            <button class="btn btn-danger">Two</button>
+            <!-- aparent astea ultimele 2 sunt aceleasi dar se suprascriu una pe cealalta -->
+            <button class="btn btn-warning">Three</button>
+            <!-- DACA DIN BUTOANELE/OPTIUNILE ASTEA NUMAI UNUL/UNA TREBUIE SELECTAT(A), ATUNCI SETAM ' role="group" ' -->
+        </div>
+        <!-- !!!UNELE CHESTII FUNCTIONEAZA CU JS!!! -->
+        <h3>Alerts</h3>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <!-- fade aparent nu face nimic singur, dar fade show da un efect placut vizual la inchiderea alert-ului -->
+            <!-- alert-dismissible muta x-ul butonului de close mai sus -->
+            <!-- <div class="alert alert-success"> -->
+            <!-- we can make them dismissible -->
+            <h4 class="alert-heading">Oh No!</h4>
+            Danger! You are about to end the world as we know it!
+            <button aria-label="Close" class="close" data-dismiss="alert">
+                <!-- data-dismiss="alert" e cva de la bootstrap! -->
+                <!-- class="close" -> arata mai misto oleak -->
+                <!-- "aria hidden" spune screen-readers-urilor ca nu e nevoie sa citeasca/stie despre elementul asta -->
+                <!-- TOATE atributele care incep cu "aria-" au de-a face cu accessibility, screen-readers!! -->
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+
+        <h2 class="display-4">Typography</h2>
+
+        <p class="lead">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, quibusdam sint! Expedita, tenetur impedit.
+            Praesentium totam sequi omnis sint fuga delectus consequatur nam, necessitatibus, fugit ad at voluptatum,
+            ipsum
+            nemo!
+        </p>
+
+        <!-- 124. -->
+        <blockquote class="blockquote text-right bg-light">
+            <!-- this is simlpy a quotation -->
+            <!-- "mb-0" margin bottom setata la 0-->
+            <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, beatae. Inventore, nobis
+                reprehenderit
+                id non necessitatibus quae beatae ipsum fuga omnis quis nulla itaque repudiandae nesciunt illo placeat
+                praesentium blanditiis?
+            </p>
+            <footer class="blockquote-footer">Mr. Lorem Ipsum</footer>
+        </blockquote>
+        <!-- 124. -->
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

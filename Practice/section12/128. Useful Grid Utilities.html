@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Basics</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="display-1 text-center text-primary">The Grid System</h1>
+        <div class="row">
+            <!-- EVERY ROW IN BOOTSTRAP HAS 12 UNITS OF SPACE TO DIVVY UP (A IMPARTI) -->
+            <!-- col/6 -->
+            <div class="col-2 bg-success">I AM 2 UNITS</div>
+            <div class="col-8 bg-danger">I AM 8 UNITS</div>
+            <div class="col-2 bg-success">I AM 2 UNITS</div>
+        </div>
+        <div class="row">
+            <div class="col-3 bg-info">I AM 3 UNITS</div>
+            <div class="col-6 bg-warning">I AM 6 UNITS</div>
+            <div class="col-3 bg-info">I AM 3 UNITS</div>
+        </div>
+        <!-- daca vrem, putem preciza doar col si calculeaza el automatically how much space each one needs -->
+        <!-- we can also have nested containers!! -->
+        <div class="container">
+            <div class="row">
+                <!-- <div class="col bg-primary">I AM AUTO SIZED</div>
+            <div class="col bg-secondary">I AM AUTO SIZED</div> -->
+                <!-- <div class="col bg-primary">I AM AUTO SIZED</div>
+            <div class="col bg-secondary">I AM AUTO SIZED</div> -->
+
+                <div class="col bg-primary">I AM AUTO SIZED</div>
+                <div class="col bg-secondary">I AM AUTO SIZED</div>
+                <div class="col-5 bg-primary">I AM AUTO SIZED</div>
+                <!-- <div class="col bg-secondary">I AM AUTO SIZED</div> -->
+
+                <!-- proba -->
+                <!-- <br>
+                <div class="">proba </div>
+                <div class="">proba </div>
+                <div class="">proba</div> -->
+
+
+            </div>
+        </div>
+        <h2 class="display-4">Responsive Grid</h2>
+        <div class="row">
+
+            <!-- asta spune: "dupa ce treci de display-ul 'medium', then take up 6 columns" -->
+            <!-- "medium and above: 6 columns(50%); xtra-Large and above: 3 columns(" -->
+            <!-- if anything overflows, ramane spatiu liber pe rand -->
+            <!-- <div class="col-md-6 col-xl-3 bg-info">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro molestias ratione, ipsam obcaecati iusto
+                minima? Facilis, nisi recusandae mollitia deserunt beatae corrupti earum ducimus consequuntur debitis
+                facere expedita deleniti cum.
+            </div> -->
+            <div class="col-md-6 col-xl-4 bg-info">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro molestias ratione, ipsam obcaecati iusto
+                minima? Facilis, nisi recusandae mollitia deserunt beatae corrupti earum ducimus consequuntur debitis
+                facere expedita deleniti cum.
+            </div>
+            <div class="col-md-6 col-xl-4 bg-success">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro molestias ratione, ipsam obcaecati iusto
+                minima? Facilis, nisi recusandae mollitia deserunt beatae corrupti earum ducimus consequuntur debitis
+                facere expedita deleniti cum.
+            </div>
+            <!-- deci fiindca pe medium-6 am 50% atunci astea 2 singure vor ocupa un rand PENTRU "medium - XL" -->
+            <div class="col-md-6 col-xl-4 bg-info">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro molestias ratione, ipsam obcaecati iusto
+                minima? Facilis, nisi recusandae mollitia deserunt beatae corrupti earum ducimus consequuntur debitis
+                facere expedita deleniti cum.
+            </div>
+            <div class="col-md-6 col-xl-4 bg-success">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro molestias ratione, ipsam obcaecati iusto
+                minima? Facilis, nisi recusandae mollitia deserunt beatae corrupti earum ducimus consequuntur debitis
+                facere expedita deleniti cum.
+            </div>
+        </div>
+
+        <!-- <div class="row no-gutters"> -->
+        <!-- no-gutters !!!! -->
+        <div class="row">
+            <!-- img-fluid face ca o imagine sa ¨scale¨based upon the size of its containing element!! -->
+            <!-- DECI, DACA PUNEM class="img-fluid¨ inside of an image, atunci imaginea aia isi va schimba dimensiunea daca 
+            containerul care o contine isi schimba dimensiunea !!-->
+            <div class="col-xl-4 col-md-6">
+                <img src="https://www.birdnote.org/sites/default/files/Swainsons-thrush-800-Andrew-Reding-CC_0.jpg"
+                    class="img-fluid" alt="">
+            </div>
+
+            <div class="col-xl-4 col-md-6">
+                <img src="https://www.teahub.io/photos/full/57-575008_bird-in-tropical-rainforest.jpg" class="img-fluid"
+                    alt="">
+            </div>
+            <!-- grija la typos!! aici am scris row instead of col!! -->
+            <div class="col-xl-4 col-md-6">
+                <img src="https://uk.mantralingua.com/sites/default/files/Bird2Thumbnail.jpg" class="img-fluid" alt="">
+            </div>
+        </div>
+
+    </div>
+    </div>
+    <script src=" https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+        integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
