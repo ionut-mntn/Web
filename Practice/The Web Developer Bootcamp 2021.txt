@@ -1010,8 +1010,32 @@ to be a column
 127. Responsive Bootstrap Grids
 -------------------------------
 
-
+img-fluid makes an image scale based upon the size of its containing element(containerul care o contine)!!
+DECI, DACA PUNEM class="img-fluid¨ inside of an image, atunci imaginea aia isi va schimba dimensiunea daca 
+containerul care o contine isi schimba dimensiunea !!
 
 responsive images ?? ceva nu o mers aici !!
 
 gutters
+
+128. Useful Grid Utilities
+-------------------------
+border, justify, align
+justify-content, align-items au variantele de xs, sm, md, lg, xl
+
+129. Bootstrap Forms
+--------------------
+
+custom Bootstrap form classes
+
+standard-core concepts: form-group, form-control(-> asta se aplica to most of the
+inputs)
+
+<!-- !!!TRY THINKING MOBILE FIRST!!! -->
+
+
+custom checkboxes, custom radiobuttons
+
+130. Bootstrap Navbars(signature Bootstrap component, except for the grid system)
+--------------------------------------------------------------------------------
+

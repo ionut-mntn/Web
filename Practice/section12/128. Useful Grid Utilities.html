@@ -52,8 +52,11 @@
         <h2 class="display-4">Responsive Grid</h2>
         <div class="row">
 
+            <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
             <!-- asta spune: "dupa ce treci de display-ul 'medium', then take up 6 columns" -->
             <!-- "medium and above: 6 columns(50%); xtra-Large and above: 3 columns(" -->
+            <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+
             <!-- if anything overflows, ramane spatiu liber pe rand -->
             <!-- <div class="col-md-6 col-xl-3 bg-info">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro molestias ratione, ipsam obcaecati iusto
@@ -83,29 +86,97 @@
             </div>
         </div>
 
-        <!-- <div class="row no-gutters"> -->
-        <!-- no-gutters !!!! -->
-        <div class="row">
-            <!-- img-fluid face ca o imagine sa ¨scale¨based upon the size of its containing element!! -->
-            <!-- DECI, DACA PUNEM class="img-fluid¨ inside of an image, atunci imaginea aia isi va schimba dimensiunea daca 
-            containerul care o contine isi schimba dimensiunea !!-->
-            <div class="col-xl-4 col-md-6">
-                <img src="https://www.birdnote.org/sites/default/files/Swainsons-thrush-800-Andrew-Reding-CC_0.jpg"
-                    class="img-fluid" alt="">
-            </div>
+        <h2 class="display-4">Grid Alignment</h2>
+        <!-- <div class="row align-items-start"> -->
+        <!-- <div class="row align-items-end"> -->
+        <div class="row align-items-center">
+            <div class="col-3 bg-danger">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut, dolorum?
+                Accusamus
+                ratione cum
+                facere, sed quaerat quas quam, velit tempore at, laudantium quod harum necessitatibus itaque quisquam
+                consectetur modi nulla?</div>
+            <div class="col-3 bg-warning">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut, dolorum?
+                Accusamus
+                ratione cum
+                facere, sed quaerat quas quam, velit tempore at, laudantium quod harum necessitatibus itaque quisquam
+                consectetur modi nulla?
 
-            <div class="col-xl-4 col-md-6">
-                <img src="https://www.teahub.io/photos/full/57-575008_bird-in-tropical-rainforest.jpg" class="img-fluid"
-                    alt="">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate placeat optio autem a aperiam minima
+                vitae praesentium quo porro, voluptate, beatae, consequatur voluptatum doloribus. Ipsa vero asperiores
+                iste accusamus voluptates.
+                Dignissimos officia accusamus aperiam laudantium, tenetur deserunt delectus aspernatur unde adipisci
+                porro aliquam doloremque esse iste vero aliquid repellendus. Nihil quae officiis laboriosam provident
+                doloremque, quidem nulla perspiciatis dolores. Dolorem?
+
             </div>
-            <!-- grija la typos!! aici am scris row instead of col!! -->
-            <div class="col-xl-4 col-md-6">
-                <img src="https://uk.mantralingua.com/sites/default/files/Bird2Thumbnail.jpg" class="img-fluid" alt="">
+            <div class="col-3 bg-success">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut, dolorum?
+                Accusamus
+                ratione cum
+                facere, sed quaerat quas quam, velit tempore at, laudantium quod harum necessitatibus itaque quisquam
+                consectetur modi nulla? lorem
+
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum tenetur, ullam repudiandae ut dolor
+                consectetur beatae aspernatur nihil! Hic, qui totam quis possimus non nesciunt! Ducimus earum recusandae
+                soluta accusamus.
+
+                <!-- aici am mai adaugat un lorem; obs ca toate div-urile au aceeasi inaltime, chit ca unele poate nu au
+                text cat inaltimea in ele. BOOTSTRAP E CONSTRUIT PE FLEXBOX!!
+
+                DACA NU VREAU SA SE INTAMPLE ASTA, FOLOSESC CLASELE ASTEA:
+                align-items- start/center/end
+
+                -->
             </div>
+            <div class="col-3 bg-info align-self-end">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut,
+                dolorum? Accusamus
+                ratione cum
+                facere, sed quaerat quas quam, velit tempore at, laudantium quod harum necessitatibus itaque quisquam
+                consectetur modi nulla?</div>
+        </div>
+
+        <h3>Justify Content</h3>
+        <div class="row border justify-content-center justify-content-lg-left justify-content-xl-between">
+            <!-- <div class="row border justify-content-end"> -->
+            <!-- <div class="row border justify-content-between"> -->
+            <!-- <div class="row border justify-content-sm-start"> -->
+            <!-- la fel si la align-self, align-items -->
+            <div class="col-md-4 bg-primary">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum laborum
+                voluptatum, sit dolores nostrum esse maxime hic tempora nam deleniti quasi iste odit unde itaque sequi
+                mollitia optio. Ullam, nihil.</div>
+
+            <div class="col-md-4 bg-info">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum laborum
+                voluptatum, sit dolores nostrum esse maxime hic tempora nam deleniti quasi iste odit unde itaque sequi
+                mollitia optio. Ullam, nihil.</div>
+
         </div>
 
     </div>
+
+
+
+    <!-- <div class="row no-gutters"> -->
+    <!-- no-gutters !!!! -->
+    <div class="row">
+        <!-- img-fluid face ca o imagine sa ¨scale¨based upon the size of its containing element!! -->
+        <!-- DECI, DACA PUNEM class="img-fluid¨ inside of an image, atunci imaginea aia isi va schimba dimensiunea daca 
+            containerul care o contine isi schimba dimensiunea !!-->
+        <div class="col-xl-4 col-md-6">
+            <img src="https://www.birdnote.org/sites/default/files/Swainsons-thrush-800-Andrew-Reding-CC_0.jpg"
+                class="img-fluid" alt="">
+        </div>
+
+        <div class="col-xl-4 col-md-6">
+            <img src="https://www.teahub.io/photos/full/57-575008_bird-in-tropical-rainforest.jpg" class="img-fluid"
+                alt="">
+        </div>
+        <!-- grija la typos!! aici am scris row instead of col!! -->
+        <div class="col-xl-4 col-md-6">
+            <img src="https://uk.mantralingua.com/sites/default/files/Bird2Thumbnail.jpg" class="img-fluid" alt="">
+        </div>
     </div>
+
+    </div>
+
     <script src=" https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
