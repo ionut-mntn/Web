@@ -1038,12 +1038,13 @@ custom checkboxes, custom radiobuttons
 
 130. Bootstrap Navbars(signature Bootstrap component, except for the grid system)
 --------------------------------------------------------------------------------
+
+!!! FOARTE IMPORTANT!!!
 responsive
 
 collapsable navbars
 
 cu style setam culoarea!
-
 !!! FOARTE IMPORTANT!!!
 
 131. Bootstrap Icons!
@@ -1088,3 +1089,22 @@ DROPDOWNS
 SPINNERS
 
 PROGRGESS
+
+! amintim: fluid container go all the way across !
+
+
+...
+
+138. Museum of Candy Project Part 3
+-----------------------------------
+
+139. Museum of Candy Project Part 4
+------------------------------------
+Bootstrap order-classes we can take advantage of !!
+(de revazut astea ca nu le-a explicat bine;
+update 1 min mai tarziu :)) : am clarificat, dar tot putea fi oleak mai explicit, ceva gen
+" the order refers TO THE DIVs, not the images!! .. poate is eu obosit)
+
+140. Museum of Candy Project Part 4
+------------------------------------
+DC NU MERGE BACKGROUND ul cu nav bar ul?
