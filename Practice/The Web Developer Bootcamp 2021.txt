@@ -1108,3 +1108,23 @@ update 1 min mai tarziu :)) : am clarificat, dar tot putea fi oleak mai explicit
 140. Museum of Candy Project Part 4
 ------------------------------------
 DC NU MERGE BACKGROUND ul cu nav bar ul?
+
+
+
+
+
+
+
+
+141. Javascript Basics
+----------------------
+
+
+
+142. Why Javascript is awesome
+------------------------------
+implica logica!, actiuni!!
+cart-uri, stock updates... pagina face chestii cu care eu interactionez!!
+live-chat, charts, graphs, real complex UIs, nicer animations!!
+
+143.
