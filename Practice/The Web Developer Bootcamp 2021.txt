@@ -1291,3 +1291,45 @@ let logedInUser = null; // asta indica explicit: there is nothing here (AT THE M
 Math.abs(-456) // 456
 
 obiect -> collection of properties & methods
+
+Math.floor()
+Math.ceil()
+
+chestia de la statistica: vreau in intervalul [a, b] numere, fac: a + rand()*abs(b-a)
+
+160.
+
+161
+
+162. Comparison Operators
+-------------------------
+??strict equality / strict non-equality??
+
+
+163. Equality Comparators (including strict (in)equality) adica Triple Vs Double Equals
+---------------------------------------------------------------------------------------
+
+DOUBLE EQUALS
+-------------
+checks for equality of value, but not equality of type!!!
+it coerces both values to the same type and then compares them
+!! THIS CAN LEAD TO SOME UNEXPECTED RESULTS !!
+
+1 == 1 			//true
+1 == '1' 		//true
+
+5 == 5			//true
+'b' == 'c' 		//false
+7 == '7'		//true
+0 == ''			//true
+true == false 		//false
+0 == false;		//true
+!! null == undefined	// true !!
+
+TRIPLE EQUALS (STRICT EQUALITY OPERATOR)
+----------------------------------------
+--> !!ASTUIA II PASA DE TIP!!!!
+
+1 === 1			//true
+1 === '1' 		//false, spre deosebire de ala de mai sus
+0 === false		//false, idem
