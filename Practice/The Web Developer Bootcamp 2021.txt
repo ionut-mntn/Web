@@ -1127,4 +1127,59 @@ implica logica!, actiuni!!
 cart-uri, stock updates... pagina face chestii cu care eu interactionez!!
 live-chat, charts, graphs, real complex UIs, nicer animations!!
 
-143.
+143. Primitives (primitive types) & The Console
+-----------------------------------------------
+cum se conecteaza JS to the browser, css, html.. and to the user interaction
+
+tipuri primitive in JS: number, string, boolean, null, undefined
+si astea 2: Symbol, BigInt - way less commonly used
+
+unde scriem codul? in consola JS si Chrome
+
+!! in consola --> REPL = read, evaluate, print, loop!!
+
+clear() sau CTRL + L -> curata consola
+
+144. Javascript Numbers
+-----------------------
+-one number type 
+
+pt decimals exista o limita de eroare tho
+
+2/5 -> ne da un decimal!!
+
+a^b il scriem ca "a**b"
+
+PEMDAS = paranthesis, exponents, multiplication, division, addition, substraction (in ordinea asta)
+
+145. What is NaN
+----------------
+Not a Number
+!! NaN -> considerat un numar, tho. Deci este de tip numar, dar nu reprezinta un numar!!
+
+0/0 		// NaN
+1 + NaN 	// NaN
+2 * 3		// NaN
+DAR: 1/0 	// infinity
+
+operatorul typeof -> are un singur argument; sintaxa: typeof variable/constant
+
+typeof 4 // "number"
+typeof 4.1234124 // "number"
+!!
+typeof NaN 		// "number"
+typeof undefined 	//"undefined
+!!
+
+
+
+146. Quick Numbers Quiz
+-----------------------
+
+147. Variables & let
+--------------------
+(cred ca e weak-tipizat) ca python..
+pt ca facem chestii de genul: let year = 1985;
+// nu avem nevoie de ";" in consola
+
+"let" cred ca il folosim doar cand declaram o variabila
