@@ -1,0 +1,38 @@
+VM479:1 Console was cleared
+undefined
+'hi' === 'hi'
+true
+['hi', 'bye'] === ['hi', 'bye']
+false
+[1] === [1]
+false
+[1] == [1]
+false
+[] == []
+false
+let luckyNum = 87;
+undefined
+[1,2,3] === [1,2,3]
+false
+let nums = [1,2,3]
+undefined
+let numsCopy = nums;
+undefined
+nums
+(3) [1, 2, 3]
+numsCopy
+(3) [1, 2, 3]
+nums.push(4)
+4
+nums
+(4) [1, 2, 3, 4]
+numsCopy
+(4) [1, 2, 3, 4]
+numsCopy.pop()
+4
+nums
+(3) [1, 2, 3]
+numsCopy
+(3) [1, 2, 3]
+nums === numsCopy
+true

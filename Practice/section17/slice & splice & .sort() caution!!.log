@@ -1,0 +1,28 @@
+DevTools failed to load SourceMap: Could not load content for chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/sourcemaps/disable-console.js.map: HTTP error: status code 404, net::ERR_UNKNOWN_URL_SCHEME
+DevTools failed to load SourceMap: Could not load content for chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/sourcemaps/contentscript.js.map: HTTP error: status code 404, net::ERR_UNKNOWN_URL_SCHEME
+DevTools failed to load SourceMap: Could not load content for chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/sourcemaps/inpage.js.map: HTTP error: status code 404, net::ERR_UNKNOWN_URL_SCHEME
+DevTools failed to load SourceMap: Could not load content for chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/sourcemaps/disable-console.js.map: HTTP error: status code 404, net::ERR_UNKNOWN_URL_SCHEME
+DevTools failed to load SourceMap: Could not load content for chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/sourcemaps/contentscript.js.map: HTTP error: status code 404, net::ERR_UNKNOWN_URL_SCHEME
+DevTools failed to load SourceMap: Could not load content for chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/sourcemaps/inpage.js.map: HTTP error: status code 404, net::ERR_UNKNOWN_URL_SCHEME
+let colors = ["red", "orange", "yellow", "green", "blue", "violet"];
+undefined
+colors.splice(1,0,'red-orange');
+[]
+colors
+(7) ["red", "red-orange", "orange", "yellow", "green", "blue", "violet"]
+colors.splice(3,0,'red-orange','yellow-green','forestgreen');
+[]
+colors
+(10) ["red", "red-orange", "orange", "red-orange", "yellow-green", "forestgreen", "yellow", "green", "blue", "violet"]
+colors.splice(3,3)
+(3) ["red-orange", "yellow-green", "forestgreen"]
+colors
+(7) ["red", "red-orange", "orange", "yellow", "green", "blue", "violet"]
+colors.splice(2,2,"PROBA")
+(2) ["orange", "yellow"]
+colors
+(6) ["red", "red-orange", "PROBA", "green", "blue", "violet"]0: "red"1: "red-orange"2: "PROBA"3: "green"4: "blue"5: "violet"length: 6__proto__: Array(0)
+let scores = [1, 70, 100, 2500, 9, -12, 0, 34];
+undefined
+scores.sort()
+(8) [-12, 0, 1, 100, 2500, 34, 70, 9]

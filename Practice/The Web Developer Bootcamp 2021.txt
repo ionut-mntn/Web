@@ -1260,6 +1260,12 @@ stang in acest caz la string, adica echivalentul sau )
 156. String Methods with arguments
 ----------------------------------
 
+!!! .slice(-k) -> de a indexul n + 1 - k pana la inceputul array-ului !!!
+
+
+!!".indexOf" -> returneaza -1 daca nu gaseste ce trebe!! altfel, indexul la care se gaseste!
+returneaza first match only!! (la fel si a arrays!)
+
 msg.slice(a,b) de la pana la b-1 -> inclusiv b-1
 .replace(whatToReplace, toBeReplacedWith)		---> doar prima occurence
 .replaceAll(whatToReplace, toBefacedWith) 		---> all occurences
@@ -1402,6 +1408,109 @@ TOATE VALORILE SUNT TRUTHY, EXCEPT:
 	-NaN
 	-undefined
 
-171. Logical operators
-----------------------
+171. Logical AND
+----------------
 operatii ce ne permit evaluare a large pieces of logic duhh
+
+!! JS este short-circuit evaluation!! daca am: "a OR b", iar a este adevarat, b nu va mai fi
+evaluat !!
+
+172. Logical OR
+---------------
+...
+!!!! AND are precedenta mai mare decat OR, adica:
+"&&" are precedenta mai mare decat "||" !!!!! (08:28)
+
+
+
+173. Logical Not
+----------------
+
+(in consola:)null
+(in consola:)->null
+
+(in consola):!null
+(in consola):->true
+
+??????????????????????????????????????????????????????????????????
+CUM AS FACE SA VAD VALOAREA "VALUEY" (TRUTHY) IN ACEST CAZ PT NULL
+??????????????????????????????????????????????????????????????????
+
+175. JS Arrays
+--------------
+typeof array 
+--> va indica "object" cu toate ca noi stim ca e array
+
+we can have mixed arrays:
+let stuff = [true, 0, 1.23, "miaw", undefined, NaN, null]
+
+176. Array random access
+------------------------
+
+!! aparent putem avea empty spaces in an array
+
+let colors = ['rad', 'orange', 'green', 'yellow'];
+console.log(colors);
+
+colors[0] = 'red';
+console.log(colors);
+
+colors[2] = 'yellow';
+console.log(colors);
+
+colors[3] = 'green';
+console.log(colors);
+
+console.log(colors[4]);
+
+colors[5] = 'blue';
+console.log(colors);
+
+colors[10] = 'blue';
+console.log(colors);
+
+177. Push & pop
+---------------
+
+push & pop -> add & remove from END of array
+!! spre deosebire de strings, aici chiar aducem schimbare obiectului!!
+! .push() returneaza lungimea array-ului in urma actualizarii !
+! .pop() returneaza ce s-a eliminat din array ! (.pop() pe un array empty va returna undefined)
+
+
+shift & unshift -> add & remove from START of array
+!! spre deosebire de strings, aici chiar aducem schimbare obiectului!!
+! .shift() returneaza ce s-a eliminat din array ! (.pop() pe un array empty va returna undefined)
+! .unshift() returneaza lungimea array-ului in urma actualizarii !
+
+let movieLine =['tom', 'nancy', 'pablo', 'oliver', 'eva']
+movieLine.shift() // returneaza 'tom'
+
+179. Concat, indexOf, includes & reverse
+---------------------------------------
+!!".indexOf" -> returneaza -1 daca nu gaseste ce trebe!! altfel, indexul la care se gaseste!
+returneaza first match only!! (la fel si a arrays!)
+
+
+
+180. Slice & splice
+--------------------
+
+"?start" -> sugereaza ca parametrul "Start" este optional
+
+array.slice() -> slice din tot array-ul
+.slice(k) -> de la indexul k pana la sfaritul array-ului
+!!! .slice(-k) -> de a indexul n + 1 - k pana la inceputul array-ului !!!
+.slice(a, b) -> de la a la b (fara b!!)
+
+
+CHECK MDN BEST
+--------------
+.splice() --> cu asta stergem / inlocuim elemente intr-un array!
+.splice(k,0) --> insereaza pe pozitia k, impingand-o pe vechea de pe k catre k+1.. (si toate de dupa
+cu o pozitie mai la dreapta)
+.splice(k,1) --> insereaza pe pozitia k, sterge ce era pe k inainte
+.splice(k,m) --> insereaza pe pozitia k, sterge ce era pe [k, k+1, ... k+m-1] inainte
+.splice(k,m,DELETED)
+--------------
+CHECK MDN BEST
