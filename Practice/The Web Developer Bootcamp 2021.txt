@@ -1262,7 +1262,7 @@ stang in acest caz la string, adica echivalentul sau )
 
 msg.slice(a,b) de la pana la b-1 -> inclusiv b-1
 .replace(whatToReplace, toBeReplacedWith)		---> doar prima occurence
-.replaceAll(whatToReplace, toBeReplacedWith) 		---> all occurences
+.replaceAll(whatToReplace, toBefacedWith) 		---> all occurences
 
 157. Template Literals (string-uri parametrizate)
 -------------------------------------------------
@@ -1333,3 +1333,75 @@ TRIPLE EQUALS (STRICT EQUALITY OPERATOR)
 1 === 1			//true
 1 === '1' 		//false, spre deosebire de ala de mai sus
 0 === false		//false, idem
+
+!!! ALWAYS USE TRIPLE (NON-)EQUALS !!! --> IT DOES CARE ABOUT TYPE AND IT IS IMPORTANT TO CARE ABOU TYPE
+
+
+164. Console, Alert, &Prompt
+----------------------------
+console
+console.log
+!! nu prea avem nevoie de console.log("Hello") ca sa afisam "Hello" DAR ATENTIE: asta cand lucram din consola !!
+ATENTIE: cand lucram dintr-un fisier - ei bine - acel fisier este complet deconectat de consola. Nu vedem ce scriem in 
+acel fisier. Spre deosebire de REPL (read, evaluate, print, loop) cand lucram dintr-un fisier, avem doar RE(read, execute)
+partea de print se petrece in browser, I suppose.
+
+!! console este un obiect si el !!
+
+alert("hi there") --> nu face in consola output-ul, ci in browser( in fila asociata din browser )
+
+prompt("mesaj de prompt") --> la fel, dar solicita input de la user (idem)
+
+!! parseInt !!
+--------------
+let userInput = prompt("please enter a number")
+undefined
+userInput
+"97"
+userInput += 1
+"971"
+userInput -=1
+970
+parseInt(userInput)
+970
+let userInput = prompt("please enter a number")
+undefined
+parseInt(userInput)
+97
+parseInt("101"
+VM1252:1 Uncaught SyntaxError: missing ) after argument list
+parseInt("101")
+101
+parseInt("101asdasdasd")
+101
+parseInt(userInput) + 1
+--------------
+
+
+165. Running Javascript from a script
+-------------------------------------
+SHIFT + ENTER: scriem mai multe comenzi in consola; multi-line instructions
+
++ cum legam .js-file-ul de html
+
+166. If Statements
+------------------
+...
+
+
+170. Truthy & Falsey Values
+----------------------------
+
+orice valoare in js are o valoare "truthiness/falsiness"; adica corespodentele:
+	true sau -respectiv- false
+
+TOATE VALORILE SUNT TRUTHY, EXCEPT:
+	-false
+	-0
+	-""(empty string)
+	-NaN
+	-undefined
+
+171. Logical operators
+----------------------
+operatii ce ne permit evaluare a large pieces of logic duhh

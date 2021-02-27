@@ -1,0 +1,38 @@
+DevTools failed to load SourceMap: Could not load content for chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/sourcemaps/disable-console.js.map: HTTP error: status code 404, net::ERR_UNKNOWN_URL_SCHEME
+DevTools failed to load SourceMap: Could not load content for chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/sourcemaps/contentscript.js.map: HTTP error: status code 404, net::ERR_UNKNOWN_URL_SCHEME
+DevTools failed to load SourceMap: Could not load content for chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/sourcemaps/inpage.js.map: HTTP error: status code 404, net::ERR_UNKNOWN_URL_SCHEME
+mautic-form.js:43 GET https://www.programiz.com/sites/all/themes/programiz/media/css/modal.min.css net::ERR_ABORTED 404 (Not Found)
+Modal.loadStyle @ mautic-form.js:43
+Core.initialize @ mautic-form.js:47
+(anonymous) @ mautic-form.js:48
+(anonymous) @ mautic-form.js:49
+ascii-value-character:1356 EU
+console.history = [];
+var oldConsole = {};
+for (var i in console) {
+    if (typeof console[i] == 'function') {
+        oldConsole[i] = console[i];
+        var strr = '(function(){\
+            console.history.push({func:\'' + i + '\',args : Array.prototype.slice.call(arguments)});\
+            oldConsole[\'' + i + '\'].apply(console, arguments);\
+        })';
+        console[i] = eval(strr);
+    }
+}
+undefined
+history
+History {length: 3, scrollRestoration: "auto", state: null, pushState: ƒ, replaceState: ƒ}length: 3pushState: ƒ ()replaceState: ƒ ()arguments: (...)caller: (...)length: 0name: ""prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: fbevents.js:23[[Scopes]]: Scopes[6]scrollRestoration: "auto"state: null__proto__: Historyback: ƒ back()forward: ƒ forward()go: ƒ go()length: (...)pushState: ƒ pushState()replaceState: ƒ replaceState()scrollRestoration: (...)state: (...)constructor: ƒ History()Symbol(Symbol.toStringTag): "History"get length: ƒ length()get scrollRestoration: ƒ scrollRestoration()set scrollRestoration: ƒ scrollRestoration()get state: ƒ state()__proto__: Object
+//163. Equality Comparators (including strict (in)equality)
+undefined
+1==1
+true
+1 == '1'
+true
+null == undefined;
+true
+1 == 2
+false
+'a' == 'b'
+false
+0 == false
+true
