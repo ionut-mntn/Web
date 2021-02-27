@@ -1,0 +1,32 @@
+VM464:1 Console was cleared
+DevTools failed to load SourceMap: Could not load content for chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/sourcemaps/disable-console.js.map: HTTP error: status code 404, net::ERR_UNKNOWN_URL_SCHEME
+DevTools failed to load SourceMap: Could not load content for chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/sourcemaps/contentscript.js.map: HTTP error: status code 404, net::ERR_UNKNOWN_URL_SCHEME
+DevTools failed to load SourceMap: Could not load content for chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/sourcemaps/inpage.js.map: HTTP error: status code 404, net::ERR_UNKNOWN_URL_SCHEME
+typeof 4
+"number"
+0/0
+NaN
+typeof NaN
+"number"
+typeof undefined
+"undefined"
+4 + 3*4/2
+10
+13%5**2
+13
+200 + 0/0
+NaN
+1/0
+Infinity
+--enable-ogging --v=1
+VM773:1 Uncaught SyntaxError: Unexpected identifier
+--enable-logging --v=1
+VM779:1 Uncaught SyntaxError: Unexpected identifier
+debugout.js
+VM833:1 Uncaught ReferenceError: debugout is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM833:1
+debugout
+VM852:1 Uncaught ReferenceError: debugout is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM852:1

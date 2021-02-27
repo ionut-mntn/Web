@@ -1,0 +1,87 @@
+DevTools failed to load SourceMap: Could not load content for chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/sourcemaps/disable-console.js.map: HTTP error: status code 404, net::ERR_UNKNOWN_URL_SCHEME
+DevTools failed to load SourceMap: Could not load content for chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/sourcemaps/contentscript.js.map: HTTP error: status code 404, net::ERR_UNKNOWN_URL_SCHEME
+DevTools failed to load SourceMap: Could not load content for chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/sourcemaps/inpage.js.map: HTTP error: status code 404, net::ERR_UNKNOWN_URL_SCHEME
+history
+History {length: 3, scrollRestoration: "auto", state: {…}}
+chrome.experimental.devtools.console.getMessages(function(messages) {  })
+VM240:1 Uncaught TypeError: Cannot read property 'devtools' of undefined
+    at <anonymous>:1:21
+(anonymous) @ VM240:1
+"true"
+"true"
+"thisIsText"
+"thisIsText"
+let username = "Sanki"
+undefined
+username
+"Sanki"
+let favAnimal = 'Dumbo Octopus';
+undefined
+favAnimal
+"Dumbo Octopus"
+'hello"
+VM494:1 Uncaught SyntaxError: Invalid or unexpected token
+"I told her "go away""
+VM548:1 Uncaught SyntaxError: Unexpected identifier
+"I told her 'go away'"
+"I told her 'go away'"
+'I told her "go away"'
+"I told her "go away""
+"I told her \"go away""
+VM587:1 Uncaught SyntaxError: Invalid or unexpected token
+"I told her \"go away\""
+"I told her "go away""
+let animal
+undefined
+animal ="Dumbo Octopus"
+"Dumbo Octopus"
+animal[0]
+"D"
+animal[12]
+"s"
+animal[5]
+" "
+animal[6]
+"O"
+animal[99]
+undefined
+let phoneNumber ="(231)345-1344"
+undefined
+phoneNumber[0]
+"("
+animal.length
+13
+"lol".length
+3
+"lol"[0]
+"l"
+"lol"+" stringConcatenation"
+"lol stringConcatenation"
+let firstName = "River"
+undefined
+let lastName = "Phoenix"
+undefined
+firstName + lastName
+"RiverPhoenix"
+firstName + " " lastName
+VM1280:1 Uncaught SyntaxError: Unexpected identifier
+firstName + " " + lastName
+"River Phoenix"
+let firstName = "river"
+undefined
+let fullname = firstName + " " + lastName
+undefined
+fullname
+"river Phoenix"
+1 + "hi"
+"1hi"
+let result = 1+"hi"
+undefined
+typeof result
+"string"
+const kyoto="Kyoto"
+undefined
+const japan="Japan"
+undefined
+const res = kyoto+japan
+undefined

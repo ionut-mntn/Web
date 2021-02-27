@@ -1,0 +1,253 @@
+DevTools failed to load SourceMap: Could not load content for chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/sourcemaps/disable-console.js.map: HTTP error: status code 404, net::ERR_UNKNOWN_URL_SCHEME
+DevTools failed to load SourceMap: Could not load content for chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/sourcemaps/contentscript.js.map: HTTP error: status code 404, net::ERR_UNKNOWN_URL_SCHEME
+DevTools failed to load SourceMap: Could not load content for chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/sourcemaps/inpage.js.map: HTTP error: status code 404, net::ERR_UNKNOWN_URL_SCHEME
+history
+History {length: 3, scrollRestoration: "auto", state: {…}}
+chrome.experimental.devtools.console.getMessages(function(messages) {  })
+VM240:1 Uncaught TypeError: Cannot read property 'devtools' of undefined
+    at <anonymous>:1:21
+(anonymous) @ VM240:1
+"true"
+"true"
+"thisIsText"
+"thisIsText"
+let username = "Sanki"
+undefined
+username
+"Sanki"
+let favAnimal = 'Dumbo Octopus';
+undefined
+favAnimal
+"Dumbo Octopus"
+'hello"
+VM494:1 Uncaught SyntaxError: Invalid or unexpected token
+"I told her "go away""
+VM548:1 Uncaught SyntaxError: Unexpected identifier
+"I told her 'go away'"
+"I told her 'go away'"
+'I told her "go away"'
+"I told her "go away""
+"I told her \"go away""
+VM587:1 Uncaught SyntaxError: Invalid or unexpected token
+"I told her \"go away\""
+"I told her "go away""
+let animal
+undefined
+animal ="Dumbo Octopus"
+"Dumbo Octopus"
+animal[0]
+"D"
+animal[12]
+"s"
+animal[5]
+" "
+animal[6]
+"O"
+animal[99]
+undefined
+let phoneNumber ="(231)345-1344"
+undefined
+phoneNumber[0]
+"("
+animal.length
+13
+"lol".length
+3
+"lol"[0]
+"l"
+"lol"+" stringConcatenation"
+"lol stringConcatenation"
+let firstName = "River"
+undefined
+let lastName = "Phoenix"
+undefined
+firstName + lastName
+"RiverPhoenix"
+firstName + " " lastName
+VM1280:1 Uncaught SyntaxError: Unexpected identifier
+firstName + " " + lastName
+"River Phoenix"
+let firstName = "river"
+undefined
+let fullname = firstName + " " + lastName
+undefined
+fullname
+"river Phoenix"
+1 + "hi"
+"1hi"
+let result = 1+"hi"
+undefined
+typeof result
+"string"
+const kyoto="Kyoto"
+undefined
+const japan="Japan"
+undefined
+const res = kyoto+japan
+undefined
+res
+"KyotoJapan"
+"hello".repeat(4)
+"hellohellohellohello"
+let msg = "hello boss"
+undefined
+msg.toUpperCase
+ƒ toUpperCase() { [native code] }
+msg.toUpperCase()
+"HELLO BOSS"
+msg
+"hello boss"
+let angryMsg = msg.toUpperCase()
+undefined
+angryMsg
+"HELLO BOSS"
+msg
+"hello boss"
+let userInput = "     hello my name is tim tom tammy ping pong  "
+undefined
+userInput.trim()
+"hello my name is tim tom tammy ping pong"
+"_________sadgfgereth".trim()
+"_________sadgfgereth"
+"_________sadgfgereth".trim("_")
+"_________sadgfgereth"
+"_________sadgfgereth".trim("_")
+"_________sadgfgereth"
+userInput2 = "    afasd       asfgfg       dfsdf     "
+"    afasd       asfgfg       dfsdf     "
+userInput2.trim()
+"afasd       asfgfg       dfsdf"
+let greeting = "hello again!!!"
+undefined
+greeting.trim()
+"hello again!!!"
+greeting.trim().toUpperCase()
+"HELLO AGAIN!!!"
+"catdog".indexOf('dog');
+3
+"catdog".indexOf('dg');
+-1
+let msg = "haha that is so funny"
+undefined
+msg.slice(5,10)
+"that "
+msg.slice(10, 12)
+"is"
+msg.slice(-1)
+"y"
+msg.slice(-1)
+"y"
+msg.slice(-2)
+"ny"
+msg.replace("haha", "miawmiaw")
+"miawmiaw that is so funny"
+msg
+"haha that is so funny"
+msg.replace("h","H")
+"Haha that is so funny"
+msg.replaceAll("h","H")
+"HaHa tHat is so funny"
+// DON'T TOUCH THIS LINE! (please)
+const word = "skateboard"; //Don't change this line!
+
+// YOUR CODE BELOW THIS LINE:
+word.slice(5).replace("o","e");
+"beard"
+let product='Artichoke'
+undefined
+let prce = 3.99
+undefined
+let price = 2.25
+undefined
+let qty = 5;
+undefined
+"You bought %d %s".format
+undefined
+"You bought %d %s".format()
+VM3458:1 Uncaught TypeError: "You bought %d %s".format is not a function
+    at <anonymous>:1:20
+(anonymous) @ VM3458:1
+asd
+VM3631:1 Uncaught ReferenceError: asd is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM3631:1
+` counted ${3+4} sheep`
+" counted 7 sheep"
+"hello ${1 + 2 + 9} --> asa nu merge"
+"hello ${1 + 2 + 9} --> asa nu merge"
+`You bought ${qty}`
+"You bought 5"
+`You bought ${qty} ${product}s. Your total is: ${qty * price}`
+"You bought 5 Artichokes. Your total is: 11.25"
+`You bought ${qty} ${product}s. Your total is: ${qty * price} \`(<- this backtick is escaped) `
+"You bought 5 Artichokes. Your total is: 11.25 `(<- this backtick is escaped) "
+`You bought ${qty} ${product.toUpperCase()}s. Your total is: ${qty * price}`
+"You bought 5 ARTICHOKEs. Your total is: 11.25"
+let x;
+undefined
+x
+undefined
+3.99999999999999999999
+4
+Math
+Math {abs: ƒ, acos: ƒ, acosh: ƒ, asin: ƒ, asinh: ƒ, …}E: 2.718281828459045LN2: 0.6931471805599453LN10: 2.302585092994046LOG2E: 1.4426950408889634LOG10E: 0.4342944819032518PI: 3.141592653589793SQRT1_2: 0.7071067811865476SQRT2: 1.4142135623730951abs: ƒ abs()acos: ƒ acos()acosh: ƒ acosh()asin: ƒ asin()asinh: ƒ asinh()atan: ƒ atan()atan2: ƒ atan2()atanh: ƒ atanh()cbrt: ƒ cbrt()ceil: ƒ ceil()clz32: ƒ clz32()cos: ƒ cos()cosh: ƒ cosh()exp: ƒ exp()expm1: ƒ expm1()floor: ƒ floor()fround: ƒ fround()hypot: ƒ hypot()imul: ƒ imul()log: ƒ log()log1p: ƒ log1p()log2: ƒ log2()log10: ƒ log10()max: ƒ max()min: ƒ min()pow: ƒ pow()random: ƒ random()round: ƒ round()sign: ƒ sign()sin: ƒ sin()sinh: ƒ sinh()sqrt: ƒ sqrt()tan: ƒ tan()tanh: ƒ tanh()trunc: ƒ trunc()Symbol(Symbol.toStringTag): "Math"__proto__: Object
+3.9999999999999
+3.9999999999999
+3.999999999999999
+3.999999999999999
+3.999999999999999
+3.999999999999999
+3.9999999999999999
+4
+Math.floor(3.9999999999999999)
+4
+Math.random()
+0.45670552614415993
+Math.random()*10
+1.01013197897188
+Math.random()*10
+9.31866349522088
+Math.random()*10
+5.250356724610318
+Math.random()*10
+8.6506935468683
+Math.random()*10
+8.938288389695776
+Math.random()*10
+0.20639447925336896
+Math.random()*10
+5.9098702242007395
+Math.random()
+0.25541851826913886
+Math.random()
+0.17945825860333087
+Math.random()
+0.31967094413653574
+Math.random()
+0.4246698695098534
+Math.random()
+0.23028755541395873
+Math.random()
+0.34649062852393153
+Math.random()
+0.14779153818772994
+Math.random()
+0.5513447449828119
+Math.random()
+0.31623470411763854
+Math.random()
+0.6286825524313433
+Math.random()
+0.4646689328099296
+Math.random()
+0.09262737711079727
+Math.random()
+0.31023683313373196
+Math.random()
+0.6323748795525597
+Math.random()
+0.7572605830270944
+Math.random()
+0.6142472014907445
+0.09262737711079727 * 10
+0.9262737711079727

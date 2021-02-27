@@ -1144,7 +1144,20 @@ clear() sau CTRL + L -> curata consola
 -----------------------
 -one number type 
 
-pt decimals exista o limita de eroare tho
+pt decimals exista o limita de eroare tho (15 decimals, more precisely)
+
+!!ATENTIE!!
+3.999999999999999(15 DECIMALS)
+3.999999999999999
+
+3.9999999999999999(16 DECIMALS)
+4
+
+DECI O CHESTIE DE GENUL: 
+Math.floor(3.9999999999999999)  // (16 DECIMALS) 
+4
+POATE FI PROBLEMATICA
+
 
 2/5 -> ne da un decimal!!
 
@@ -1183,3 +1196,98 @@ pt ca facem chestii de genul: let year = 1985;
 // nu avem nevoie de ";" in consola
 
 "let" cred ca il folosim doar cand declaram o variabila
+
+148. Updating variables
+-----------------------
+
+var -> the old way of making variables; orginially, this was the sole method of making variables
+nu mai avem de ce sa il folosim acuma.. dar totusi merge
+
+let vs var
+----------
+Main difference is scoping rules. Variables declared by var keyword are scoped to the 
+immediate function body (hence the function scope) while let variables are scoped to the 
+immediate enclosing block denoted by { } (hence the block scope).
+----------
+
+let variables -> function within
+var -> block scope
+
+
+
+
+149. Booleans
+-------------
+true, false
+
+variables can be changed type !!!
+
+151. Variable Naming and Conventions
+------------------------------------
+
+let isLoggedIn
+
+variabilele sunt case-sensitive, pot contine underscore(sau chiar incepe cu underscore), cifre 
+DAR nu pot incepe cu cifre! toate numele de variabile sunt camelCased.
+
+current_date -> valid, dar problematic
+currentDate -> valid, ok
+
+153. Introducing Strings
+------------------------
+
+-> enclosed quotes; single or doubled quotes
+
+154. Indices & Length
+----------------------
+
+! Strings are indexed (starting from 0) !
+	-> si nu doar ele!!
+
+!!every string has the .length property!!
+
+!!! Strings are immutable !!!!
+!! 1 + "merge" // "1merge" ( se face un autoboxing cred; pardon, nu autoboxing de fapt - cred - ci o conversie implicita a operandului
+stang in acest caz la string, adica echivalentul sau )
+
+155. String Methods
+-------------------
+"hello".length 		-> accesam o proprietate
+"hello".repeat(4) 	-> executam o metoda
+
+.trim() 		-> mananca whhitespace-ul extra dinainte si de dupa string
+
+156. String Methods with arguments
+----------------------------------
+
+msg.slice(a,b) de la pana la b-1 -> inclusiv b-1
+.replace(whatToReplace, toBeReplacedWith)		---> doar prima occurence
+.replaceAll(whatToReplace, toBeReplacedWith) 		---> all occurences
+
+157. Template Literals (string-uri parametrizate)
+-------------------------------------------------
+
+`I counted ${3+4} sheep` ---> folosim backticks(sub escape, nu single quotes!!) 
+si se va evalua ce avem intre ${ ... }
+
+`You bought ${qty} ${product}s. Your total is: ${qty * price} \`(<- this backtick is escaped) `
+"You bought 5 Artichokes. Your total is: 11.25 `(<- this backtick is escaped) "
+
+
+`You bought ${qty} ${product.toUpperCase()}s. Your total is: ${qty * price}`
+"You bought 5 ARTICHOKEs. Your total is: 11.25"
+
+158. Null & Undefined
+---------------------
+"undefined"	-> JS: "i do not know"
+"null"		-> intentional lack of value
+
+let logedInUser = null; // asta indica explicit: there is nothing here (AT THE MOMENT)
+
+
+159. The Math Object
+--------------------
+
+Math.abs(-456) // 456
+
+obiect -> collection of properties & methods
