@@ -1506,11 +1506,136 @@ array.slice() -> slice din tot array-ul
 
 CHECK MDN BEST
 --------------
-.splice() --> cu asta stergem / inlocuim elemente intr-un array!
+.splice() --> cu asta stergem / inlocuim elemente intr-un array! (returneaza ce a sters din array)
+.splice(i,k) --> incepand cu pozitia i, sterge k elemente
+/splice(i,0,obiect) --> pe pozitia i insereaza obiect; nu sterge nimic(shifteaza la dreapta)
+
+
+
+/*
 .splice(k,0) --> insereaza pe pozitia k, impingand-o pe vechea de pe k catre k+1.. (si toate de dupa
 cu o pozitie mai la dreapta)
 .splice(k,1) --> insereaza pe pozitia k, sterge ce era pe k inainte
 .splice(k,m) --> insereaza pe pozitia k, sterge ce era pe [k, k+1, ... k+m-1] inainte
 .splice(k,m,DELETED)
+*/
 --------------
 CHECK MDN BEST
+
+
+182. Arrays + Const !! F IMPORTANT !!
+-------------------------------------
+
+!! 
+const nums = [1,2,3] !! AICI REFERINTA E CONSTANTA!! NU CONTENT-UL DIN ARRAY!!
+DECI POT SCHIMBA ORICE LA ARRAY, NUMAI ADRESA(implicit si tipul) NU !!!
+deci nu putem face assignment-uri pe acea variabila; dar putem face operatii pe ea, la
+acea adresa!
+!!
+
+185. Introducing Object Literals
+--------------------------------
+- objects = collections of properties
+- properties = key-value pair
+- in loc sa accesam date folosind un index, vom folosi custom keys
+
+
+! vad ca un obiect in JS este un dictionar !
+
+
+186. Creating Object Literals
+----------------------------
+
+typeof [] // object.. dar nu le vom numi object
+
+//creem un obiect:
+const person = {
+	firstName: 'Mick', lastName: 'Jagger'
+}
+
+187. Accessing Data Out Of Objects
+----------------------------------
+!! important !!
+
+const kitchenSink = {
+    favNum: 92319023,
+    isFunny: true,
+    colors: ['red', 'orange']
+}
+kitchenSink
+{favNum: 92319023, isFunny: true, colors: Array(2)}
+person["lastName"]
+"Jagger"
+kitchenSink["asdasdasd"]
+undefined
+kitchenSink["colors"]
+(2) ["red", "orange"]
+person
+{firstName: "Mick", lastName: "Jagger"}
+person.firstName
+"Mick"
+person."firstName"
+
+const years = {
+1999: 'GOOD',
+2020: 'BAD'
+}
+----------------
+what happens behind the scenes: EVERY KEY THAT WE MAKE IN AN OBJECT IS CONERTED TO A STRING!!
+(EXCEPT FOR SYMBOLS, WHICH WE HAVEN'T TALKED ABOUT YET) --> deci da, cum am zis si eu: sunt string-uri
+----------------
+
+
+diferenta intre person.firstName si person['firstName']
+ATENTIE!:
+mai sus a mers years[1999] pt ca vedea el ca 1999 e constanta si incerca sa converteasca la int)
+aici, in schimb, nu stie ce e cu firstName (fara ghilimele) si nu stie ce sa faca
+
+! deci cu ".numeProprietate" se uita dupa proprietate!!
+
+!! Daca folosim dinamicitate cu cheile (numele unei proprietati intr-o variabila), vom folosi
+obj[numeProprietate/numeVariabila] !! Nu putem dinamic cu "."
+
+!! DECI CU [] putem face mai multe!!
+
+
+188. Modifying Objects
+----------------------
+
+nu uitam ca normal nu avem voie asa ceva, danielle fara ghilimele! dar e ok in obiecte!
+deci avem voie si asa:
+const midterms = {danielle: 96, thomas: 78}
+si asa:
+const midterms2 = {'danielle': 96, 'thomas': 78}
+
+putem adauga proprietati daca ele inca nu exista deja!!
+-----------------------------------------------------------------
+midterms
+{danielle: 96, thomas: 78}
+midterms.thomas = 79
+79
+midterms
+{danielle: 96, thomas: 79}
+midterms.thomas = 'C+'
+"C+"
+midterms['danielle'] = 'A'
+"A"
+midterms
+{danielle: "A", thomas: "C+"}
+midterms.ezra
+undefined
+midterms.ezra = 'B+'
+"B+"
+midterms
+{danielle: "A", thomas: "C+", ezra: "B+"}
+midterms['antonio'] = 'A-'
+"A-"
+midterms
+{danielle: "A", thomas: "C+", ezra: "B+", antonio: "A-"}
+-----------------------------------------------------------------
+
+
+
+
+
+

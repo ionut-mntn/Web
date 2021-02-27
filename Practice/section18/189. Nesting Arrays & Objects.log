@@ -1,0 +1,14 @@
+DevTools failed to load SourceMap: Could not load content for chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/sourcemaps/disable-console.js.map: HTTP error: status code 404, net::ERR_UNKNOWN_URL_SCHEME
+DevTools failed to load SourceMap: Could not load content for chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/sourcemaps/contentscript.js.map: HTTP error: status code 404, net::ERR_UNKNOWN_URL_SCHEME
+DevTools failed to load SourceMap: Could not load content for chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/sourcemaps/inpage.js.map: HTTP error: status code 404, net::ERR_UNKNOWN_URL_SCHEME
+const comments = [
+    {username: 'Tammy', text: 'ololoolo', votes: 9},
+    {username: 'FishBoi', text: 'glub glub', votes: 12387}
+]
+undefined
+comments[1]
+{username: "FishBoi", text: "glub glub", votes: 12387}
+comments[1].text
+"glub glub"
+comments[1]['text']
+"glub glub"

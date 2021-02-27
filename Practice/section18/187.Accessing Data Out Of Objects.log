@@ -1,0 +1,75 @@
+DevTools failed to load SourceMap: Could not load content for chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/sourcemaps/disable-console.js.map: HTTP error: status code 404, net::ERR_UNKNOWN_URL_SCHEME
+DevTools failed to load SourceMap: Could not load content for chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/sourcemaps/contentscript.js.map: HTTP error: status code 404, net::ERR_UNKNOWN_URL_SCHEME
+DevTools failed to load SourceMap: Could not load content for chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/sourcemaps/inpage.js.map: HTTP error: status code 404, net::ERR_UNKNOWN_URL_SCHEME
+const person = {
+	firstName: 'Mick', lastName: 'Jagger'
+}
+undefined
+DevTools failed to load SourceMap: Could not load content for chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/sourcemaps/disable-console.js.map: HTTP error: status code 404, net::ERR_UNKNOWN_URL_SCHEME
+DevTools failed to load SourceMap: Could not load content for chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/sourcemaps/contentscript.js.map: HTTP error: status code 404, net::ERR_UNKNOWN_URL_SCHEME
+DevTools failed to load SourceMap: Could not load content for chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/sourcemaps/inpage.js.map: HTTP error: status code 404, net::ERR_UNKNOWN_URL_SCHEME
+person
+{firstName: "Mick", lastName: "Jagger"}
+  const kitchenSink = {
+    favNum: 92319023,
+    isFunny: true,
+    colors: ['red', 'orange']
+  }
+undefined
+kitchenSink
+{favNum: 92319023, isFunny: true, colors: Array(2)}
+person["lastName"]
+"Jagger"
+kitchenSink["asdasdasd"]
+undefined
+kitchenSink["colors"]
+(2) ["red", "orange"]
+person
+{firstName: "Mick", lastName: "Jagger"}
+person.firstName
+"Mick"
+person."firstName"
+VM572:1 Uncaught SyntaxError: Unexpected string
+years["2020"]
+VM602:1 Uncaught ReferenceError: years is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM602:1
+const years = {
+1999: 'GOOD',
+2020: 'BAD'
+}
+undefined
+years["2020"]
+"BAD"
+years["1999"]
+"GOOD"
+years[1999] // ma lasa si asa; converteste 1999 la string
+"GOOD"
+const dumbdumb = {true: 'dat', null: 'asdkasdkljd'}
+undefined
+dumbdumb
+{true: "dat", null: "asdkasdkljd"}
+dumbdumb[true]
+"dat"
+dumbdumb['true']
+"dat"
+dumbdumb["null"]]
+VM961:1 Uncaught SyntaxError: Unexpected token ']'
+dumbdumb["null"]
+"asdkasdkljd"
+dumbdumb['null']
+"asdkasdkljd"
+person[firstName]
+VM1033:1 Uncaught ReferenceError: firstName is not defined
+    at <anonymous>:1:8
+(anonymous) @ VM1033:1
+person['firstName']
+"Mick"
+person['first' + 'Name']
+"Mick"
+let birthYear = 2020
+undefined
+years[birthYear]
+"BAD"
+years['birthYear']
+undefined

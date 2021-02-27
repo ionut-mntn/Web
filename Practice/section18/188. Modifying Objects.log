@@ -1,0 +1,27 @@
+DevTools failed to load SourceMap: Could not load content for chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/sourcemaps/disable-console.js.map: HTTP error: status code 404, net::ERR_UNKNOWN_URL_SCHEME
+DevTools failed to load SourceMap: Could not load content for chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/sourcemaps/contentscript.js.map: HTTP error: status code 404, net::ERR_UNKNOWN_URL_SCHEME
+DevTools failed to load SourceMap: Could not load content for chrome-extension://nkbihfbeogaeaoehlefnkodbefgpgknn/sourcemaps/inpage.js.map: HTTP error: status code 404, net::ERR_UNKNOWN_URL_SCHEME
+const midterms = {danielle: 96, thomas: 78}
+undefined
+midterms
+{danielle: 96, thomas: 78}
+midterms.thomas = 79
+79
+midterms
+{danielle: 96, thomas: 79}
+midterms.thomas = 'C+'
+"C+"
+midterms['danielle'] = 'A'
+"A"
+midterms
+{danielle: "A", thomas: "C+"}
+midterms.ezra
+undefined
+midterms.ezra = 'B+'
+"B+"
+midterms
+{danielle: "A", thomas: "C+", ezra: "B+"}
+midterms['antonio'] = 'A-'
+"A-"
+midterms
+{danielle: "A", thomas: "C+", ezra: "B+", antonio: "A-"}
