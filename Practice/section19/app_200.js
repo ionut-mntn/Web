@@ -20,6 +20,7 @@ console.log(Object.values(testScores));
 // array sub forma: [cheie, valoare1, valoare2, ..., valoareN):
 console.log(Object.entries(testScores));
 
+// FOR... IN
 // for (let person in testScores)
 //     console.log(`${person} scroed ${testScores[person]}`);
 

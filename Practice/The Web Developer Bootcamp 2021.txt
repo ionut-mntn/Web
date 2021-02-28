@@ -1509,8 +1509,7 @@ CHECK MDN BEST
 .splice() --> cu asta stergem / inlocuim elemente intr-un array! (returneaza ce a sters din array)
 .splice(i,k) --> incepand cu pozitia i, sterge k elemente
 /splice(i,0,obiect) --> pe pozitia i insereaza obiect; nu sterge nimic(shifteaza la dreapta)
-
-
+.splice('cevaStringFaraSensSauFaraNumere, 1) -> the string defaults to 0
 
 /*
 .splice(k,0) --> insereaza pe pozitia k, impingand-o pe vechea de pe k catre k+1.. (si toate de dupa
@@ -1642,3 +1641,23 @@ midterms
 underlying data of Reddit ceva cu JSON
 
 
+...
+
+199. The Lovely For...Of Loop
+-----------------------------
+
+
+
+for(let char of "hello world")
+	console.log(char)
+
+
+200. Iterating Over Objects
+---------------------------
+
+for... of -> use all the time !!
+
+for... in -> not so common, dar merge pt a itera obiecte
+
+for(let person in testScores){
+	console.log(`${person} scored ${testScores[person]}`);
