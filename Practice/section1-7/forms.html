@@ -28,6 +28,8 @@
         <br>
         <label for="number">Enter a number</label>
         <input id="number" type="number" min="1" max="1000" step="2" value="2">
+        <!-- <input id="number" type="number" min="2" step="2" value="2"> -->
+        <!-- value aici este valoarea de start -->
         <!-- grija la chestii de genul-->
         <!-- <label>
 
@@ -78,14 +80,15 @@
 
     <form action="/birds">
         <input id="agree" type="checkbox" name="agree_terms_of_service" unchecked>
-        <input id="agree2" type="checkbox" name="agree_terms_of_service" unchecked>
         <label for="agree">I agree to everything</label>
+        <input id="agree2" type="checkbox" name="agree_terms_of_service" unchecked>
         <label for="agree2">I do not agree to everything</label>
         <p>
             <label for="xs">XS</label>
             <label for="s">S</label>
             <label for="m">M</label>
             <!-- PRIN atributul 'name' le grupam pe toate, adica impunem user-ului sa bifeze un singur cerculetz din astea de mai jos !! -->
+            <!-- DAR ATENTIE! Functioneaza doar cu radio dupa tiparul asta implicit; cu checkbox vad ca nu -->
             <input type="radio" name="size" id=xs value="xs">
             <input type="radio" name="size" id="s" value="s">
             <input type="radio" name="size" id="m" value="m">
@@ -95,9 +98,9 @@
             <select name="meal" id="meal">
                 <option value="">Please choose an option</option>
                 <!--putem face si asa!!-->
-                <option value="fish_variable">Fish</option>
-                <option value="veg_variable">Vegeterian</option>
-                <option value="steak_variable" selected>Steak</option>
+                <option value="fish_variable_value">Fish</option>
+                <option value="veg_variable_value">Vegeterian</option>
+                <option value="steak_variable_value" selected>Steak</option>
             </select>
         </p>
         <p>

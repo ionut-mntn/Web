@@ -41,9 +41,11 @@ browser-ul le interpreteaza si le transforma in ceva ce omul intelege !!
 
 
 15. Front-End / Back-End
+-------------------------
 
 
 16. What do HTML/CSS/JS do?
+-------------------------
 HTML - the what?
 CSS - the style adjectives ( infrumuseteaza )
 JS - the actions
@@ -81,6 +83,7 @@ ONE H1 at most on a page
 
 
 25. Chrome Inspector
+-------------------------
 
 
 26. HTML Boilerplate
@@ -114,6 +117,7 @@ ATRIBUTE !! = little pieces of info that we pass to a tag; href = hypertext refe
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 34. Inline vs Block Comments
+-----------------------------
 block: paragraph ,h1, h2
 inline: 
 
@@ -131,6 +135,7 @@ alcatuiesc intregul
 
 
 35. <hr> <br> <sup> <sub>
+-----------------------------
 <hr> horizontal rule
 --> nu are ending tag
 --> e o linie orizontala care are la mijloc un semn ceva;
@@ -141,10 +146,10 @@ alcatuiesc intregul
 
 <sup>, <sub> superscript subscript
 
-36. HTML Entities (aka "entity codes")
+36. HTML Entities (aka "entity codes" / "character entity references")
 --------------------------------------
 sunt diferite caractere: copyright symbol, diamond, cruce etc
---> incep cu un ampersand si se termina cu punct-virgula
+--> incep cu un ampersand "&" si se termina cu punct-virgula ";"
 --> folosite pt a afisa diverse caractere care ar fi invalide otherwise
 --> browserul le interpreteaza si "renders" the correct character!!
 
@@ -1678,3 +1683,8 @@ pt ca e arr.length, nu arr.size !!
 ?????????????????????????????????????????????????????????????????????????????????????????????????????????
 
 !! ATENTIE LA .proprietate VERSUS .metoda() !!
+
+...
+
+210. Function Scope
+-------------------
