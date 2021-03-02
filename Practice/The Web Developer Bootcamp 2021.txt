@@ -237,9 +237,9 @@ ne aflam deja
 to using the attribute called "action" ( al lui <form> ) si controlam ce tip de http method
 folosind atributul "method"
 
-48. ce intra intr-un form?
---------------------------
-<input> !!! extrem de versatil: checkbox, color picker, date picker, password input, text input
+48. Common Input Types - ce intra intr-un form?
+-----------------------------------------------
+<input> !!! extrem de versatil: type = checkbox, color picker, date picker, password, text
 atributul "type" e important !!
 INPUT NU ARE CLOSING TAG !!!
 
@@ -291,7 +291,7 @@ we submit a form !!
 
 
 <select> + <option>
-selected
+selected --> merge doar cu option!!!
 o optiune fara
 
 54. Range & Text Area
@@ -1688,3 +1688,9 @@ pt ca e arr.length, nu arr.size !!
 
 210. Function Scope
 -------------------
+
+211. Function Scope
+-------------------
+prima data ma uit la block-ul in care lucrez; daca nu gasesc variabila definita in block-ul
+curent, ma uit si mai in exterior
+INTAI MA UIT N BLOCK-UL CURENT, APOI IN EXTERIOR CAND VREAU SA VAD CINE E O VARIABILA

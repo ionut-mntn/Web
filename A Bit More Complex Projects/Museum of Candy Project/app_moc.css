@@ -65,8 +65,9 @@ body{
 /* codul se cam repeta.. am putea face o clasa numita "red" or smth 
 pentru toate elementele ce au nevoie de culoarea asta si sa aplicam acolo culoarea */
 
-.scrolled{
-    background: rgb(222,192,222) im !important; 
+.navbar.scrolled{
+    /* background: rgb(222,192,222) !important;  */
+    background: rgb(222,192,222); 
     /* de convertit aici in hex pt consistenta */
     transition: background 500ms;
     /* "cand se schimba proprietatea "background", sa se schimbe in 500ms" (ea se schimba chiar aici, un pic mai sus*/
