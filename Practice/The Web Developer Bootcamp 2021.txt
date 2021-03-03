@@ -1833,7 +1833,58 @@ console.log("a doua varianta");
 // console.log(myMath2.10(2)); // asa chiar nu o sa vrea !!
 console.log(myMath2[10](3));  // completeaza implicit la adresare ca la array
 
+218. !! "This" keyword !!
+-------------------------
 
+!! THE VALUE OF "THIS" DEPENDS ON THE INVOCATION CONTEXT OF THE FUNCTION IT IS USED IN !!
+MAI EXACT, UN EXEMPLU DE GENUL:
+// =====================================================================
+const cat = {
+    name: 'Blue Steele',
+    color: 'grey',
+    breed: 'scottish fold',
+    meow() {
+        // console.log(color); // asta o sa imi zica: "color not defined"
+        // console.log("MEOW MEOW MEOW MEOW " + this.name);
+        console.log(this);
+        console.log(`${this.name} says MEOWW`);
+    }
+}
+
+const meow2 = cat.meow;
+console.log("note the below difference:")
+cat.meow(); // stie cine e "this"; este obiectul cat !!
+meow2(); // "this" in cazul asta nu se mai refera la obiectul nostru; ci se refera la obiectul 'Window' --> the top level Object that everything lives inside of !! ("the root object" - cred)
+// ============================================================================================================================================================================================
+
+va produce urmatorul output:
+  says MEOWW
+Blue Steele says MEOWW
+
+observam ca prima linie afisata este: -blank- says MEOWW
+
+
+
+
+function scream() {
+    console.log("AHHAHAHAHAH");
+}
+// pot accesa asta cu window.scream() !!! 'Window' e un fel de Object din Java... e 
+// "this" scris in consola pur si simplu --> printeaza obiectul Window
+
+
+
+219. Using Try/Catch
+---------------------
+
+220. Callbacks & Array Methods
+------------------------------
+
+(chestii predefinite in JS)
+
+221.
+
+222. Subset of array methods
 
 
 
