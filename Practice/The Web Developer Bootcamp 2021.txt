@@ -1882,9 +1882,98 @@ function scream() {
 
 (chestii predefinite in JS)
 
+
+
+
+
 221.
+------------------- 
+Subset of array methods - critical to understanding JavaScript!!
+deci ideea centrala section-ului asta este: array methods that require us to pass functions to them
 
-222. Subset of array methods
 
 
+222. forEach Method
+-------------------
 
+223. Map Method
+----------------
+
+224. Intro to Arrow Functions
+-----------------------------
+
+225. Arrow Function Implicit Returns
+----------------------------------------------------------------------------
+
+obs: note diferenta intre paranteze rotunde si acolade in arrow functions
+
+const isEven = function (num) { // regular function expression
+    return num % 2 === 0;
+}
+
+const isEven = (num) => {  // arrow function with parens around param
+    return num % 2 === 0;
+}
+
+const isEven = num => {  // no parens around single param
+    return num % 2 === 0;
+}
+
+const isEven = num => (  // implicit return
+    num % 2 === 0;
+)
+
+const isEven = num => num % 2 === 0;  // one-liner implicit return
+
+// IMPLICIT RETURNS WORK WHEN AND ONLY WHEN THERE IS ONE SINGLE STATEMENT IN THE BODY OF OUR FUNCTION!!
+
+226. Arrow Functions Wrapup
+----------------------------
+
+
+227. setTimeout & setInterval & clearInterval
+----------------------------------------------
+(?? what is a callback function ??)
+
+comenzile astea 2 have nothing to do with arrays. They work with the executon of the program
+
+DEF CALLBACK (FUNCTION) = A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.
+
+228. The Filter Method
+------------------------
+
+
+229. Every & Some
+-----------------
+// Every si Some sunt echivalente cu .all & .any din Java (parca si in Linq)
+// astea primesc predicate !! deci lambda-ul trebuie sa returneze boolean
+
+
+230. The Notorious Reduce Method
+--------------------------------
+
+231. Arrow Functions & 'this'
+------------------------------
+const person = {
+    firstName: 'Viggo',
+    lastName: 'Mortensen',
+    // fullName: function () {
+    //     return `${this.firstName} - ${this.lastName}`
+    // }
+    fullName: () => {
+        return `${this.firstName} - ${this.lastName}`
+        // !! INSIDE OF AN ARROW FUNCTION, THE KEYWORD 'this' IS GOING TO REFER TO THE SCOPE
+        // THAT IT(THE ARROW FUNCTION, i suppose) WAS CREATED IN !!  
+        // in acest caz, "this" se refera la obiectul "Window" !!
+    }
+}
+
+pe la minutul 02:00 nu prea inteleg ce zice acolo: arrow functions vs traditional functions
+!!! + grija la 04:00 (04:18, !!04:30!!, !!04:35!!) !!!
+
+====================================================
+COLOSAL DE IMPORTANT (cel putin asa mi se pare mie):
+====================================================
+
+De retinut ca: 
+the keyword "this"
