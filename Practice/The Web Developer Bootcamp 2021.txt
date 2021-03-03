@@ -1694,3 +1694,146 @@ pt ca e arr.length, nu arr.size !!
 prima data ma uit la block-ul in care lucrez; daca nu gasesc variabila definita in block-ul
 curent, ma uit si mai in exterior
 INTAI MA UIT N BLOCK-UL CURENT, APOI IN EXTERIOR CAND VREAU SA VAD CINE E O VARIABILA
+
+(pass by value --> always; just like Java)
+
+!JS uses the closest version! ( pt o variabila; bn, dar oricum asa era si prin celelalte limbaje )
+
+212. Block Scopes
+-----------------
+for (let i = 0; i < 5; i++) {
+    // let msg = "afasldhjf";
+    var msg = "afasldhjf";
+}
+// !! var variables are not restricted to block scopes!!!
+// !! let & const 'variables' --> block-scoped
+console.log(msg);
+
+213. Lexical Scopes
+-------------------
+inner functions (nested inside of a 'parent function') have access to the variables inside of the parent function
+
+214. Function expressions (functii stocate in variabile)
+---------------------------------------------------------
+======================================================================
+const add = function (x, y) {
+    return x + y;
+}
+
+======================================================================
+function returnMeOperation(str) {
+    console.log(str);
+    const avOps = {
+        add: function (a, b) { return a + b; },
+        sub: function (a, b) { return a - b; },
+        mul: function (a, b) { return a * b; },
+        div: function (a, b) { return a / b; }
+    }
+    console.log(avOps[str]);
+    return avOps[str];
+}
+
+f = returnMeOperation('add');
+console.log(f(2, 3));
+f = returnMeOperation('sub');
+console.log(f(2, 3));
+f = returnMeOperation('mul');
+console.log(f(2, 3));
+f = returnMeOperation('div');
+console.log(f(2, 3));
+
+======================================================================
+
+215. Higher Order Functions
+---------------------------
+Functions that work with other functions
+operate on/with other functions
+or functions that can return functions
+
+216. Returning Functions
+------------------------
+function makeMysteryFunc() {
+    const rand = Math.random();
+    if (rand > 0.5) {
+        return function () {
+            console.log("CONGRATS, I AM A GOOD FUNCTION!");
+            console.log("YOU WIN A MILLION DOLLARS!");
+        }
+    } else {
+        return function () {
+            alert("YOU HAVE BEEN INFECTED BY A COMPUTER VIRUS");
+            alert("STOP TRYING TO CLOSE THE WINDOW");
+        }
+    }
+}
+
+const misteryFunc = makeMysteryFunc();
+// ==================================================================
+function makeBetweenFunc(min, max) {
+    return function (val) {
+        return (min <= val && val <= max)
+    }
+}
+
+const isBetweenFunc = makeBetweenFunc(5, 10);
+console.log(isBetweenFunc(3));
+// ==================================================================
+
+
+
+217. Defining Methods
+---------------------------------------------------------------------
+!! o metoda este o functie, plasata ca proprietate a unui obiect !!
+evident accesam prin "."
+ORICE METODA ESTE O FUNCTIE, dar nu orice functie este o metoda
+z
+const myMath = {
+    PI: 3.14159,
+    square: function (num) {
+        return num * num;
+    },
+    cube: function (num) {
+        // return num * num * num;
+        return num ** 3;
+    },
+    10: function (num) {
+        return num + 10;
+    }
+}
+
+// console.log(myMath.square(2));
+console.log(myMath.cube(2));
+console.log(myMath["cube"](2));
+// console.log(myMath[cube](2)); // asta nu merge; trebuie neaparat string acolo
+// sau constanta, gen: myMath[10]...
+
+// vad ca variantele astea de dedesubt merg, dar varianta de deasupra cu "cube" fara ghilimele nu
+// keywords: indexare string obiect acces
+console.log(myMath[10](2));
+console.log(myMath['10'](2));
+
+// DAR !! exista o scurtatura, pt ca asta (a declara metode pt un obiect) se intampla des in JavaScript
+
+const myMath2 = {
+    PI: 3.14159,
+    // square: function (num) {
+    square(num) {
+        return num * num;
+    },
+    // cube: function (num) {
+    cube(num) {
+        // return num * num * num;
+        return num ** 3;
+    },
+    10(num) {           // si chiar merge si asa vad !!
+        return num + 10;
+    }
+}
+console.log("a doua varianta");
+// console.log(myMath2.10(2)); // asa chiar nu o sa vrea !!
+console.log(myMath2[10](3));  // completeaza implicit la adresare ca la array
+
+
+
+
+
