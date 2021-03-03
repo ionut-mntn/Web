@@ -1971,9 +1971,51 @@ const person = {
 pe la minutul 02:00 nu prea inteleg ce zice acolo: arrow functions vs traditional functions
 !!! + grija la 04:00 (04:18, !!04:30!!, !!04:35!!) !!!
 
-====================================================
-COLOSAL DE IMPORTANT (cel putin asa mi se pare mie):
-====================================================
+==============================================================================================================
+!!!!!!!!!!!!!!!!!!!!!!!!!!COLOSAL DE IMPORTANT (cel putin asa mi se pare mie):!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+==============================================================================================================
 
 De retinut ca: 
-the keyword "this"
+the keyword "this" inside of any arrow function are aceeasi valoare a keyword-ului "this"
+in the scope of where the function was created.
+
+CEEA CE INSEAMNA CA: IN EXEMPLUL NOSTRU (LA SHOUTNAME) "THIS" REPREZINTA OBIECTUL 'person', DEOARECE
+FUNCTIA SA PARINTE ESTE functia anonima "shoutName: function() { (setTimeout( () ).... }
+iar mai departe cred ca setTimeout are parintele 
+
+
+==============================================================================================================
+!!!!!!!!!!!!!!!!!!!!!!!!!!COLOSAL DE IMPORTANT (cel putin asa mi se pare mie):!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+==============================================================================================================
+
+232. ...
+
+233. Default Params
+-------------------
+
+234. Spread in Function Calls
+-----------------------------
+
+... -> the rest operator
+
+235. Spread with Array Literals
+-------------------------------
+
+236. Spread with Objects
+------------------------
+!! oleak balbaiala la minutul 5, but i think i got the point
+
+237. Rest Params
+----------------
+in fiecare functie pe care o scriem avem acces la 'arguments' (observ ca e foarte unix-like / shell-like JS-ul asta)
+
+!!! ARGUMENTS IS NOT AN ARRAY! DECI NU ARE NICIO METODA DE GENUL .reduce() !!!
+
+!!!ARGUMENTS NU EXISTA IN ARROW FUNCTION DELOC!!!
+
+238. Destructuring Arrays
+-------------------------
+def: = a short clean syntax to 'unpack'
+	- values from arrays
+	- properties from objects
+into distinct variables ( kind of like a synonym of spread )
