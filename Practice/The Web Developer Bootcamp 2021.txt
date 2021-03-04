@@ -2019,3 +2019,17 @@ def: = a short clean syntax to 'unpack'
 	- values from arrays
 	- properties from objects
 into distinct variables ( kind of like a synonym of spread )
+
+239. Destructurign Objects (more commonly used)
+-----------------------------------------------
+
+242. Introducing the DOM
+-------------------------
+Document Object Model -> bunch of JS objects that represent the web pages
+
+de ex: daca avem un <h1> in pagina noastra, vom avea un JS object that is modelling(representing)
+that h1
+
+Este practic fereastra / portalul de acces catre continutul unei pagini web, din directia JavaScript
+
+!! ACTIUNILE REQUIRE JAVASCRIPT !!
