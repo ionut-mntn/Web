@@ -2033,3 +2033,86 @@ that h1
 Este practic fereastra / portalul de acces catre continutul unei pagini web, din directia JavaScript
 
 !! ACTIUNILE REQUIRE JAVASCRIPT !!
+
+243. The Document Object
+-------------------------
+e un obiect, asemenea cu 'window'
+console.dir(document) 	--> asa vedem proprietatile obiectului document
+			-> document are o gramada de proprietati
+-> creat automat de browser when we load a new page; bazat pe "the content" of the page;
+	THE ROOT OF THE TREE; THE TOP-LEVEL OBJECT
+JS TAKES IN THE MARKUP AND SPITS OUT THE JS OBJECTS
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!! THE DOCUMENT OBJECT CONTAINS LOTS OF METHODS & DIFFERENT PROPERTIES THAT ACTUALLY CORRESPOND
+TO OTHER OBJECTS THAT -IN THEIR TURN- CONTAIN LOTS OF METHODS & DIFFERENT PROPERTIES !!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+// exemplu consola:
+document.all[10]
+<b>​Silkie​</b>​
+document.all[10].innerText = "SLICKIE"
+"SLICKIE"
+document.all
+
+SELECTIE
+244. getElementById
+-------------------
+selectia(similar cu CSS):
+
+- getElementById
+- getElementsByTagName
+- getElementsByClassName
+toate astea sunt metode predefinite in 'document object'
+
+!! NU RETURNEAZA HTML, ci un obiect JavaScript !! clar
+when we fetch an object using getElementById, we basically tell JS: "please fetch me
+the object that represents -some_element- on the page"(evident matching some Id)
+
+245. getElementsByTagName & className
+-------------------------------------
+-nu sunt case sensitive!
+
+!! these return an HTML_Collection (provided everything goes fine); arata ca un array, DAR nu este un array, deci nu are array methods !!
+DAR TOT UN OBIECT ESTE!!
+
+// consola:
+// allImages.map
+// undefined
+DAR! FIIND ARRAY(GRESEALA AICI; NU "ARRAY", CI ITERABIL!!), PUTEM FOLOSI FOR...OF
+
+
+tipul oricarui element dintr-un HTML Collection este tipul 'Element'
+
+246. querySelector & querySelectorAll
+-------------------------------------
+!document.querySelector!
+!! querySelector -> returneaza doar primul gasit !!
+
+TRECEM LA MANIPULARE
+247. innerHTML, textContent, & innerText (poate de revazut asta de pe la 08:00-09:00)
+----------------------------------------
+properties & Methods (the important ones)
+
+diferenta intre innerText si textContent:
+-innerText -> efectiv textul; DAR ATENTIE: TEXTUL AFISAT PE ECRAN. DACA AM CEVA PENTRU CARE 
+AM SETAT "DISPLAY: NONE" ATUNCI ACEL CEVA NU VA FI AFISAT(nu va fi afisat, dar oare tot il selectez? nu cred...)
+-textContent -> textul, dar asa cum e scris el in markup; deci TOT (spre deosebire de mai sus),
+cu punctuatia care exista acolo; astuia nu ii pasa ce este displayed / showed to the user!!
+MAI AVEM SI:
+-innerHTML: retrieves the full contents, including the tag names of basically everything insie of 
+an element, between the opening and closing tag
+
+
+// exemplu(+ obs):
+const allLinks = document.querySelectorAll('a');
+for (let link of allLinks) {
+    link.innerText = 'I AM A LINK!!!'
+    // ATENTIE!! DACA CE E INSIDE OF innerText are bold tags sau alte chestii de genul, we are completely overwriting that!!
+}
+
+// alta obs:
+
+
+
+
