@@ -2114,5 +2114,9 @@ for (let link of allLinks) {
 // alta obs:
 
 
+248. Changing Styles
+---------------------
+const h1 = document.querySelector('h1')
+
 
 

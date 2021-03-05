@@ -1,21 +1,35 @@
-// const h1 = document.querySelector('h1');
-// console.dir(h1);
+const firstLink = document.querySelector('a')
 
-const allLinks = document.querySelectorAll('a');
-for (let link of allLinks) {
-    link.innerText = 'I AM A LINK!!!'
-    // ATENTIE!! DACA CE E INSIDE OF innerText are bold tags sau alte chestii de genul, we are completely overwriting that!!
-}
+// astea 2 de dedesubt fac acelasi lucru
+console.log(firstLink.href);
+console.log(firstLink.getAttribute('href'));
+// DAR EXISTA TOTUSI O DIFERENTA!
+// A DOUA VARIANTA IA DIRECT DIN HTML
+// PRIMA VARIANTA (ACCESEZ O PROPRIETATE DIRECT PRIN ELEMENT) --> ASTA TRECE PRIN JavaScript (prin obiectul)
 
-document.querySelector('h1').innerText = '<i>asdahsfa</i>'; // asa ceva trateaza ca text ce e intre apostroafe!!
-// intr-un astfel de caz trebuie sa apelam la innerHTML
-//document('h1')
+//output consola:
+// file:///E:/wiki/List_of_chicken_breeds
+// app_248.js:3 /wiki/List_of_chicken_breeds
 
-document.querySelector('h1').innerHTML = '<i>asdahsfa</i>'; // dar asta merge
-//document('h1')
+// console.log(firstLink.href);
+console.log("fl=", firstLink);
+firstLink.getAttribute('title');
+firstLink.setAttribute('href', 'http://www.google.com');
+console.log("fl=", firstLink);
+// console.log(firstLink.href);
+// nu am input ul asta
+// document.querySelectorAll('input')[1]
+// const input = document.querySelectorAll('input[type="text"]') //GRIJA!! AICI ERA PROBLEMA
+const input = document.querySelector('input[type="text"]')
+// input // "text"
+console.log(input);
+input.type = 'password'
+input.type = 'color'
+input.setAttribute('type', 'text')
 
-// putem face si chestii de genul:
-document.querySelector('h1').innerHTML += '<i>\+AdaugatSiAsta</i>';
+// deci mai multe feluri in care putem face acelasi lucru;
+// ori direct prin proprietate pe obiectu JS
+// sau lucram direct cu atributele insusi, ON THE MARKUP!!
 
 
 
