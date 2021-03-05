@@ -2117,6 +2117,15 @@ for (let link of allLinks) {
 248. Changing Styles
 ---------------------
 const h1 = document.querySelector('h1')
+// asta e <h1>Silkie Chicken</h1>
 
 
+249. ClassList
+---------------!!!
+
+250. Traversing Relatives
+-------------------------
+
+251. Append & AppendCHild ( cum creem, inseram obiecte )
+--------------------------------------------------------
 
