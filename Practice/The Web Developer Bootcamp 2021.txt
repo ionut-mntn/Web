@@ -2037,7 +2037,7 @@ Este practic fereastra / portalul de acces catre continutul unei pagini web, din
 243. The Document Object
 -------------------------
 e un obiect, asemenea cu 'window'
-console.dir(document) 	--> asa vedem proprietatile obiectului document
+console.dir(document) 	--> asa vedem proprietatile obiectului (obiectul document in acest exemplu)
 			-> document are o gramada de proprietati
 -> creat automat de browser when we load a new page; bazat pe "the content" of the page;
 	THE ROOT OF THE TREE; THE TOP-LEVEL OBJECT
@@ -2094,11 +2094,15 @@ TRECEM LA MANIPULARE
 ----------------------------------------
 properties & Methods (the important ones)
 
+!!!
 diferenta intre innerText si textContent:
+!!!
 -innerText -> efectiv textul; DAR ATENTIE: TEXTUL AFISAT PE ECRAN. DACA AM CEVA PENTRU CARE 
 AM SETAT "DISPLAY: NONE" ATUNCI ACEL CEVA NU VA FI AFISAT(nu va fi afisat, dar oare tot il selectez? nu cred...)
+
 -textContent -> textul, dar asa cum e scris el in markup; deci TOT (spre deosebire de mai sus),
 cu punctuatia care exista acolo; astuia nu ii pasa ce este displayed / showed to the user!!
+
 MAI AVEM SI:
 -innerHTML: retrieves the full contents, including the tag names of basically everything insie of 
 an element, between the opening and closing tag
@@ -2115,17 +2119,313 @@ for (let link of allLinks) {
 
 
 248. Changing Styles
----------------------
+----------------------------------------------
 const h1 = document.querySelector('h1')
 // asta e <h1>Silkie Chicken</h1>
 
 
-249. ClassList
----------------!!!
+// rezumat:
+// dash-ul nu e valabil in javascript !!
+// tot ce exista in CSS este camelCased aici !!
+
+// obj.style returneaza un obiect de tip CSSStyleDeclaration - DAR ATENTIE: cu stilurile inline din HTML !! in care am toate stilurile ce ma intereseaza, dar doar acces read-only
+// daca vrem sa modificam ceva la stiluri o facem prin obj.style.proprietate !! DAR ATENTIE: ce alteram va fi adaugat inline in HTML
+
+// window.getComputedStyle returneaza un obiect de tip CSSStyleDeclaration - DAR ATENTIE: este un obiect read-only!!
+
+
+
+
+
+// const h1 = document.querySelector('h1')
+// ATENTIE!
+// THE STYLE OBJECT DOES NOT CONTAIN THE CURRENT STYLES!! (DACA DEFINIM SEPARAT STYLESHEET-UL)
+
+// schimbam in css h1 -> color olive;
+// dar observam in consola ca nu se schimba nimic;
+// Mai mult, mai toate proprietatile sunt empty strings!!
+
+// copy-paste consola:
+// const h1 = document.querySelector('h1')
+// undefined
+// h1
+// <h1>​Silkie Chickens​</h1>​
+// h1.style
+// CSSStyleDeclaration {alignContent: "", alignItems: "", alignSelf: "", alignmentBaseline: "", all: "", …}
+// h1.style.color
+// ""
+// h1.style.color='green'
+// "green"
+// h1.style.border='2px solid pink'
+// "2px solid pink"
+// !! CHESTII DE GENUL APLICA INLINE STYLES !! (which is not that ok)
+// varianta mai buna ar fi folosind o clasa!! o adaugam sau we remove it from elements
+
+
+const allLinks = document.querySelectorAll('a');
+for (let link of allLinks) {
+    link.style.color = 'rgb(0,108,134)';
+    link.style.textDecorationColor = 'magenta';
+    link.style.textDecorationStyle = 'wavy';
+}
+
+// Deci, o problema pe care am observat-o este ca :
+// daca nu scriu inline style-urile, nu am acces la acel stil !
+// Deci, de exemplu, daca vreau sa fac element de aceeasi dimensiune
+// a unui alt element --> eu nu stiu acel "alt element" ce fontSize are (fara a ma uita la fisierul CSS)
+// O metoda de a DETERMINA(am scris cu majuscule pt ca ce returneaza document.getComputedStyle() este read-olny) proprietatea care ma intereseaza(in acest caz fontSize-ul) este:
+// window.getComputedStyle(elementulCareMaIntereseaza) --> varianta asta imi da stilul dupa ce browserul a calculat tot ce trebuie calculat pentru a aplica stilul; 
+// Ma refer aici la cazuri de genul: am mai multe stylesheet-uri - exista conflicte de stiluri intre acestea, conflicte de specificitate
+// Deci unele stiluri ar putea fi aplicate ca mai apoi sa fie suprascrise; de asta folosim window.getComputedStyle(elementCeMaIntereseaza)
+// DAR -din nou- ATENTIE!! window.getComputedStyle --> returneaza un obiect de tip CSSStyleDeclaration care e read-only!! 
+// deci pana acum, daca vreau o schimbare, tot inline tre sa o fac( probabil ca adaugand o clasa nu mai trebuie inline!!)
+
+// eroare consola:
+// VM2399:1 Uncaught DOMException: Failed to set the 'color' property on 'CSSStyleDeclaration': These styles are computed, and therefore the 'color' property is read-only.
+//     at <anonymous>:1:34
+// OARE TOT CE E COMPUTED E READ-ONLY?
+
+// //consola:
+// const h1 = document.querySelector('h1')
+// undefined
+// h1.style.fontSize
+// ""
+// window.getComputedStyle
+// ƒ getComputedStyle() { [native code] }
+// window.getComputedStyle(h1)
+// CSSStyleDeclaration {0: "align-content", 1: "align-items", 2: "align-self", 3: "alignment-baseline", 4: "animation-delay", 5: "animation-direction", 6: "animation-duration", 7: "animation-fill-mode", 8: "animation-iteration-count", 9: "animation-name", 10: "animation-play-state", 11: "animation-timing-function", 12: "appearance", 13: "backdrop-filter", 14: "backface-visibility", 15: "background-attachment", 16: "background-blend-mode", 17: "background-clip", 18: "background-color", 19: "background-image", 20: "background-origin", 21: "background-position", 22: "background-repeat", 23: "background-size", 24: "baseline-shift", 25: "block-size", 26: "border-block-end-color", 27: "border-block-end-style", 28: "border-block-end-width", 29: "border-block-start-color", 30: "border-block-start-style", 31: "border-block-start-width", 32: "border-bottom-color", 33: "border-bottom-left-radius", 34: "border-bottom-right-radius", 35: "border-bottom-style", 36: "border-bottom-width", 37: "border-collapse", 38: "border-image-outset", 39: "border-image-repeat", 40: "border-image-slice", 41: "border-image-source", 42: "border-image-width", 43: "border-inline-end-color", 44: "border-inline-end-style", 45: "border-inline-end-width", 46: "border-inline-start-color", 47: "border-inline-start-style", 48: "border-inline-start-width", 49: "border-left-color", 50: "border-left-style", 51: "border-left-width", 52: "border-right-color", 53: "border-right-style", 54: "border-right-width", 55: "border-top-color", 56: "border-top-left-radius", 57: "border-top-right-radius", 58: "border-top-style", 59: "border-top-width", 60: "bottom", 61: "box-shadow", 62: "box-sizing", 63: "break-after", 64: "break-before", 65: "break-inside", 66: "buffered-rendering", 67: "caption-side", 68: "caret-color", 69: "clear", 70: "clip", 71: "clip-path", 72: "clip-rule", 73: "color", 74: "color-interpolation", 75: "color-interpolation-filters", 76: "color-rendering", 77: "column-count", 78: "column-gap", 79: "column-rule-color", 80: "column-rule-style", 81: "column-rule-width", 82: "column-span", 83: "column-width", 84: "content", 85: "cursor", 86: "cx", 87: "cy", 88: "d", 89: "direction", 90: "display", 91: "dominant-baseline", 92: "empty-cells", 93: "fill", 94: "fill-opacity", 95: "fill-rule", 96: "filter", 97: "flex-basis", 98: "flex-direction", 99: "flex-grow", …}
+// window.getComputedStyle(h1)[0]
+// "align-content"
+// window.getComputedStyle(h1).color
+// "rgb(128, 128, 0)"
+// window.getComputedStyle(h1).fontSize
+// "32px"
+// window.getComputedStyle(h1).fontFamily
+// ""Times New Roman""
+// window.getComputedStyle(h1).marginLeft
+// 0px
+// window.getComputedStyle(h1).fontFamily
+// "21.44px 0px" top-bottom horizontal
+
+
+
+
+
+
+249. ClassList!!!
+------------------
+
+// document.querySelector('h2')
+//     < h2 id = "mw-toc-heading" > Contents​</h2 >​
+// const h2 = document.querySelector('h2')
+// undefined
+// h2.getAttribute('class')
+// null
+// h2.setAttribute('class', 'purple')
+// undefined
+// h2.setAttribute('class', 'border') // problema e ca asta o suprascrie pe celalta
+// undefined
+
+// solutie:
+// let currentClasses = h2.getAttribute('class')
+// undefined
+// h2.setAttribute('class', `${currentClasses} purple`)
+// undefined
+
+// solutie mai buna:
+// classList --> returneaza DOMTokenList
+// const h2 = document.querySelector('h2')
+// undefined
+// h2
+// <h2 id=​"mw-toc-heading">​Contents​</h2>​
+// h2.classList
+// DOMTokenList [value: ""]
+// h2.classList
+// DOMTokenList [value: ""]
+// h2.classList.add('purple')
+// undefined
+// h2.classList.add('border')
+// undefined
+// h2.classList.remove('border')
+// undefined
+// h2.classList.contains('border')
+// false
+// h2.classList.contains('purple')
+// true
+// !! TOGGLE !! -> ADAUGA / ELIMINA O CLASA!!
+// h2.classList.toggle('purple')
+// false
+// h2.classList.toggle('purple')
+// true
+// h2.classList.toggle('purple')
+// false
+// h2.classList.toggle('purple')
+// true
+// h2.classList.toggle('purple')
+// false
+
+// SUMMARY: obj.classList -> metoda usoara de a determina clasele unui obiect + a le manipula
+// e mult mai usor decat ce am facut mai sus
+
+
 
 250. Traversing Relatives
 -------------------------
 
+// obj.nextSibling / obj.previousSibling -> astea returneaza tip de data 'Node'
+// obj.nextElementSibling / obj.previous -> astea returneaza tip de data 'Element' (efectiv )
+
+// DE STIUT: BROWSERELE(nu toate, dar multe dintre) convertesc automat whitespace into TextNodes(DOMNode)
+
+
+
 251. Append & AppendCHild ( cum creem, inseram obiecte )
 --------------------------------------------------------
 
+// append, appendChild
+
+
+// const newImg = document.createElement('img')
+// undefined
+// console.dir(newImg)
+// VM266:1 imgaccessKey: ""align: ""alt: ""ariaAtomic: nullariaAutoComplete: nullariaBusy: nullariaChecked: nullariaColCount: nullariaColIndex: nullariaColSpan: nullariaCurrent: nullariaDescription: nullariaDisabled: nullariaExpanded: nullariaHasPopup: nullariaHidden: nullariaKeyShortcuts: nullariaLabel: nullariaLevel: nullariaLive: nullariaModal: nullariaMultiLine: nullariaMultiSelectable: nullariaOrientation: nullariaPlaceholder: nullariaPosInSet: nullariaPressed: nullariaReadOnly: nullariaRelevant: nullariaRequired: nullariaRoleDescription: nullariaRowCount: nullariaRowIndex: nullariaRowSpan: nullariaSelected: nullariaSetSize: nullariaSort: nullariaValueMax: nullariaValueMin: nullariaValueNow: nullariaValueText: nullassignedSlot: nullattributeStyleMap: StylePropertyMap {size: 0}attributes: NamedNodeMap {length: 0}autocapitalize: ""autofocus: falsebaseURI: "file:///E:/Web%20Development/Cursuri%20Udemy%20-%20parcurse%20or%20in%20progres/The%20Web%20Developer%20Bootcamp%202021/Web/Practice/section24/251.%20Append%20&%20AppendChild.html"border: ""childElementCount: 0childNodes: NodeList []children: HTMLCollection []classList: DOMTokenList [value: ""]className: ""clientHeight: 0clientLeft: 0clientTop: 0clientWidth: 0complete: truecontentEditable: "inherit"crossOrigin: nullcurrentSrc: ""dataset: DOMStringMap {}decoding: "auto"dir: ""draggable: trueelementTiming: ""enterKeyHint: ""firstChild: nullfirstElementChild: nullheight: 0hidden: falsehspace: 0id: ""innerHTML: ""innerText: ""inputMode: ""isConnected: falseisContentEditable: falseisMap: falselang: ""lastChild: nulllastElementChild: nullloading: "auto"localName: "img"longDesc: ""lowsrc: ""name: ""namespaceURI: "http://www.w3.org/1999/xhtml"naturalHeight: 0naturalWidth: 0nextElementSibling: nullnextSibling: nullnodeName: "IMG"nodeType: 1nodeValue: nullnonce: ""offsetHeight: 0offsetLeft: 0offsetParent: nulloffsetTop: 0offsetWidth: 0onabort: nullonanimationend: nullonanimationiteration: nullonanimationstart: nullonauxclick: nullonbeforecopy: nullonbeforecut: nullonbeforepaste: nullonbeforexrselect: nullonblur: nulloncancel: nulloncanplay: nulloncanplaythrough: nullonchange: nullonclick: nullonclose: nulloncontextmenu: nulloncopy: nulloncuechange: nulloncut: nullondblclick: nullondrag: nullondragend: nullondragenter: nullondragleave: nullondragover: nullondragstart: nullondrop: nullondurationchange: nullonemptied: nullonended: nullonerror: nullonfocus: nullonformdata: nullonfullscreenchange: nullonfullscreenerror: nullongotpointercapture: nulloninput: nulloninvalid: nullonkeydown: nullonkeypress: nullonkeyup: nullonload: nullonloadeddata: nullonloadedmetadata: nullonloadstart: nullonlostpointercapture: nullonmousedown: nullonmouseenter: nullonmouseleave: nullonmousemove: nullonmouseout: nullonmouseover: nullonmouseup: nullonmousewheel: nullonpaste: nullonpause: nullonplay: nullonplaying: nullonpointercancel: nullonpointerdown: nullonpointerenter: nullonpointerleave: nullonpointermove: nullonpointerout: nullonpointerover: nullonpointerrawupdate: nullonpointerup: nullonprogress: nullonratechange: nullonreset: nullonresize: nullonscroll: nullonsearch: nullonseeked: nullonseeking: nullonselect: nullonselectionchange: nullonselectstart: nullonstalled: nullonsubmit: nullonsuspend: nullontimeupdate: nullontoggle: nullontransitioncancel: nullontransitionend: nullontransitionrun: nullontransitionstart: nullonvolumechange: nullonwaiting: nullonwebkitanimationend: nullonwebkitanimationiteration: nullonwebkitanimationstart: nullonwebkitfullscreenchange: nullonwebkitfullscreenerror: nullonwebkittransitionend: nullonwheel: nullouterHTML: "<img>"outerText: ""ownerDocument: documentparentElement: nullparentNode: nullpart: DOMTokenList [value: ""]prefix: nullpreviousElementSibling: nullpreviousSibling: nullreferrerPolicy: ""scrollHeight: 0scrollLeft: 0scrollTop: 0scrollWidth: 0shadowRoot: nullsizes: ""slot: ""spellcheck: truesrc: ""srcset: ""style: CSSStyleDeclaration {alignContent: "", alignItems: "", alignSelf: "", alignmentBaseline: "", all: "", …}tabIndex: -1tagName: "IMG"textContent: ""title: ""translate: trueuseMap: ""vspace: 0width: 0x: 0y: 0__proto__: HTMLImageElement
+// undefined
+// newImg.src='https://uploads.sitepoint.com/wp-content/uploads/2019/04/1556504110pug.jpg'
+// "https://uploads.sitepoint.com/wp-content/uploads/2019/04/1556504110pug.jpg"
+// document.body.appendChild(newImg) // adauga ca ultim copil al body-ului
+// <img src=​"https:​/​/​uploads.sitepoint.com/​wp-content/​uploads/​2019/​04/​1556504110pug.jpg">​
+// newImg.classList.add('square')
+// undefined
+// const newH3=document.createElement('h3')
+// undefined
+// h3.innerText='I am new!'
+// VM769:1 Uncaught ReferenceError: h3 is not defined
+//     at <anonymous>:1:1
+// (anonymous) @ VM769:1
+// newH3.innerText='I am new!'
+// "I am new!"
+// document.body.appendChild(newH3)
+// <h3>​I am new!​</h3>​
+// // mai este si obj.append(dar asta nu exista in Internet Explorer !!
+// undefined
+// const p = document.querySelector('p')
+// undefined
+// p.append('i am new text yaaaay!!!')
+// undefined
+// // se appenduieste la finalul paragrafului!! Deci in cadrul aceluiasi element !!
+// undefined
+// p.appendChild('i am new text yaaaay!!!')
+// VM1411:1 Uncaught TypeError: Failed to execute 'appendChild' on 'Node': parameter 1 is not of type 'Node'.
+//     at <anonymous>:1:3
+// (anonymous) @ VM1411:1
+// p.append('i am new text yaaaay!!!', 'asdasdasdasdasdasdasdasd') // putem appendui mai multe chestii
+// undefined
+// // when we append, we append to the insisde of the paragraph; la fel si cu appendChild; facem ceva the last child of the (in acest caz:) paragraph
+// undefined
+// const newB = document.createElement('b')
+// undefined
+// newB.append('Hi!') // putem face si asa in loc de innerText
+// undefined
+// newB
+// <b>​Hi!​</b>​
+// p.prepend(newB)
+// undefined
+// p
+// <p>​…​</p>​<b>​Hi!​</b>​"The "<b>​Silkie​</b>​" (sometimes spelled "<b>​Silky​</b>​") is a "<a href=​"/​wiki/​List_of_chicken_breeds" title=​"List of chicken breeds">​breed​</a>​" of "<a href=​"/​wiki/​Chicken" title=​"Chicken">​chicken​</a>​" named for
+//         its atypically fluffy "<a href=​"/​wiki/​Plumage" title=​"Plumage">​plumage​</a>​", which is said to feel like "<a href=​"/​wiki/​Silk" title=​"Silk">​silk​</a>​" and satin. The breed has several other unusual qualities, such as
+//         black skin and bones, blue earlobes, and five toes on each foot, whereas most chickens only have four. They are
+//         often exhibited in "<a href=​"/​wiki/​Poultry" title=​"Poultry">​poultry​</a>​" shows, and appear in various colors. In
+//         addition to their distinctive physical characteristics, Silkies are well known for their calm, friendly
+//         temperament. It is among the most docile of poultry. Hens are also exceptionally "<a href=​"/​wiki/​Broodiness" title=​"Broodiness">​broody​</a>​", and care for young well. Though they are fair layers themselves, laying only
+//         about three eggs a week, they are commonly used to hatch eggs from other breeds and bird species due to their
+//         broody nature. Silkie chickens are very easy to keep as pets. They are suitable for children, but like any pet,
+//         should be handled with care.
+//     ""i am new text yaaaay!!!""i am new text yaaaay!!!""asdasdasdasdasdasdasdasd"</p>​
+// // daca vrem sa inseram ceva nu ca si copil, ci ca element adiacent:
+// undefined
+// const h2 = document.createElement('h2')
+// undefined
+// h.append("Are adorable chickens")
+// VM2442:1 Uncaught ReferenceError: h is not defined
+//     at <anonymous>:1:1
+// (anonymous) @ VM2442:1
+// h2.append("Are adorable chickens")
+// undefined
+// h2
+// <h2>​Are adorable chickens​</h2>​
+// const h1 = document.querySelector('h1')
+// undefined
+// h1
+// <h1>​Traversing Parent Child Sibling (relatives)​</h1>​
+// h1.insertAdjacentElement('afterend', h2)
+// <h2>​Are adorable chickens​</h2>​
+// h1.nextElementSibling
+// <h2>​Are adorable chickens​</h2>​
+// const h3 = document.createElement('h3')
+// undefined
+// h3.innerText = 'I am h3';
+// "I am h3"
+// h1.after(h3)
+// undefined
+// // exista si ChildNode.before()
+// undefined
+// document.body.append('hello') // l-a adaugat tot la final (nu am mai verificat cu element inspector)
+// undefined
+
+// DIFERENTE ParentNode.append() si Node.appendChild()
+// ParentNode.append()
+// The ParentNode.append() method inserts a set of Node objects or DOMString objects after the last child of the ParentNode. DOMString objects are inserted as equivalent Text nodes.
+
+// Differences from Node.appendChild():
+
+// ParentNode.append() allows you to also append DOMString objects, whereas Node.appendChild() only accepts Node objects.
+// ParentNode.append() has no return value, whereas Node.appendChild() returns the appended Node object.
+// ParentNode.append() can append several nodes and strings, whereas Node.appendChild() can only append one node.
+
+
+252. remove & removeChild
+--------------------------
+
+// remove & removeChild
+
+// const firstLi = document.querySelector('li')
+// undefined
+// firstLi
+// <li class=​"toclevel-1 tocsection-1">​…​</li>​
+// const ul = firstLi.parentElement
+// undefined
+// ul.removeChild(firstLi)
+// <li class=​"toclevel-1 tocsection-1">​…​</li>​
+// // pana aici am scos primul element din lista de la Contents
+// undefined
+// const b = ul.document.querySelector('b')
+// VM483:1 Uncaught TypeError: Cannot read property 'querySelector' of undefined
+//     at <anonymous>:1:23
+// (anonymous) @ VM483:1
+// const b = document.querySelector('b')
+// VM492:1 Uncaught SyntaxError: Identifier 'b' has already been declared
+// const b2 = document.querySelector('b')
+// undefined
+// b2.parentElement.removeChild(b2)
+// <b>​Silkie​</b>​
+// // kinda jenky
+// undefined
+// // este varianta cu remove direct, dar nu functioneaza in Internet Explorer
+// undefined
+// const img = document.querySelector('img')
+// undefined
+// img.remove()
+// undefined
+// // am sters prima poza din body
+// undefined
+
+
+
+253. Pokemon...
+-----------------
+
+254...section
+-----------------
+
+255. Intro to Events
+---------------------
