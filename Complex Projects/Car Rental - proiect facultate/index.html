@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="app.css">
+    <!-- OBSERVATIE: am scris si un mic CSS, doar ca sa se vada ca tabelele sunt bune. Am comentat tot ce era acolo, pentru ca stiu ca nu aveam voi cu CSS pentru primul laborator. Daca doriti sa vedeti ca sunt in regula tabelele, decomentati. -->
+    <title>Lab 1 Form</title>
+
+</head>
+
+<body>
+    <img src="Camaro.jfif" alt="Photo of blue Chevrolet Camaro" height="300" width="500">
+    <!-- alt asta ajuta cu screen-readerele, web-crawlers sau daca efectiv nu se poate incarca imaginea -->
+
+    <h1>Car Rental Form</h1>
+    <hr>
+
+    <aside>
+
+        <img id="sprites" src="Sprites.png" alt="">
+        <hr>
+        <!--Social media-->
+        <div class="icon-bar">
+            <!-- <a href="http://www.facebook.com" class="facebook"><i class="fa fa-facebook"></i></a>
+            <a href="http://www.twitter.com" class="twitter"><i class="fa fa-twitter"></i></a>
+            <a href="http://www.google.com" class="google"><i class="fa fa-google"></i></a>
+            <a href="http://www.linkedin.com" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            <a href="http://www.youtube.com" class="youtube"><i class="fa fa-youtube"></i></a>
+            <a href="http://www.pinterest.com" class="pinterest"><i class="fa fa-pinterest"></i></a>
+            <a href="http://www.vimeo.com" class="vimeo"><i class="fa fa-vimeo"></i></a>
+            <a href="http://www.skype.com" class="skype"><i class="fa fa-skype"></i></a> -->
+            <a href="http://www.facebook.com" class="socialMediaSprite facebook"></a>
+            <a href="http://www.youtube.com" class="socialMediaSprite youtube"></a>
+            <a href="http://www.vimeo.com" class="socialMediaSprite vimeo"></a>
+            <a href="http://www.linkedin.com" class="socialMediaSprite linkedIn"></a>
+            <a href="http://www.twitter.com" class="socialMediaSprite twitter"></a>
+            <a href="http://www.skype.com" class="socialMediaSprite skype"></a>
+            <!-- <a href="http://www.twitter.com" class="socialMediaSprite pinterest"></a>
+            <a href="http://www.twitter.com" class="socialMediaSprite Skype"></a>
+            <a href="http://www.twitter.com" class="socialMediaSprite twitter"></a> -->
+        </div>
+    </aside>
+
+    <!-- <form action="#serverRequest"> -->
+    <form action="/serverRequest" method="get" target="_blank">
+        <!-- The target attribute specifies a name or a keyword that indicates where to display the response that is received after submitting the form.  -->
+        <section class="pickUp">
+            <!-- aparent nu am voie un h2 inside of a label!! -->
+            <!-- <label for="pickupLocDropdown">
+                    <h2>Pick-Up Location</h2>
+                 </label> -->
+            <h2>Pick-Up Location</h2>
+            <input type="text" value="România" readonly size="5">
+            <select name="pickupLoc" id="pickupLoc">
+                <option value="">Please choose an option</option>
+                <option value="BC">Bacau</option>
+                <option value="MM">Baia Mare</option>
+                <option value="BT">Botosani</option>
+                <option value="B">Bucuresti</option>
+                <option value="BZ">Buzau</option>
+                <option value="BV">Brasov</option>
+                <option value="CJ">Cluj</option>
+                <option value="CT">Constanta</option>
+                <option value="DJ">Craiova</option>
+                <option value="GR">Giurgiu</option>
+                <option value="IS">Iasi</option>
+                <option value="BH">Oradea</option>
+                <option value="SV" selected>Suceava</option>
+                <option value="TM">Timisoara</option>
+            </select>
+            <input type="date" name="pickupDate">
+        </section>
+        <br>
+        <section class="dropOff">
+            <!-- <label for="dropOffLoc">
+                    <h2>Drop-off Location</h2>
+                 </label> -->
+            <h2>
+                <label for="dropOffLoc">
+                    Drop-off Location
+                </label>
+            </h2>
+            <input type="text" value="România" readonly size="5">
+            <select name="dropOffLoc" id="dropOffLoc">
+                <option value="">Please choose an option</option>
+                <option value="BC">Bacau</option>
+                <option value="MM">Baia Mare</option>
+                <option value="BT">Botosani</option>
+                <option value="B">Bucuresti</option>
+                <option value="BZ">Buzau</option>
+                <option value="BV">Brasov</option>
+                <option value="CJ">Cluj</option>
+                <option value="CT">Constanta</option>
+                <option value="DJ">Craiova</option>
+                <option value="GR">Giurgiu</option>
+                <option value="IS">Iasi</option>
+                <option value="BH">Oradea</option>
+                <option value="SV" selected>Suceava</option>
+                <option value="TM">Timisoara</option>
+            </select>
+            <input type="date" name="dropoffDate" id="dropoffDate">
+
+        </section>
+
+        <!-- <input type="text" name="" id=""> -->
+        <br>
+        <section class="personalData">
+            <fieldset>
+                <legend>
+                    <h3>Personal data</h3>
+                </legend>
+                <input type="text" placeholder="Enter your name" name="name">
+                <input type="email" placeholder="Enter your email" name="email">
+                <input type="tel" placeholder="Enter your phone number" name="phone" maxlength="20">
+            </fieldset>
+        </section>
+        <br>
+        <section class="additInfoSection">
+            <hr>
+            <h3>Car type</h3>
+            <label>Please select a car type:</label>
+            <br>
+            <!-- cu checkbox aici nu ar fi mers schema sa selectez una maxim!! -->
+            <input type="radio" name="carType" value="std" id="stdCarType"><label for="stdCarType">Standard</label>
+            <input type="radio" name="carType" value="conv" id="convCarType"><label
+                for="convCarType">Convertible</label>
+            <input type="radio" name="carType" value="lux" id="luxCarType"><label for="luxCarType">Luxury</label>
+            <input type="radio" name="carType" value="van" id="vanCarType"><label for="vanCarType">Van</label>
+            <input type="radio" name="carType" value="suv" id="suvCarType"><label for="suvCarType">SUV</label>
+            <input type="radio" name="carType" value="pup" id="pupCarType"><label for="pupCarType">Pickup</label>
+        </section>
+
+        <!-- <input data-role="doubleslider"> -->
+
+        <h3>Additional Requests</h3>
+        <textarea name="additInfo" id="additInfo" cols="70" rows="10"
+            placeholder="Is there anything else you would like to add pertaining to your request?&#10;Write here..."></textarea>
+
+        <br>
+
+        <section class="termsOfAgreement">
+            <h3>Terms of Agreement</h3>
+            <hr>
+            <ol start="1" class="levelOneList" type="I">
+
+                <li>
+                    <h4>Physical person terms</h4>
+
+                    <ul class="levelTwoList">
+                        <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni beatae accusamus impedit,
+                            minima
+                            optio dolorum harum. Ipsum quaerat ad iste libero doloribus iusto. Iure sequi repudiandae
+                            similique recusandae tempora odit.
+                            <ul class="levelThreeList">
+                                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quod quia nemo natus
+                                    est
+                                    quis
+                                    explicabo nesciunt, dolore perferendis tempore expedita maxime laboriosam delectus.
+                                    Enim
+                                    architecto rerum animi eligendi esse.</li>
+                                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro officia
+                                    exercitationem
+                                    aut
+                                    repellat qui voluptatum at natus necessitatibus possimus pariatur explicabo
+                                    consectetur
+                                    temporibus, recusandae iste minus rerum corrupti ad quod.</li>
+                            </ul>
+                        </li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore minima repudiandae
+                            laudantium,
+                            eligendi suscipit consectetur sequi, eius facere dicta ea maxime adipisci veniam omnis
+                            veritatis
+                            obcaecati est vel sit doloremque.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore minima repudiandae
+                            laudantium,
+                            eligendi suscipit consectetur sequi, eius facere dicta ea maxime adipisci veniam omnis
+                            veritatis
+                            obcaecati est vel sit doloremque.</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore minima repudiandae
+                            laudantium,
+                            eligendi suscipit consectetur sequi, eius facere dicta ea maxime adipisci veniam omnis
+                            veritatis
+                            obcaecati est vel sit doloremque.</li>
+                    </ul>
+                </li>
+                <li>
+                    <h4>Juridical person terms</h4>
+
+                    <ul class="LevelTwoList">
+                        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, sapiente expedita, sequi
+                            officia voluptates commodi facilis iste nulla unde id architecto saepe, sunt praesentium
+                            maxime.
+                            Dolores officia doloremque sit deserunt!
+                        </li>
+
+
+                        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, sapiente expedita, sequi
+                            officia voluptates commodi facilis iste nulla unde id architecto saepe, sunt praesentium
+                            maxime.
+                            Dolores officia doloremque sit deserunt!</li>
+                        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, sapiente expedita, sequi
+                            officia voluptates commodi facilis iste nulla unde id architecto saepe, sunt praesentium
+                            maxime.
+                            Dolores officia doloremque sit deserunt!</li>
+                    </ul>
+                <li>
+                    <h4>Refunding</h4>
+
+                    <ul>
+                        <li>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur beatae labore consectetur
+                            fugiat error praesentium saepe dicta incidunt amet, eligendi iste porro aliquid
+                            necessitatibus
+                            accusantium similique corrupti quasi aspernatur esse!
+                        </li>
+                        <li>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur beatae labore consectetur
+                            fugiat error praesentium saepe dicta incidunt amet, eligendi iste porro aliquid
+                            necessitatibus
+                            accusantium similique corrupti quasi aspernatur esse!
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h4>Other notes</h4>
+
+                    <ol class="LevelTwoList" type="A">
+                        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum impedit provident quis, ex
+                            quibusdam aliquid ad accusamus libero nulla facere, tempora, nesciunt beatae? Corporis totam
+                            maxime quisquam. Distinctio, est magni!</li>
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum neque excepturi, fugit,
+                            exercitationem voluptates, minus ut ratione reprehenderit impedit ipsum natus magni
+                            voluptate
+                            accusantium rerum ad dolor. Magni, accusamus harum.
+                            <ol class="levelThreeList" type="1" start=1>
+                                <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste assumenda, aspernatur
+                                    modi
+                                    ipsa possimus, impedit aut ducimus excepturi laborum voluptatem error quis
+                                    repudiandae
+                                    id!
+                                    Corrupti consectetur quisquam dolorem obcaecati sed?
+
+                                </li>
+                                <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste assumenda, aspernatur
+                                    modi
+                                    ipsa possimus, impedit aut ducimus excepturi laborum voluptatem error quis
+                                    repudiandae
+                                    id!
+                                    Corrupti consectetur quisquam dolorem obcaecati sed?
+
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+
+
+
+            <!-- dc zice ca nu e ok unchecked aici? poate e obsolete, pt ca el e oricum unchecked la inceput -->
+            <!-- <input type="checkbox" name="termsAgree" id="termsAgree" checked> -->
+            <input type="checkbox" name="termsAgree" id="termsAgree" checked>
+            <!-- stiu ca nu e ok sa fac asa ceva in productie, dar am zis ca pentru un exemplu de fata trivial ar merge.. -->
+            <label for="termsAgree">I agree to the
+                <!-- <font size="+2"> -->
+                <a href="/termsConditions">
+                    terms & conditions
+                </a>
+                <!-- </font> -->
+            </label>
+        </section>
+
+        <button class="button">Submit</button>
+        <!-- <input type="submit" value="Click me!!"> -->
+    </form>
+    <button id="supportButton" disabled>Ask for support</button>
+    <span class="availability">(Temporarily unavailable)</span>
+
+    <section class="priceSection">
+        <h3>Price ranges</h3>
+        <hr>
+        <!-- <h4>SUVs & Vans</h4> -->
+        <h4>Standard vehicles</h4>
+        <table class="smallTable pricingTable">
+            <thead>
+                <tr>
+                    <!-- am mers pe principiul explicit > implicit; puteam sa nu setez rowspan-urile, ar fi fost acelasi lucru pentru exemplul de fata -->
+                    <!-- <th bgcolor="rgb(230,230,230)" rowspan="1">Durata</th> -->
+                    <th rowspan="1" style="background-color:#e6e6e6">Duration</th>
+                    <th rowspan="1" colspan="2" style="background-color:#e6e6e6">Price(euro)</th>
+                    <!-- <th colspan=" 2">Pret</th> -->
+                    <!-- !!puteam omite rowspan pt a doua, pt ca implicit e 1!! -->
+                </tr>
+                <tr>
+                    <th style="background-color:#e6e6e6">(days)</th>
+                    <!-- incep un rand nou in header; primul nu il mai scriu, pt ca e deja ocupat de "rowspan = 2" pt Durata  -->
+                    <th style="background-color:#e6e6e6">Physical</th>
+                    <th style="background-color:#e6e6e6">Juridical</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="text-align: center;vertical-align: middle">1</td>
+                    <td style="text-align: center;vertical-align: middle">25</td>
+                    <td style="text-align: center;vertical-align: middle">30</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;vertical-align: middle">2</td>
+                    <td style="text-align: center;vertical-align: middle">50</td>
+                    <td style="text-align: center;vertical-align: middle">55</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;vertical-align: middle">3</td>
+                    <td style="text-align: center;vertical-align: middle">75</td>
+                    <td style="text-align: center;vertical-align: middle">80</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;vertical-align: middle">4</td>
+                    <td style="text-align: center;vertical-align: middle">100</td>
+                    <td style="text-align: center;vertical-align: middle">105</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;vertical-align: middle">6</td>
+                    <td style="text-align: center;vertical-align: middle">125</td>
+                    <td style="text-align: center;vertical-align: middle">130</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;vertical-align: middle">7</td>
+                    <td style="text-align: center;vertical-align: middle">150</td>
+                    <td style="text-align: center;vertical-align: middle">155</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;vertical-align: middle"> 8+</td>
+                    <td style="text-align: center;vertical-align: middle">
+                        <span class="fraction"><sup>+20</sup>/<sub>day</sub></span>
+                    </td>
+                    <td style="text-align: center;vertical-align: middle"><span
+                            class="fraction"><sup>+20</sup>/<sub>day</sub></span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br>
+        <h4>Convertible & Luxury vehicles</h4>
+        <table class="largeTable pricingTable" style="border: 1px solid red">
+            <thead>
+                <tr>
+                    <!-- am mers pe principiul explicit > implicit; puteam sa nu setez rowspan-urile, ar fi fost acelasi lucru pentru exemplul de fata -->
+                    <!-- <th bgcolor="rgb(230,230,230)" rowspan="1">Durata</th> -->
+
+                    <th rowspan="2" style="background-color:#e6e6e6;">Car Type</th>
+                    <!-- <th rowspan="2">Duration &#10; (days)</th> -->
+                    <th rowspan="2" style="background-color:#e6e6e6">Duration<br>(days)</th>
+                    <th rowspan="1" colspan="2" style="background-color:#e6e6e6">Price(euro)</th>
+                    <!-- <th colspan="2">Pret</th> -->
+                    <!-- !!puteam omite rowspan pt a doua, pt ca implicit e 1!! -->
+                </tr>
+                <tr>
+                    <!-- incep un rand nou in header; primul nu il mai scriu, pt ca e deja ocupat de "rowspan = 2" pt Durata  -->
+                    <th style="background-color:#e6e6e6">Physical</th>
+                    <th style="background-color:#e6e6e6">Juridical</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Convertible</td>
+                    <!-- <td colspan="3"> -->
+                    <td colspan="3">
+                        <!-- ceav -->
+                        <table>
+                            <thead>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>50</td>
+                                    <td>55</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>75</td>
+                                    <td>80</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>100</td>
+                                    <td>105</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>125</td>
+                                    <td>130</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>150</td>
+                                    <td>155</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>175</td>
+                                    <td>180</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>200</td>
+                                    <td>205</td>
+                                </tr>
+                                <tr>
+                                    <td>8+</td>
+                                    <td>
+                                        <span class="fraction"><sup>+20</sup>/<sub>day</sub></span>
+                                    </td>
+                                    <td>
+                                        <span class="fraction"><sup>+20</sup>/<sub>day</sub></span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>Luxury</td>
+                    <td colspan="3">
+                        <!-- ceav -->
+                        <table>
+                            <thead>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>100</td>
+                                    <td>105</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>130</td>
+                                    <td>135</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>160</td>
+                                    <td>165</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>190</td>
+                                    <td>195</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>220</td>
+                                    <td>225</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>250</td>
+                                    <td>255</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>280</td>
+                                    <td>285</td>
+                                </tr>
+                                <tr>
+                                    <td>8+</td>
+                                    <td>
+                                        <span class="fraction"><sup>+30</sup>/<sub>day</sub></span>
+                                    </td>
+                                    <td>
+                                        <span class="fraction"><sup>+30</sup>/<sub>day</sub></span>
+                                    </td>
+                                </tr>
+                        </table>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <select name="cars" id="cars" multiple>
+            <option value="volvo">Volkswagen</option>
+            <option value="saab">Type</option>
+            <option value="opel">BMW</option>
+            <option value="audi">Audi</option>
+        </select>
+
+        <hr>
+
+        <span class="notice"> For info regarding Van/SUV/Pickup pricing, please contact us at this number:
+            <span class="ownPhone">
+                (+40) 747 XXX XXX
+            </span>
+        </span>
+
+    </section>
+
+
+    <p>
+        Note:
+        <span class="notice"> We will get back to you in maximum of: <span>1hr</span> (<a href="/schedule">
+                <!-- <font size="+1"> working days</font> -->
+                working days
+            </a>)
+        </span>
+
+        <br>
+        <!-- If this is not your first time visiting
+        <select name="" id=""></select>
+        <input type="checkbox" id="Very satisfied">
+        <input type="checkbox" id="Satisfied">
+        <input type="checkbox" id="Somewhat satisfied">
+        <input type="checkbox" id="Not satisfied at all"> -->
+        Note:
+        For a split transaction, please add files with the details referring to the companies.
+        <input type="file" name="splitTransFile" multiple>
+
+    </p>
+    <!-- <div class="mottoLogo" style="display:flex;justify-content:center;flex-wrap:wrap;"> -->
+    <div class="mottoLogo">
+        <h5>Not just a drive, but a journey</h5>
+        <h6>
+            All rights reserved -
+            <span class="logo">
+                &copy;Mountain Rental<sup>&reg;&trade;</sup>
+            </span>
+        </h6>
+    </div>
+</body>
+
+</html>
