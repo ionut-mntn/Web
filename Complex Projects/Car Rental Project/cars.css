@@ -1,0 +1,17 @@
+/* category{text-decoration-line: line-through;background-color: #1eb01e;}
+
+category{color:blue;}
+
+table, th, td {
+  border: 1px solid black;
+}
+*/
+/*<!-- standard, convertible, luxury, van, suv, pickup-->*/
+
+.standard{color:gray;}
+.convertible{color:pink;}
+.luxury{color:georgian;}
+.van{color:blue;}
+.suv{color:red;}
+.pickup{color:green;}
+

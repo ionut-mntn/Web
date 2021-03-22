@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type = "text/xsl" href="cars.xsl"?>
+<!--?xml-stylesheet type = "text/css" href="cars.css"?-->
+<cars>
+<!-- standard, convertible, luxury, van, suv, pickup-->
+	<car>
+		<brand>Volkswagen</brand>
+		<model>Passat</model>
+		<category>standard</category>
+		<year>2010</year>
+		<VIN>JN8AS5MV9BW681541</VIN>
+	</car>
+	<car>
+		<brand>Peugeot</brand>
+		<model>206 cc</model>
+		<category>convertible</category>
+		<year>2006</year>
+		<VIN>5FNRL38747B406926</VIN>
+	</car>
+	<car>
+		<brand>Ferrari</brand>
+		<model>Spyder</model>
+		<category>luxury</category>
+		<year>2017</year>
+		<VIN>1C6RR7FTXES418673</VIN>
+	</car>
+	<car>
+		<brand>Chevrolet</brand>
+		<model>Express 2500 Passenger</model>
+		<category>van</category>
+		<year>2019</year>
+		<VIN>1FMNU42S1YED17294</VIN>
+	</car>
+	<car>
+		<brand>Cadillac</brand>
+		<model>Escalade</model>
+		<category>SUV</category>
+		<year>2012</year>
+		<VIN>5N1AN08U36C516529</VIN>
+	</car>
+	<car>
+		<brand>Ford</brand>
+		<model>Ranger</model>
+		<category>pickup</category>
+		<year>2016</year>
+		<VIN>1HGCP26858A193674</VIN>
+	</car>
+	<car>
+		<brand>Ford</brand>
+		<model>Kuga</model>
+		<category>SUV</category>
+		<year>2010</year>
+		<VIN>2HNYD28398H521026</VIN>
+	</car>
+	<car>
+		<brand>Nissan</brand>
+		<model>NV Cargo</model>
+		<category>van</category>
+		<year>2012</year>
+		<VIN>1XP7D49X24D880867</VIN>
+	</car>
+	<car>
+		<brand>Toyota</brand>
+		<model>HiAce</model>
+		<category>van</category>
+		<year>2013</year>
+		<VIN>2C3CCAGG7EH281122</VIN>
+	</car>
+</cars>

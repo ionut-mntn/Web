@@ -25,34 +25,23 @@
         <hr>
         <!--Social media-->
         <div class="icon-bar">
-            <!-- <a href="http://www.facebook.com" class="facebook"><i class="fa fa-facebook"></i></a>
-            <a href="http://www.twitter.com" class="twitter"><i class="fa fa-twitter"></i></a>
-            <a href="http://www.google.com" class="google"><i class="fa fa-google"></i></a>
-            <a href="http://www.linkedin.com" class="linkedin"><i class="fa fa-linkedin"></i></a>
-            <a href="http://www.youtube.com" class="youtube"><i class="fa fa-youtube"></i></a>
-            <a href="http://www.pinterest.com" class="pinterest"><i class="fa fa-pinterest"></i></a>
-            <a href="http://www.vimeo.com" class="vimeo"><i class="fa fa-vimeo"></i></a>
-            <a href="http://www.skype.com" class="skype"><i class="fa fa-skype"></i></a> -->
             <a href="http://www.facebook.com" class="socialMediaSprite facebook"></a>
             <a href="http://www.youtube.com" class="socialMediaSprite youtube"></a>
             <a href="http://www.vimeo.com" class="socialMediaSprite vimeo"></a>
             <a href="http://www.linkedin.com" class="socialMediaSprite linkedIn"></a>
             <a href="http://www.twitter.com" class="socialMediaSprite twitter"></a>
             <a href="http://www.skype.com" class="socialMediaSprite skype"></a>
-            <!-- <a href="http://www.twitter.com" class="socialMediaSprite pinterest"></a>
-            <a href="http://www.twitter.com" class="socialMediaSprite Skype"></a>
-            <a href="http://www.twitter.com" class="socialMediaSprite twitter"></a> -->
         </div>
     </aside>
 
+    <form action="cars.xml">
+        <input type="submit" value="Check out our car models!">
+        <!-- nu cred ca se mai pune slash ul la final!! -->
+    </form>
     <!-- <form action="#serverRequest"> -->
     <form action="/serverRequest" method="get" target="_blank">
         <!-- The target attribute specifies a name or a keyword that indicates where to display the response that is received after submitting the form.  -->
         <section class="pickUp">
-            <!-- aparent nu am voie un h2 inside of a label!! -->
-            <!-- <label for="pickupLocDropdown">
-                    <h2>Pick-Up Location</h2>
-                 </label> -->
             <h2>Pick-Up Location</h2>
             <input type="text" value="România" readonly size="5">
             <select name="pickupLoc" id="pickupLoc">
@@ -76,9 +65,6 @@
         </section>
         <br>
         <section class="dropOff">
-            <!-- <label for="dropOffLoc">
-                    <h2>Drop-off Location</h2>
-                 </label> -->
             <h2>
                 <label for="dropOffLoc">
                     Drop-off Location
@@ -120,6 +106,7 @@
         </section>
         <br>
         <section class="additInfoSection">
+
             <hr>
             <h3>Car type</h3>
             <label>Please select a car type:</label>
@@ -531,6 +518,7 @@
             </span>
         </h6>
     </div>
+    <script src="app.js"></script>
 </body>
 
 </html>
