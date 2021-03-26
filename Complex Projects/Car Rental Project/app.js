@@ -4,6 +4,7 @@ function sortTable(c) {
     switching = true;
     /* Make a loop that will continue until
     no switching has been done: */
+    // !!!! de implementat aici si invers sa sorteze tabelul !!!!!!
     while (switching) {
         // Start by saying: no switching is done:
         switching = false;

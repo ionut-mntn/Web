@@ -1935,7 +1935,7 @@ const isEven = num => num % 2 === 0;  // one-liner implicit return
 ----------------------------------------------
 (?? what is a callback function ??)
 
-comenzile astea 2 have nothing to do with arrays. They work with the executon of the program
+comenzile astea 2 have nothing to do with arrays. They work with the execution of the program
 
 DEF CALLBACK (FUNCTION) = A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.
 
@@ -2461,8 +2461,165 @@ exemplu:
 
 AMBELE VARIANTE SCHIMBA IN OBIECTUL DOM 
 
-3) addEventListener !! cea mai buna
+258. addEventListener
+----------------------
+3) addEventListener !! cea mai buna; avem mai multa flexibilitate cu asa ceva
+
+
+const btn3 = document.querySelector('#v3')
+btn3.addEventListener('click', function () {
+    alert('hawMiaw')
+})
+
+// CALLBACK = FUNCTIE CARE VREM SA FIE EXECUTATA DUPA CE EXECUTIA UNEI ALTEI FUNCTII S-A TERMINAT
+// (de exemplu, ma gandesc ca in cazul event-urilor: un event inseamna ca s-a apelat o functie, iar 
+// eventHandler-ul nostru spune cum sa se reactioneze in urma apelului acelei functii, adica in urma trigger-ului event-ului, ... i suppose)
+// ORICE FUNCTIE IN JAVASCRIPT PE CARE O PASAM CA ARGUMENT ESTE "A CALLBACK FUNCTION" !!
+
+btn3.addEventListener('mouseup', () => {
+    alert('ai dat drumu la buton boss!')
+}) // dar obs ca se bate cap in cap cu ala de mai sus ( BA NUUU )
+// pt ca ala de mai sus imi da alerta exact atunci cand dau click, iar asta de acuma cand dau drumu la click;
+// fiindca alerta de la ala de mai sus apare chiar la click, se interpreteaza ca dau drumu la click cand apare alerta de la ala de mai sus!!
+// BA NU!! NU E ADEVARAT.. M-am grabit eu; e posibil tho sa se intample asa ceva?? 2 eventHandlers to overlap
+
+// key press de exemplu nu functioneaza cu un buton !!
 
 
 
+259. Color Changing Page
+------------------------
+
+260. Events & The Keyword This
+------------------------------
+
+!! REAMINTIM: KEYWORD-ul "this" depinde (ia diverse insemnatati/meaning) in functie de "contextul de executie" / "contextul de invocare" din care a fost apelat
+
+ 
+
+261. Keyboard Events & The Event Object
+---------------------------------------
+const btn = document.querySelector('button').addEventListener('click', (evt) => { console.log(evt) }) // pot sa nici nu pasez vreun argument, ca mai jos !!
+// const btn = document.querySelector('button').addEventListener('click', function (evt) {
+//     console.log(evt)
+// })
+// the event object
+// --------------
+// automatically passed in to our callback ! nu l folosim, we don t caputre it
+// long story short: un obiect ce contine informatii despre event-ul generat
+// clientX, clientY --> coordonatele locului in care am apasat;
+// putem de exemplu daca vrem sa apara o animatie misto acolo une am apasat click sa ne folosim de proprietatile astea
+// sau daca vrem sa facem altceva, sa ne foosim de proprietati din acest EventObject
+// de multe ori o sa trebuiasca sa rely on it; for instance when we're working with keyboard events, pt ca vrem sa stim ce tasta a fost apasata
+
+const input = document.querySelector('input');
+input.addEventListener('keydown', function () {
+    console.log("KEYDOWN")
+})
+input.addEventListener('keyup', function (e) {
+    console.log("KEYUP")
+    //console.log(this)   //ATENTIE!! aici se refera la elementul input!! nu la event-ul KeyboardEvent_keyDown
+    // console.log(this.value) //ATENTIE!! aici se refera la input.value!! nu la event-ul KeyboardEvent_keyDown
+    console.log(e);
+    console.log(e.key);
+    console.log(e.code);
+    // diferenta intre key si code:
+    //     KeyboardEvent {isTrusted: true, key: "ș", code: "Semicolon", location: 0, ctrlKey: false, …}
+    // app_261.js:23 ș // asta e end-result --> ce caracter a fost generat
+    // app_261.js:24 Semicolon // the physical key corresponding to the end-result
+    // daca schimb limba, key o sa fie un caracter diferit, dar code o sa fie exact tasta apasata !!
+})
+
+window.addEventListener('keydown', (evt) => {
+    // console.log(evt.key);
+    // console.log(evt.code);
+
+    switch (evt.code) {
+        case 'ArrowUp':
+            console.log("UP");
+            break;
+        case 'ArrowDown':
+            console.log('DOWN');
+            break;
+        case 'ArrowLeft':
+            console.log('LEFT');
+            break;
+        case 'ArrowRight':
+            console.log('RIGHT');
+            break;
+        default:
+            console.log('IGNORED');
+    }
+
+})
+
+// recap: event object ---> smth we have access to in every eventHandler & is passed to the eventHandler automatically
+// putem adauga un parametru callback-ului so that we capture it !!!
+
+
+
+262. Form Events & PreventDefault
+---------------------------------
+
+
+const tweetForm = document.querySelector('#tweetForm')
+const tweetContainer = document.querySelector('#tweets')
+tweetForm.addEventListener('submit', function (e) {
+
+    // submit event!! nu neaparat la click pe buton; poate chiar si la enter
+
+    e.preventDefault(); // anuleaza default behavior-ul !!
+
+    // DE RETINUT form.elements !!
+
+    alert("SUBMITTED");
+    console.log("SUBMITTED");
+    // e.target = null;
+    // e.preventDefault();
+    // vrem sa nu se mai faca request ul cand se da submit la form !!
+    // daca scoatem atributul action al form-ului din html, aia nu o sa ne mai trimita la o noua pagina, dar va face un refresh al paginii curente
+    // e.preventDefault();
+    // suprascriem the default behavior of 
+    // getAttribute, setAttribute
+    const usernameInput = document.querySelectorAll('input')[0];
+    const tweetInput = document.querySelectorAll('input')[1];
+    console.log(usernameInput, tweetInput); // astea is efectiv elementele/tag-urile de input !!
+    console.log(usernameInput.value, tweetInput.value);
+    //this.
+    //tweetForm.
+    // acelasi lucru astea
+    // putem accesa prin nume(varianta noastra) SAU prin 
+    const username = tweetForm.elements.username.value // 'username' e unul din name-urile pe care le-am setat noi in html
+    const tweet = tweetForm.elements.tweet.value // 'tweet' e unul din name-urile pe care le-am setat noi in html
+    // console.dir(tweetForm)
+    //console.log(tweetForm.elements)
+
+
+    // const newTweet = document.createElement('li');
+    // const boldTag = document.createElement('b')
+    // boldTag.append(username); // appenduieste inside of the element, chiar la final
+    // newTweet.append(boldTag);
+
+    // newTweet.append(`-${tweet}`)
+    // tweetContainer.append(newTweet);
+    // console.log(newTweet);
+    addTweet(username, tweet);
+
+    tweetForm.elements.username.value = '';
+    tweetForm.elements.tweet.value = '';
+
+})
+// function addTweet2 = () => console.log('ceva')
+// addTweet2();
+
+const addTweet = (username, tweet) => {
+    const newTweet = document.createElement('li');
+    const boldTag = document.createElement('b')
+    boldTag.append(username); // appenduieste inside of the element, chiar la final
+    newTweet.append(boldTag);
+
+    newTweet.append(`-${tweet}`)
+    tweetContainer.append(newTweet);
+    console.log(newTweet);
+}
 

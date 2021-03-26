@@ -35,7 +35,7 @@
 						
 						<!--exemplu sortare dupa mai multe criterii(coloane)-->
 						<xsl:sort select="category" order="ascending"/>
-						<xsl:sort select="VIN" order="ascending"/>
+						<xsl:sort select="brand" order="ascending"/>
 						
 						<!--xsl:choose-->
 							<tr class="{category}">
