@@ -1,0 +1,15 @@
+h1{
+    text-align: center;
+}
+/* div button{ */
+button{
+    /* align-self: center; */
+    /* align-items: center; asta poate merge numa cu flexbox, la fel si align-self*/
+    /* atentie!! butoanele sunt elemente de tip inline */
+    display: block;
+    /* text-align: center; */
+    /* nimic de pana aici nu a mers */
+    margin: 0 auto;
+    /* vertical 0, pe orizontala auto!! --> o sa distribuie egal pe orizontala, implicit il centreaza pt ca e singurul de pe aceasta linie ( e element block ) */
+
+}
