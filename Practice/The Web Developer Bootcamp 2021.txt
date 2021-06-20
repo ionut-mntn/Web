@@ -2623,3 +2623,617 @@ const addTweet = (username, tweet) => {
     console.log(newTweet);
 }
 
+
+SECTIUNEA 27
+(facut pe mac sectiunea 27)
+272. Web APIs & Single Threaded 
+
+JS -> single threaded!!
+
+!! At any given point in time, the single JS thread is running at most one line of JS code !! (poate sari prin call stacks, dar un singur call!! )
+
+un request poate dura mai mult timp, gen 1 - 1,5 secunde !
+
+deci avem delay de 1 - 1,5 secunde intre linii?? Nu!
+￼
+
+
+Chiar daca e single threaded, am mai vz chestii de astea:
+￼
+am mai vz setTimeout!!
+
+console.log(“Sending request to server!”)
+setTimeout( () => { console.log(“Here is your data from the server…”)}, 3000 )
+console.log(“I am at the end of the file”)
+// primul parametru e o functie (un callback!!)
+
+output:
+Sending request to server
+I am at the end of the file
+// dupa 3 secunde:
+Here is your data from the server…
+
+Cum functioneaza acest comporament?? (callbacks si toate astea..)
+
+!!Browser-ul face treburile astea!!
+Browser ul nu e scris in Javascript, e scris in C++ - de obicei. JS hands off certain tasks to the browser. Browserele vin cu ceva numit “Web APIs” -> in general metode pe care le putem apela din JS, dar sunt handed off to the browser… toate astea se intampla in background!! JS e capabil sa recunoasca aceste “special web API functions” si sa le paseze browser-ului; “here u go, browser; please remind me in 3 seconds to take care of this” -> iar browserul dupa 3 secunde le pune in call stack “hello i am the browser; JS, you make sure you run that callback now! 
+
+exemplu:
+…
+
+Mecanism
+1. browserele au functiile astea speciale
+2. concept callback -> passing a function in that is not executed right away 
+browser ul keeps track of the time!!
+
+loupe.com
+
+273. Callback Hell
+￼
+
+￼
+
+callbacks -> le folosim si atunci cand un lucru trebuie sa se faca, numai dupa ce altul s a indeplinit
+
+de multe ori o sa avem mai mult de o singura functie de callback pe care le pasam unor functii (functii asincrone / asynchronous) !! una pentru cazul in care se intoarce un rezultat, pozitiv; una pentru erori etc
+￼
+!! promises & async functions help us with callback hell !! 
+
+274. Demo: fakeRequest using Callbacks
+
+PROMISE = object that represents the eventual success / failure of some async operation
+cel mai bun exemplu: making a request -> getting data
+
+275. Demo: fakeRequest using Promises
+
+PROMISE = promise of an eventual value that may or may not work out ( ca o promisiune in viata reala: daca esti baiat cuminte, poti avea dulciuri; promise for the event of me eatting all my vegetables; dar din nou, nu mereu imi mananc toate legumele )
+= the eventual guarantee or either a value or an error; eventual resolution of something good or bad —>! DAR NU ACELASI LUCRU CU A AVEA ACEL CEVA
+
+promiseStatus -> pending / rejected / resolved
+
+!! atasam callbacks obiectului de tip Promise !!
+
+
+const request = fakeRequestPromise(‘yelp.com/api/coffee')
+
+promise
+“.then( () => {… //callback code} )” -> request ul a fost rezolvat!!
+request.then( () => {
+    console.log(“It worked!!”); 
+})
+
+“.catch( () => {… //callback code} )” -> request ul a fost rejected
+
+276. The Magic of Promises
+￼
+￼
+￼
+
+277. Creating our own Promises
+
+￼
+￼
+
+sau pe o singura linie: (using implicit returns )
+￼
+
+
+278. The Async keyword
+async functions help us write clean code; “syntax “makeup”/“sugar” for promises” !
+
+!! Async + Await !!
+
+Async
+asynchronous (function) -> orice functie care e async RETURNEAZA IMPLICIT A PROMISE!!!
+
+async function hello() {
+    …
+}
+
+const sing = async () => { … } // asta e resolved cu value “undefined”
+const sing = async () => { return “ la la la “ } // asta e resolved cu “la la la”
+
+!! DACA FUNCTIA NOASTRA RETURNEAZA A VALUE, ATUNCI OUR PROMISE WILL BE RESOLVED WITH THAT VALUE !!
+
+sing().then( () => {
+    console.log(“Promise resolved with”, data) // promise resolved with: la la la
+} )
+
+
+￼
+const sing = async () => { 
+ cevaCodCeAruncaEroare() // throw new Error
+return “ la la la “ }
+
+
+￼
+
+
+279. THE AWAIT KEYWORD
+—> allows us to write asynchronous code that looks like is synchronous!
+—> putem folosi await doar in interiorul functiilor declarate cu async!!
+—> await will pause the execution of the function, waiting for a promise to be resolved, before continuing on
+
+￼
+￼
+￼
+￼
+
+280. Handling Errors in Async Functions
+- good old fashioned try { } catch { }
+-
+(facut pe mac sectiunea 27)
+SECTIUNEA 27
+
+SECTIUNEA 28
+281. What matters in this section
+XHR -> XML HTTP Request: the old ugly clunky way of making requests; they're old, they suck
+Fetch API -> newwer way to make request
+Axios -> dar noi o sa favorizam asta
+Ce sunt APIs?
+What are endpoints? How do we read API docs?
+etc.
+
+282. Intro to AJAX
+-------------------
+Asynchronous Javascript And XML (making requests seamlessly behind the scenes)
+"AJAX is a developer's dream", because it provides us with the facilities to:
+- read data from a web server 0 after a web page has loaded
+- update a web page without reloading the page
+- send data to a web server - in the background(la fel, without reloading the page)
+
+exemplu: pe reddit cand dam scroll in jos
+in consola, in tab-ul de sus "Network" putem vedea ce requests au fost facute
+
+when we search for things in a search bar, requests are being made so that we get suggestions
+making requests using JavaScript code
+
+when we're working with JS and making requests, what we want is just Data!
+we make a request to an API endpoint; that endpoint respons with JSON-formatted data! instead about
+
+283. Intro to APIs
+------------------
+For a typical webpage, we are loading html/css/js. But when we make requests using JavaSript/AJAX, we are looking
+for barebone information. We don't need the extra-stuff made for humans, we just want the data.
+
+API = Application Programming Interface; (an interface not for humans, but for my app)
+- broad term that refers to any interface for one piece of software to interact or communicate with another 
+piece of software
+
+IT DOES NOT HAVE TO DO WITH THE WEB, IN GENERAL! But, most of the time: when we hear "API" most of the people
+are referring to "Web-APIs"
+!! "Web-APIs" are interacfes that are web-based, HTTP-based!!
+Twitter / Facebook / some weather / Bitcoin APIs etc. - expose certain endpoints. These exposed endpoints are 
+going to respond with information for cfode to consume or for other pieces of sotware to consume.
+!! BASICALLY, APIs ARE LIKE A PORTAL INTO A DIFFERENT APP !!
+AGAIN: "WEB-APIs" -> we're referring to an interface that occurs over HTTP; we make requests to particular URLs -
+which we usually call endpoints
+
+2:30 -> if we send the request as it is displayed there in the textbox, what we get back is JSON-formatted
+data, not a webpage!!
+
+examples: crypto currency exchange rate API (cryptonator), openweathermap.org, twitter API - display tweets,
+instagram APIs, Reddit 
+very different, but very useful - twilio; send text messags for you, make phone calls, email APIs.
+It s all about reading the doc! 
+!!!! APIs do a whole bunch !!!!
+
+284. What is JSON
+-----------------
+XML - Extensible Markup Language
+JSON - Javascript Object Notation
+
+AJAJ - Asynchronous Javascript And JSON
+
+!! IN JSON EVERY KEY HAS TO BE A DOUBLE QUOTED STRING !! - UNLIKE IN JAVASCRIPT WHERE WE CAN JUST WRITE THEM 
+WITHOUT QUOTES AT ALL, OR WE COULD USE SINGLE QUOTES; THAT IS INVALID IN JSON!! THE VALUES COULD BE: 
+string, numbers, anothe JSON object, an array, a boolean, null
+
+json.org -> valid JSON
+jsonformatter -> transforma invalid JSON in valid JSON. !! undefined il pune in string-uri!
+
+!! WHEN WE REQUEST SOME INFORMATION FROM AN API, WHATE WE GET BACK IS BASICALLY A GIANT STRING !!
+!! IN JS AVEM O METODA "JSON.parse(string)" WHICH TURNS A JSON STRING IN A JSOBJECT !!
+!! ANALOG: "JSON.stringify(JSObject)" TURNS A JSOBJECT INTO A JSON STRING !!
+
+??undefined se evalueaza la true??
+
+285. Using Postman
+-----------------
+- what do we do in this video? basically the anatomy of an http request and a response
+WE'll make a bunch of requests to different apps and learn more about how http
+requests structured, different status codes that we can get back, what headers are in a request, what
+the query string is
+
+To do all the above, we will be using a tool named Postman.
+
+Whether we are requesting a webpage or an API endpoint, we type in an url!
+
+!POSTMAN does not do anything we could not already do; it is just a tool to make requests!
+
+MOST OF THE TIME WHEN WORKING WITH APIs WE WILL BE READING DOCS & TESTING RESULTS BASED ON CODE THAT WE WROTE
+AND REQUESTS SMTH FROM AN API ENDPOINT
+
+IN POSTMAN, IF I SIMPLY ENTER -for example- la GET: https://postman.com voi primi ca raspuns pagina web!
+
+THERE ARE DIFFERENT TYPES OF REQUESTS THAT WE CAN SEND: GET, POST.
+GET - ASKING TO GET SOMETHING
+POST - SEND DATA TO SOMEHOW IMPACT SERVER SIDE
+
+CORE PIECES OF AN HTTP RESPONSE:
+1) BODY - the data; the body of the reponse. THE CONTENT
+2) STATUS CODE - numeric codes that are standardised for the most part; quick way to indicate -from the server-
+to us on the client THAT THINGS ARE OK (if this is 200)
+if we put bullshit in the url get link, we would get back 404 not found
+405 - not allowed (daca de ex vrem sa facem la acel endpoint de get a post request in loc de get request)
+
+any status code that starts with a 2 -> good status codes; SUCCESS, good overall
+				   3 -> REDIRECTING
+				   4 -> CLIENT ERROR STATUS CODES (the client did smth wrong); WHAT WE ARE ASKING
+FOR IS THE PROBLEM
+				   5 -> SERVER ERROR RESPONSES; SMTH WRONG ON THE SERVER SIDE - astea sunt mai rare
+
+3) HEADERS - key-value pairs; kind of like the metadata for the response and also for the request. There are headers
+on both sides(both client & server). In our case (bitcoin price API)
+obs: in Postman cred ca partea de sus e server-side -> the request si partea de jos clientul -> the response
+
+286. Query Strings & Headers
+----------------------------
+2 different endpoints pt API-ul cu Bitcoin
+
+https://www.tvmaze.com/api#full-schedule ---> Endpoint pt tv shows
+EVERY TIME WE SEE A COLON :nume_variabila IN AN ENDPOINT, de exemplu: .../search/show?q=:query
+INSEAMNA CA ACEA VARIABILA -in cazul nostru query- este o variabila that we proivde
+
+"?q=:query"
+
+CONCLUSION: QUERY STRINGS ARE JUST INFORMATION THAT WE CAN PROVIDE TO ANY URL OR AS PART OF A URL THAT USUALLY IS
+GOING TO IMPACT WHAT WE GET BACK
+ampersand-ul separa mai multe variabile intr-un query string
+
+!! WHEN WE HAVE A GET REQUEST SUBMITTED BY A FORM, IT JUST CREATES A QUERY STRING AND IT REDIRECTS US TO A URL !!
+NONSENSE VARIABLES ADDED AT THE END OF A QUERY STRING ARE IGNORED!! IN SCHIMB, DACA SCHIMBAM LINK-UL DE BAZA,
+E POSIBIL SA NU MAI MEARGA
+
+icanhazdadjoke!!
+
+Every API is different. asta ultimul e capabil sa raspunda cu XML, JSON sau plain text + noutate: IT REQUIRES US
+TO PASS IN OR TO INCLUDE A HEADER ON THE REQUEST!! And this header is called "ACCEPT" in acest caz. Si in functie
+de ce key-value setam in header-ul respectiv, obtinem un response diferit!
+
+287. Making XHRs
+----------------
+-> the original way of sending requests via JS
+-> does not support promises... so lots of callbacks!
+-> clunky syntax!!
+
+const req = new XMLHttpRequest();
+
+req.onload = function () {
+    console.log("ALL DONE WITH REQUEST!!!");
+    // console.log(this);
+    // console.log(this.responseText);
+    const data = JSON.parse(this.responseText);
+    console.log(data.ticker.price);
+}
+
+req.onerror = function () {
+    console.log("error!!!")
+    console.log(this);
+}
+
+req.open('GET', 'https://api.cryptonator.com/api/ticker/btc-usd')
+// req.open('GET', 'https://api.cryptdddddonator.com/api/ticker/btc-usd')
+req.send();
+
+288. !!! The Fetch API !!!
+--------------------------
+-> written in respons to XHRs that sucked
+-> supports promises, deci folosim: .then, .catch, async, await
+
+fetch('https://api.cryptonator.com/api/ticker/btc-usd'); // returneaza a promise
+
+// fetch('https://api.cryptonator.com/api/ticker/btc-usd') // returneaza a promise
+//     .then(res => {
+//         // console.log('RESPONSE ', res);
+//         console.log('RESPONSE, WAITING TO PARSE... ', res);
+//         // res.json().then()...
+//         return res.json() // this returns a promise itself
+//     })
+//     .then(data => {
+//         console.log("DATA PARSED...", data);
+//         console.log(data.ticker.price);
+//     })
+//     .catch(e => {
+//         console.log("OH NO! ERROR!", e);
+//     })
+//     // cu toate ca o sa rezolve promise-ul cu succes, one thing annoying about
+//     // fetch is that we don't actually have the data, just yet; we don't have it
+//     // easily accesible
+//     // what happens: fetch is actually going to resolve the promise, triggering our
+//     // ".then" as soon as it receives the headers coming back from the API we passed!!
+//     // So it doesn't wait to resolve. When all of the data is back, when everything is done .. n-am inteles aici
+//     // As soon as it gets the first bit of the headers, fetch is going to resolve the promise
+//     // AICI INTERVINE METODA "response.json()"
+//     // it's still a little bit of work; we need to have multiple promises we're working with
+
+// above: promisy function
+
+const fetchBitcoinPrice = async () => {
+    try {
+        const res = await fetch('https://api.cryptonator.com/api/ticker/btc-usd')
+        // console.log(res);
+        const data = await res.json();
+        console.log(data.ticker.price);
+    }
+    catch (e) {
+        console.log("something went wrong!!");
+    }
+}
+// with async functions (adica varianta asta )
+
+289. Intro to Axios
+-------------------
+-> library built on top of fetch
+Without Axios ie. just with fetch we have to worry about the first promise (check above) in the very beginning of a
+received response and then we call res.json() whic itself returns a promise when the whole body has been parsed;
+SO 2 SEPARATE STEPS. Axios creaza un singur pas din astea 2!! We just include it
+
+// // fetch('https://api.cryptonator.com/api/ticker/btc-usd') // returneaza a promise
+// //     .then(res => {
+// //         // console.log('RESPONSE ', res);
+// //         console.log('RESPONSE, WAITING TO PARSE... ', res);
+// //         // res.json().then()...
+// //         return res.json() // this returns a promise itself
+// //     })
+// //     .then(data => {
+// //         console.log("DATA PARSED...", data);
+// //         console.log(data.ticker.price);
+// //     })
+// //     .catch(e => {
+// //         console.log("OH NO! ERROR!", e);
+// //     })
+// //     // cu toate ca o sa rezolve promise-ul cu succes, one thing annoying about
+// //     // fetch is that we don't actually have the data, just yet; we don't have it
+// //     // easily accesible
+// //     // what happens: fetch is actually going to resolve the promise, triggering our
+// //     // ".then" as soon as it receives the headers coming back from the API we passed!!
+// //     // So it doesn't wait to resolve. When all of the data is back, when everything is done .. n-am inteles aici
+// //     // As soon as it gets the first bit of the headers, fetch is going to resolve the promise
+// //     // AICI INTERVINE METODA "response.json()"
+// //     // it's still a little bit of work; we need to have multiple promises we're working with
+
+// // above: promisy function
+
+// const fetchBitcoinPrice = async () => {
+//     try {
+//         const res = await fetch('https://api.cryptonator.com/api/ticker/btc-usd')
+//         // console.log(res);
+//         const data = await res.json();
+//         console.log(data.ticker.price);
+//     }
+//     catch (e) {
+//         console.log("something went wrong!!");
+//     }
+// }
+// // with async functions (adica varianta asta )
+
+axios.get('https://api.cryptonator.com/api/ticker/btc-usd')//;
+    // scriind asta de deasupra in consola, obs ca promise-ul returnat este resolved
+    // are deja datele parsed inside of it; we didn't have to deal with any json parsing
+    // chain multiple ".then"s as with fetch
+    .then(res => {
+        console.log(res.data.ticker.price)
+    })
+    .catch(err => {
+        console.log("ERROR!", err);
+    })
+
+const fetchBitcoinPrice = async () => {
+    try {
+        const res = await axios.get('https://api.cryptonator.com/api/ticker/btc-usd');
+        console.log(res.data.ticker.price)
+    } catch (e) {
+        // 
+    }
+}
+
+// deci diff dintre varianta cu axios si varianta cu fetch este ca in varianta de deasupra(din 288.) -cea cu fetch-
+// facem prima data un fetch call - asta returneaza a promise, but this promise is resolved with
+// what is basically an incomplete response object. 
+// !!Data is still coming in; it's not been parsed!!
+// Iar apoi we have to call res.json() care returneaza another promise dupa care trebuie sa asteptam for it to be finished..
+// so it's just an extra step
+
+// Axios does it all for us at once. We just await one thing or we have one ".then" and we get this nice response that has 
+// everything in it.
+// REMEMBER: IT DOESN'T DO ANYTHING WE COULDN'T DO BEFORE!!
+
+
+
+290. Setting Headers With Axios
+-------------------------------
+
+!! CAUTION: APIs do often have rate limits!! DO NOT SPAM, do not make API calls in a loop.. you might get your ip
+address banned!! or at least give you a cooldown
+
+// // fetch('https://api.cryptonator.com/api/ticker/btc-usd') // returneaza a promise
+// // //     .then(res => {
+// // //         // console.log('RESPONSE ', res);
+// // //         console.log('RESPONSE, WAITING TO PARSE... ', res);
+// // //         // res.json().then()...
+// // //         return res.json() // this returns a promise itself
+// // //     })
+// // //     .then(data => {
+// // //         console.log("DATA PARSED...", data);
+// // //         console.log(data.ticker.price);
+// // //     })
+// // //     .catch(e => {
+// // //         console.log("OH NO! ERROR!", e);
+// // //     })
+// // //     // cu toate ca o sa rezolve promise-ul cu succes, one thing annoying about
+// // //     // fetch is that we don't actually have the data, just yet; we don't have it
+// // //     // easily accesible
+// // //     // what happens: fetch is actually going to resolve the promise, triggering our
+// // //     // ".then" as soon as it receives the headers coming back from the API we passed!!
+// // //     // So it doesn't wait to resolve. When all of the data is back, when everything is done .. n-am inteles aici
+// // //     // As soon as it gets the first bit of the headers, fetch is going to resolve the promise
+// // //     // AICI INTERVINE METODA "response.json()"
+// // //     // it's still a little bit of work; we need to have multiple promises we're working with
+
+// // // above: promisy function
+
+// // const fetchBitcoinPrice = async () => {
+// //     try {
+// //         const res = await fetch('https://api.cryptonator.com/api/ticker/btc-usd')
+// //         // console.log(res);
+// //         const data = await res.json();
+// //         console.log(data.ticker.price);
+// //     }
+// //     catch (e) {
+// //         console.log("something went wrong!!");
+// //     }
+// // }
+// // // with async functions (adica varianta asta )
+
+// axios.get('https://api.cryptonator.com/api/ticker/btc-usd')//;
+//     // scriind asta de deasupra in consola, obs ca promise-ul returnat este resolved
+//     // are deja datele parsed inside of it; we didn't have to deal with any json parsing
+//     // chain multiple ".then"s as with fetch
+//     .then(res => {
+//         console.log(res.data.ticker.price)
+//     })
+//     .catch(err => {
+//         console.log("ERROR!", err);
+//     })
+
+// const fetchBitcoinPrice = async () => {
+//     try {
+//         const res = await axios.get('https://api.cryptonator.com/api/ticker/btc-usd');
+//         console.log(res.data.ticker.price)
+//     } catch (e) {
+//         // 
+//     }
+// }
+
+// // deci diff dintre varianta cu axios si varianta cu fetch este ca in varianta de deasupra(din 288.) -cea cu fetch-
+// // facem prima data un fetch call - asta returneaza a promise, but this promise is resolved with
+// // what is basically an incomplete response object. 
+// // !!Data is still coming in; it's not been parsed!!
+// // Iar apoi we have to call res.json() care returneaza another promise dupa care trebuie sa asteptam for it to be finished..
+// // so it's just an extra step
+
+// // Axios does it all for us at once. We just await one thing or we have one ".then" and we get this nice response that has 
+// // everything in it.
+// // REMEMBER: IT DOESN'T DO ANYTHING WE COULDN'T DO BEFORE!!
+
+// const jokes = document.querySelector('#jokes');
+// const getDadJoke = async () => {
+//     // const res = await axios.get('https://icanhazdadjoke.com/') // cu asta primim html inapoi in data
+
+//     // const headers = { headers: { Accept: 'application/json', } } 
+//     const config = { headers: { Accept: 'application/json' } }
+//     const res = await axios.get('https://icanhazdadjoke.com/', config); // cu asta primim JSON inapoi in data
+//     // console.log(res);
+//     console.log(res.data.joke);
+
+//     const newLI = document.createElement('LI');
+//     newLI.append(res.data.joke);
+//     jokes.append(newLI);
+// }
+
+// const newJokeBtn = document.querySelector('#newJokeBtn');
+// newJokeBtn.addEventListener('click', getDadJoke);
+
+const button = document.querySelector('button');
+
+const addNewJoke = async () => {
+    const jokeText = await getDadJoke();
+    // console.log(jokeText);
+    const newLI = document.createElement('LI');
+    // newLI.append(res.data.joke);
+    // jokes.append(newLI);
+    newLI.append(jokeText);
+    jokes.append(newLI);
+}
+
+button.addEventListener('click', addNewJoke);
+
+const getDadJoke = async () => {
+    try {
+        const config = { headers: { Accept: 'application/json' } };
+        const res = await axios.get('https://icanhazdadjoke.com/', config);
+        // const res = await axios.get('https://icanhazdaSDdjoke.com/', config);
+        return res.data.joke;
+    }
+    catch (e) {
+        return "NO JOKES AVAILABLE! SORRY :(";
+    }
+}
+
+
+291.TV Show Search App
+----------------------
+
+const form = document.querySelector('#searchForm');
+form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    // console.log('subbmitted!');
+    // console.lof(this);
+    // console.log(form);
+    // console.dir(this);
+    console.dir(form); //The Console method dir() displays an interactive list of the properties of the specified 
+JavaScript object. The output is presented as a hierarchical listing with disclosure triangles that let you see 
+the contents of child objects.
+    // console.log(form.elements.q.value);
+    // console.log(form.elements.query.value);
+    const searchTerm = form.elements.query.value;
+    // const res = axios.get(`http://api.tvmaze.com/search/shows?q=${searchTerm}`) // la acest pas am facut functia o functie async;
+    // const res = await axios.get(`http://api.tvmaze.com/search/shows?q=${searchTerm}`) // la acest pas am facut functia o functie async;
+
+    // const config = { params: { q: searchTerm } }
+    const config = { params: { q: searchTerm, isFunny: 'colt' } };
+    const res = await axios.get(`http://api.tvmaze.com/search/shows`, config) // la acest pas am facut functia o functie async;
+
+    // console.log(res.data);
+    // console.log(res.data[0].show.image.medium);
+
+    // const img = document.createElement('IMG');
+    // // img.src = res.data[0].show.image.medium;
+    // document.body.append(img);
+    makeImages(res.data);
+    form.elements.query.value = ''
+});
+
+const makeImages = (shows) => {
+    for (let result of shows) {
+        if (result.show.image) {
+            console.log(result);
+            const img = document.createElement('IMG');
+            img.src = result.show.image.medium;
+            document.body.append(img);
+
+        }
+    }
+}
+SECTIUNEA 28
+===================================================================================================================================================================================================
+SECTIUNEA 29
+
+293. What on Earth are Prototypes
+---------------------------------
+def: prototype(according to MDN) = mechanism by which JavaScript Objects, inherit features from one another. Objects
+				   can have a prototype object which acts as a template object!
+
+Cum se face ca: atunci cand avem un array(remember arrays are objects in JS!) "arr", cand scriem in consola
+arr nu vedem din prima -de exemplu- metoda push?! dc aceasta se gaseste sub proprietatea "__proto__"? 
+Note: this(the __proto__ in the case of Array objects) is a property that references the array prototype! Deci in acest
+caz, the prototype is the template object for in this case arrays.
+!!ATENTIE!!: arr.includes(2) ---> aceasta metoda "includes" si in general toate metodele unui Array nu sunt definite
+IN/PENTRU/PE fiecare array that we create! Ea este definita IN/PENTRU/PE acest __proto__ (prototype) object!! 
+So rather than having a separate method on every single array -called 'push' for instance-, there is one prototype
+and each array has a reference to that prototype with this special property "__property__"
+of having a 
+
+
+SECTIUNEA 29
