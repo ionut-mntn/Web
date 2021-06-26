@@ -3257,6 +3257,191 @@ Array.prototype.pop = function () {         // we could even overwrite
 
 294. Intro To Object Oriented Programming
 -----------------------------------------
+...
+__proto__ ul ala ne spune which would be that same cookie cutter !!
+
+factory function -> o functie ce face un obiect (ii adauga niste metode, atribute etc) si il returneaza
+
+295. Factory Functions
+----------------------
+
+296. Constructor Functions
+-------------------------
+.rgb
+.hrx
+metodele astea sunt dublate pt fiecare obiect!! fiecare obiect are o copie a metodei respective!!
+
+function CapitalLetter() --> constructor function
+function Color(r, g, b){
+   this.r = r;
+   this.g = g;
+   this.b = b;
+   console.log(this);
+}
+
+07:00 !
+
+
+297. Javascript Classes
+-----------------------
+... check VSCode
+
+298. More Classes Practice
+--------------------------
+... check VSCode
+
+299. Extends and Super Keywords
+--------------------------------
+... check VSCode
 
 
 SECTIUNEA 29
+===================================================================================================================================================================================================
+SECTIUNEA 30
+:chestii banale.. poate doar pe alocuri noutati
+
+301. Backend Overview
+---------------------
+Pana acuma, tot ce am scris a fost static. De acuma incercam sa scriem cod care scrie cod!!
+Cum scriem un server? Cum scriem dynamic nujce...
+Un task big care implica multe tehnologii
+
+302. A Pep Talk On Terminal
+---------------------------
+
+303. Why Do We Need To Know Terminal Commands?
+----------------------------------------------
+terminologie:
+
+1.terminal - text-based interace to your computer;originally chiar era un physical object that we would interact with; 
+these days, it refers to software
+
+2.shell - the program/software running on the terminal;
+
+ANALOGIE: terminalul - ATM-ul
+          shell - the software running on the ATM to make it work
+
+3.bash - one of the most popular shellfs (the default on mac; dar incepand cu Catalna e zshell, zsh)
+zsh has some new features
+
+304. Windows Terminal Installation Instructions
+-----------------------------------------------
+...
+
+305. The Basics: LS & PWD
+-------------------------
+...
+
+306. Changing Directories
+------------------------
+...
+
+307. Relative Vs Absolute Paths
+-------------------------------
+...
+
+308. Making Directories
+-----------------------
+...
+
+309. Man Pages & Flags
+----------------------
+...
+
+310. The Touch Command
+----------------------
+... (cu asta faci fisiere, dar nu e the main purpose al comenzii)
+
+311. Removing Files & Folders
+-----------------------------
+...
+
+SECTIUNEA 30
+===================================================================================================================================================================================================
+SECTIUNEA 31: OUR FIRST BRUSH WITH NODE
+
+312. What Matters in this Section
+---------------------------------
+Node REPL - JS console in our browser but for node
+run code in a JS file using node
+Process - special thing that exists in Node that we have available to us in every node file; similar cu Document / Window
+pe care le avem available in every JS file in the browser
+File system module - we can do things with node that we can t do with a browser
+
+313. Introducing NodeJS
+-----------------------
+What is NodeJS? It is technically a JS Runtime. 
+
+La inceput am invatat ca nu exista "an oficial JS" pe care il descarcam & instalam. 
+Exista o specificatie ECMAScript la care browserele adera si pe care trebuie sa o implementeze. DECI ESTE RESPONSABILITATEA
+BROWSERELOR TO FOLLOW THE RULES SI SA IMPLEMENTEZE LIMBAJUL!!
+
+Pentru mult timp, singurul loc in care am scrie&executa cod JS ar fi fost intr-un browser.
+In python/ruby putem scrie interactiona cu file systemsun web server, putem crea jocuri, putem scrie CL(Command Line) 
+tools etc. 
+!! Toate astea nu le puteam face cu JS until the advent of NodeJS !!
+Node este o implementare a JS that runs outside of the browser! So we can run JS scode without ever opening a browser!
+DAR ASTA NU INSEAMNA CA PUTEM FACE EXACT ACELEASI LUCRURI! Daca nu avem un browser, inseamna ca nu putem manipula
+DOM-ul or deal with user input and events and all that. Aside of these differences, it's just JavaScript that runs 
+outside the browser; so we can use the same syntax that we already know to write code that RUNS ON THE SERVER SIDE.
+
+Si cica sunt multe apps care fac astea.
+!!Node nu este prima implementare a JS care ruleaza outside of the browser!! Netscape's LiveWire Pro Web.
+NodeJS exista din 2009.
+
+Node are si mult mai multe pachete decat alte variante -- strong community!
+
+Deci, exista multe lucruri pe care nu am fost capabili pana acum sa le facem cu JS in the browser, but from now on
+we will be able to do
+
+314. What Is Node Used For?
+---------------------------
+
+NodeJS = JS that runs outside of the browser
+
+we just run it on our machine and because it is not in the browser, we can do a lot of other stuff that we normally
+couldn't do, such as:
+
+1) creating Web Servers and writing server side logic for a full stack application.
+-at the moment of going through this section- we could write code in the browser that can request a server; we can
+request an API and get some information back and do smth in the browser
+WHAT IF I WANT TO MAKE MY OWN API? WHAT IF I WANT TO WORK WITH A DATABASE OF MY OWN AND CONNECT THAT DATABASE TO MY
+WEB SERVER AND BUILD A FULL APPLICATION?
+
+Netflix, Uber use NodeJS
+!! a ajutat chiar niste astronauti!!  (in spatiu EVA = extravehicular activity)
+Express - 
+
+2) Command Line Tools: apps that run in our command line, eg: NPM
+
+3) Native Apps: VSCode is a Node app!! alte exemple: slack - runs both in browser as a native app! 
+pt asta se foloseste: Electron!! Twitch, WhatsApp, VSCode, Microsoft Teams, Figma.. toate astea cica folosesc Electron
+BASICALLY WE CAN WRITE JS TO MAKE NATIVE APPS
+
+4) Video Games: CrossCode - huge success; first in browser apoi in Steam.. ca mai apoi sa fie "portat" (nuj daca asta 
+e cuvanutl potrivit) pe PS, Xbox, Nintendo
+
+5) Drone Software
+
+6) A Whole Lot More!
+
+1) ---> NE INTERESEAZA CEL MAI MULT!!
+
+315. Installing Node
+--------------------
+LTS = long term support
+
+316. The Node REPL
+------------------
+
+317. Running Node Files
+-----------------------
+
+318. Process & Argv
+-------------------
+
+319. File System Module Crash Course
+------------------------------------
+
+SECTIUNEA 31
+===================================================================================================================================================================================================
