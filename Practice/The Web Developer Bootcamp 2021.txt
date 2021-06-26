@@ -3226,14 +3226,37 @@ def: prototype(according to MDN) = mechanism by which JavaScript Objects, inheri
 				   can have a prototype object which acts as a template object!
 
 Cum se face ca: atunci cand avem un array(remember arrays are objects in JS!) "arr", cand scriem in consola
-arr nu vedem din prima -de exemplu- metoda push?! dc aceasta se gaseste sub proprietatea "__proto__"? 
+arr nu vedem din prima -de exemplu- metoda push?! dc aceasta se gaseste sub proprietatea "__proto__"?
+-- 
 Note: this(the __proto__ in the case of Array objects) is a property that references the array prototype! Deci in acest
 caz, the prototype is the template object for in this case arrays.
 !!ATENTIE!!: arr.includes(2) ---> aceasta metoda "includes" si in general toate metodele unui Array nu sunt definite
 IN/PENTRU/PE fiecare array that we create! Ea este definita IN/PENTRU/PE acest __proto__ (prototype) object!! 
 So rather than having a separate method on every single array -called 'push' for instance-, there is one prototype
 and each array has a reference to that prototype with this special property "__property__"
-of having a 
+
+!! PROTOTYPES ARE TEMPLATE OBJECTS !! so they are objects
+
+!REMEMBER: strings, numbers, booleans are technically primitive types.. HOWEVER, in JavaScript they all get these
+intermediate wrappers and that s where all those string methods come from, the string prototype!.
+!! Putem altera prototipurile!!
+
+String.prototype.yell = function () {       // we could 
+    return `ceva string fratello ${this.toUpperCase()}!!!`;
+}
+
+Array.prototype.pop = function () {         // we could even overwrite
+    return `Sorry boss I need that, I will never pop it off!`;
+}
+
+// care e diferenta intre Array.prototype si actual_array.__proto__?
+// diff e ca:
+// Array.prototype este efectiv prototipul la care putem umbla si sa
+// alteram/adaugam unele metode 
+// pe cand __proto__ e o referinta!
+
+294. Intro To Object Oriented Programming
+-----------------------------------------
 
 
 SECTIUNEA 29
